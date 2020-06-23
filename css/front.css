@@ -1,0 +1,106 @@
+a img {
+	border: 0;
+}
+body {
+	background: white;
+	color: black;
+	font-family: Arial, sans-serif;
+	font-size: 11pt;
+	line-height: 1.3em;
+	margin: 0;
+	margin-top: 3%;
+}
+div.blank-space {
+	height: 1em;
+}
+div.footnote {
+	font-size: 8pt;
+	margin-right: 0.2em;
+	padding: 0.2em;
+	text-align: right;
+}
+table.front-page {
+	font-size: 10pt;
+	margin-left: 2%;
+	margin-right: 2%;
+	padding-bottom: 50px;
+	padding-top: 75px;
+}
+table.front-page td#right {
+	text-align: center;
+	padding-top: 15px;
+}
+table.front-page td#text {
+	padding-right: 20px;
+}
+table.front-page img#thumb {
+	border: 0;
+}
+table.front-page img#title-banner {
+	margin-left: -5px;
+	padding: 0;
+}
+table.front-page p#download {
+	/* background: #f0f0f0; */
+	/* background: #55ff4e; */
+	/* background: #a0ff90; */
+	background: #90ff80;
+	font-size: 18pt;
+	font-weight: bold;
+	line-height: 115%;
+	/* margin-top: 10px; */
+	/* padding: 0.7em; */
+	/* padding-bottom: 0.8em; */
+	text-align: center;
+	color: #0c5e00;
+}
+table.front-page p#download a {
+	text-decoration: none;
+	color: #0c5e00;
+}
+table.front-page a:visited {
+	color: blue;
+}
+table.front-page td#text a:hover {
+	background: #f5f5f5;
+}
+table.front-page td#right a:hover {
+	text-decoration: underline;
+}
+
+/**
+ * The CSS below is for rounded boxes, as demonstrated by
+ * http://kalsey.com/2003/07/rounded_corners_in_css/
+ */
+div.rounded-box {
+	/* width: 100%; */
+	background: #90ff80;
+	/* color: #fff; */
+	margin-top: 10px;
+}
+div.rounded-box p {
+	margin: 0px;
+}
+.roundtop-15 { 
+	background: url(../img/corners/tr-15.png) no-repeat top right; 
+}
+.roundbottom-15 {
+	background: url(../img/corners/br-15.png) no-repeat top right; 
+}
+img.corner-15 {
+	width: 15px;
+	height: 15px;
+	border: none;
+	display: block !important;
+}
+
+/**
+ * Added trick from http://webdesign.anmari.com/clickable_link_nested_divs/
+ * to make the entire box into a clickable link.
+ */
+div.rounded-box a {
+	display: block; text-decoration: none;
+}
+div.rounded-box a:hover {
+	color: #0c5e00;
+}

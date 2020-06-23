@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pygplates.EnumerationType &mdash; pygplates 2.1.0.18 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.1.0.18',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pygplates 2.1.0.18 documentation" href="../index.html" />
+    <link rel="up" title="Reference" href="../pygplates_reference.html" />
+    <link rel="next" title="pygplates.FeatureId" href="pygplates.FeatureId.html" />
+    <link rel="prev" title="pygplates.Vector3D" href="pygplates.Vector3D.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="pygplates.FeatureId.html" title="pygplates.FeatureId"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pygplates.Vector3D.html" title="pygplates.Vector3D"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">pygplates 2.1.0.18 documentation</a> &raquo;</li>
+          <li><a href="../pygplates_reference.html" accesskey="U">Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="pygplates-enumerationtype">
+<h1>pygplates.EnumerationType<a class="headerlink" href="#pygplates-enumerationtype" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pygplates.EnumerationType">
+<em class="property">class </em><tt class="descclassname">pygplates.</tt><tt class="descname">EnumerationType</tt><a class="headerlink" href="#pygplates.EnumerationType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></tt></p>
+<p>The namespace-qualified type of an enumeration.</p>
+<p>All comparison operators (==, !=, &lt;, &lt;=, &gt;, &gt;=) are supported. EnumerationType is hashable (can be used as a key in a <tt class="docutils literal"><span class="pre">dict</span></tt>).</p>
+<dl class="method">
+<dt id="pygplates.EnumerationType.__init__">
+<tt class="descname">__init__</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.EnumerationType.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raises an exception
+This class cannot be instantiated from Python</p>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.EnumerationType.__init__" title="pygplates.EnumerationType.__init__"><tt class="xref py py-obj docutils literal"><span class="pre">__init__</span></tt></a></td>
+<td>Raises an exception</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.EnumerationType.create_from_qualified_string" title="pygplates.EnumerationType.create_from_qualified_string"><tt class="xref py py-obj docutils literal"><span class="pre">create_from_qualified_string</span></tt></a>(name)</td>
+<td>[<em>staticmethod</em>] Creates a <a class="reference internal" href="#pygplates.EnumerationType" title="pygplates.EnumerationType"><tt class="xref py py-class docutils literal"><span class="pre">EnumerationType</span></tt></a> instance from a fully qualified name string.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.EnumerationType.create_gpml" title="pygplates.EnumerationType.create_gpml"><tt class="xref py py-obj docutils literal"><span class="pre">create_gpml</span></tt></a>(name)</td>
+<td>[<em>staticmethod</em>] Create an enumeration type qualified with the <tt class="docutils literal"><span class="pre">gpml:</span></tt> prefix (<tt class="docutils literal"><span class="pre">gpml:</span></tt> + <tt class="docutils literal"><span class="pre">name</span></tt>).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.EnumerationType.get_name" title="pygplates.EnumerationType.get_name"><tt class="xref py py-obj docutils literal"><span class="pre">get_name</span></tt></a>()</td>
+<td>Returns the unqualified name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.EnumerationType.get_namespace" title="pygplates.EnumerationType.get_namespace"><tt class="xref py py-obj docutils literal"><span class="pre">get_namespace</span></tt></a>()</td>
+<td>Returns the namespace URI.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.EnumerationType.get_namespace_alias" title="pygplates.EnumerationType.get_namespace_alias"><tt class="xref py py-obj docutils literal"><span class="pre">get_namespace_alias</span></tt></a>()</td>
+<td>Returns the namespace alias.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.EnumerationType.to_qualified_string" title="pygplates.EnumerationType.to_qualified_string"><tt class="xref py py-obj docutils literal"><span class="pre">to_qualified_string</span></tt></a>()</td>
+<td>Returns the fully qualified name.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="pygplates.EnumerationType.create_from_qualified_string">
+<tt class="descname">create_from_qualified_string</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#pygplates.EnumerationType.create_from_qualified_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>[<em>staticmethod</em>] Creates a <a class="reference internal" href="#pygplates.EnumerationType" title="pygplates.EnumerationType"><tt class="xref py py-class docutils literal"><span class="pre">EnumerationType</span></tt></a> instance from a fully qualified name string.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>string</em>) &#8211; qualified name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#pygplates.EnumerationType" title="pygplates.EnumerationType"><tt class="xref py py-class docutils literal"><span class="pre">EnumerationType</span></tt></a> or None</td>
+</tr>
+</tbody>
+</table>
+<p>The name string should have a <tt class="docutils literal"><span class="pre">:</span></tt> character separating the namespace alias from the unqualified name, for example <tt class="docutils literal"><span class="pre">gpml:SubductionPolarityEnumeration</span></tt>. If the namespace alias is not recognised (as <tt class="docutils literal"><span class="pre">gpml</span></tt>, <tt class="docutils literal"><span class="pre">gml</span></tt> or <tt class="docutils literal"><span class="pre">xsi</span></tt>) then <tt class="docutils literal"><span class="pre">gpml</span></tt> is assumed.</p>
+<p>An over-qualified name string (eg, containing two or more <tt class="docutils literal"><span class="pre">:</span></tt> characters) will result in <tt class="docutils literal"><span class="pre">None</span></tt> being returned.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">enumeration_type</span> <span class="o">=</span> <span class="n">pygplates</span><span class="o">.</span><span class="n">EnumerationType</span><span class="o">.</span><span class="n">create_from_qualified_string</span><span class="p">(</span><span class="s1">&#39;gpml:SubductionPolarityEnumeration&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.EnumerationType.create_gpml">
+<tt class="descname">create_gpml</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#pygplates.EnumerationType.create_gpml" title="Permalink to this definition">¶</a></dt>
+<dd><p>[<em>staticmethod</em>] Create an enumeration type qualified with the <tt class="docutils literal"><span class="pre">gpml:</span></tt> prefix (<tt class="docutils literal"><span class="pre">gpml:</span></tt> + <tt class="docutils literal"><span class="pre">name</span></tt>).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>string</em>) &#8211; unqualified name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#pygplates.EnumerationType" title="pygplates.EnumerationType"><tt class="xref py py-class docutils literal"><span class="pre">EnumerationType</span></tt></a></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">gpml_subduction_polarity_enumeration_type</span> <span class="o">=</span> <span class="n">pygplates</span><span class="o">.</span><span class="n">EnumerationType</span><span class="o">.</span><span class="n">create_gpml</span><span class="p">(</span><span class="s1">&#39;SubductionPolarityEnumeration&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.EnumerationType.get_name">
+<tt class="descname">get_name</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.EnumerationType.get_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the unqualified name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+<p>This is the fully qualified name minus the <tt class="docutils literal"><span class="pre">gpml:</span></tt> prefix (if created with <em>create_gpml()</em>).</p>
+<p>For example, <tt class="docutils literal"><span class="pre">SubductionPolarityEnumeration</span></tt>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.EnumerationType.get_namespace">
+<tt class="descname">get_namespace</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.EnumerationType.get_namespace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the namespace URI.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+<p>For example, the <tt class="docutils literal"><span class="pre">gpml</span></tt> namespace alias has the namespace <tt class="docutils literal"><span class="pre">http://www.gplates.org/gplates</span></tt>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.EnumerationType.get_namespace_alias">
+<tt class="descname">get_namespace_alias</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.EnumerationType.get_namespace_alias" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the namespace alias.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+<p>For example, <tt class="docutils literal"><span class="pre">gpml</span></tt> (if created with <em>create_gpml()</em>).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.EnumerationType.to_qualified_string">
+<tt class="descname">to_qualified_string</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.EnumerationType.to_qualified_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the fully qualified name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+<p>For example, <tt class="docutils literal"><span class="pre">gpml:SubductionPolarityEnumeration</span></tt>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pygplates.Vector3D.html"
+                        title="previous chapter">pygplates.Vector3D</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pygplates.FeatureId.html"
+                        title="next chapter">pygplates.FeatureId</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/generated/pygplates.EnumerationType.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="pygplates.FeatureId.html" title="pygplates.FeatureId"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pygplates.Vector3D.html" title="pygplates.Vector3D"
+             >previous</a> |</li>
+        <li><a href="../index.html">pygplates 2.1.0.18 documentation</a> &raquo;</li>
+          <li><a href="../pygplates_reference.html" >Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright (C) 2003-2016 The University of Sydney, Australia
+(C) 2004-2016 California Institute of Technology
+(C) 2007-2016 The Geological Survey of Norway
+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

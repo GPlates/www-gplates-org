@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pygplates.GpmlTimeSample &mdash; pygplates 2.1.0.18 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.1.0.18',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pygplates 2.1.0.18 documentation" href="../index.html" />
+    <link rel="up" title="Reference" href="../pygplates_reference.html" />
+    <link rel="next" title="pygplates.GpmlTimeWindow" href="pygplates.GpmlTimeWindow.html" />
+    <link rel="prev" title="pygplates.GpmlPiecewiseAggregation" href="pygplates.GpmlPiecewiseAggregation.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="pygplates.GpmlTimeWindow.html" title="pygplates.GpmlTimeWindow"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pygplates.GpmlPiecewiseAggregation.html" title="pygplates.GpmlPiecewiseAggregation"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">pygplates 2.1.0.18 documentation</a> &raquo;</li>
+          <li><a href="../pygplates_reference.html" accesskey="U">Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="pygplates-gpmltimesample">
+<h1>pygplates.GpmlTimeSample<a class="headerlink" href="#pygplates-gpmltimesample" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pygplates.GpmlTimeSample">
+<em class="property">class </em><tt class="descclassname">pygplates.</tt><tt class="descname">GpmlTimeSample</tt><big>(</big><em>property_value</em>, <em>time</em><span class="optional">[</span>, <em>description</em><span class="optional">]</span><span class="optional">[</span>, <em>is_enabled=True</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#pygplates.GpmlTimeSample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></tt></p>
+<p>A time sample associates an arbitrary property value with a specific time instant. Typically a sequence of time samples are used in a <a class="reference internal" href="pygplates.GpmlIrregularSampling.html#pygplates.GpmlIrregularSampling" title="pygplates.GpmlIrregularSampling"><tt class="xref py py-class docutils literal"><span class="pre">GpmlIrregularSampling</span></tt></a>. The most common example of this is a time-dependent sequence of total reconstruction poles.</p>
+<p>Time samples are equality (<tt class="docutils literal"><span class="pre">==</span></tt>, <tt class="docutils literal"><span class="pre">!=</span></tt>) comparable (but not hashable - cannot be used as a key in a <tt class="docutils literal"><span class="pre">dict</span></tt>). This includes comparing the property value in the two time samples being compared (see <a class="reference internal" href="pygplates.PropertyValue.html#pygplates.PropertyValue" title="pygplates.PropertyValue"><tt class="xref py py-class docutils literal"><span class="pre">PropertyValue</span></tt></a>) as well as the time instant, description string and disabled flag.</p>
+<dl class="method">
+<dt id="pygplates.GpmlTimeSample.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>property_value</em>, <em>time</em><span class="optional">[</span>, <em>description</em><span class="optional">]</span><span class="optional">[</span>, <em>is_enabled=True</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#pygplates.GpmlTimeSample.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a time sample given a property value and time and optionally a description string and disabled flag.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>property_value</strong> (<a class="reference internal" href="pygplates.PropertyValue.html#pygplates.PropertyValue" title="pygplates.PropertyValue"><tt class="xref py py-class docutils literal"><span class="pre">PropertyValue</span></tt></a>) &#8211; arbitrary property value</li>
+<li><strong>time</strong> (float or <a class="reference internal" href="pygplates.GeoTimeInstant.html#pygplates.GeoTimeInstant" title="pygplates.GeoTimeInstant"><tt class="xref py py-class docutils literal"><span class="pre">GeoTimeInstant</span></tt></a>) &#8211; the time position associated with the property value</li>
+<li><strong>description</strong> (<em>string or None</em>) &#8211; description of the time sample</li>
+<li><strong>is_enabled</strong> (<em>bool</em>) &#8211; whether time sample is enabled</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">time_sample</span> <span class="o">=</span> <span class="n">pygplates</span><span class="o">.</span><span class="n">GpmlTimeSample</span><span class="p">(</span><span class="n">property_value</span><span class="p">,</span> <span class="n">time</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.GpmlTimeSample.__init__" title="pygplates.GpmlTimeSample.__init__"><tt class="xref py py-obj docutils literal"><span class="pre">__init__</span></tt></a>(property_value,&nbsp;time,&nbsp;...)</td>
+<td>Create a time sample given a property value and time and optionally a description string and disabled flag.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.GpmlTimeSample.get_description" title="pygplates.GpmlTimeSample.get_description"><tt class="xref py py-obj docutils literal"><span class="pre">get_description</span></tt></a>()</td>
+<td>Returns the description of this time sample, or <tt class="docutils literal"><span class="pre">None</span></tt>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.GpmlTimeSample.get_time" title="pygplates.GpmlTimeSample.get_time"><tt class="xref py py-obj docutils literal"><span class="pre">get_time</span></tt></a>()</td>
+<td>Returns the time position of this time sample.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.GpmlTimeSample.get_value" title="pygplates.GpmlTimeSample.get_value"><tt class="xref py py-obj docutils literal"><span class="pre">get_value</span></tt></a>()</td>
+<td>Returns the property value of this time sample.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.GpmlTimeSample.is_disabled" title="pygplates.GpmlTimeSample.is_disabled"><tt class="xref py py-obj docutils literal"><span class="pre">is_disabled</span></tt></a>()</td>
+<td>Returns whether this time sample is disabled or not.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.GpmlTimeSample.is_enabled" title="pygplates.GpmlTimeSample.is_enabled"><tt class="xref py py-obj docutils literal"><span class="pre">is_enabled</span></tt></a>()</td>
+<td>Returns whether this time sample is enabled.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.GpmlTimeSample.set_description" title="pygplates.GpmlTimeSample.set_description"><tt class="xref py py-obj docutils literal"><span class="pre">set_description</span></tt></a>([description])</td>
+<td>Sets the description associated with this time sample, or removes it if none specified.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.GpmlTimeSample.set_disabled" title="pygplates.GpmlTimeSample.set_disabled"><tt class="xref py py-obj docutils literal"><span class="pre">set_disabled</span></tt></a>([is_disabled=True])</td>
+<td>Sets whether this time sample is disabled.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.GpmlTimeSample.set_enabled" title="pygplates.GpmlTimeSample.set_enabled"><tt class="xref py py-obj docutils literal"><span class="pre">set_enabled</span></tt></a>([is_enabled=True])</td>
+<td>Sets whether this time sample is enabled.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.GpmlTimeSample.set_time" title="pygplates.GpmlTimeSample.set_time"><tt class="xref py py-obj docutils literal"><span class="pre">set_time</span></tt></a>(time)</td>
+<td>Sets the time position associated with this time sample.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.GpmlTimeSample.set_value" title="pygplates.GpmlTimeSample.set_value"><tt class="xref py py-obj docutils literal"><span class="pre">set_value</span></tt></a>(property_value)</td>
+<td>Sets the property value associated with this time sample.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="pygplates.GpmlTimeSample.get_description">
+<tt class="descname">get_description</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.GpmlTimeSample.get_description" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the description of this time sample, or <tt class="docutils literal"><span class="pre">None</span></tt>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string or None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.GpmlTimeSample.get_time">
+<tt class="descname">get_time</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.GpmlTimeSample.get_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the time position of this time sample.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+<p>You can use <a class="reference internal" href="pygplates.GeoTimeInstant.html#pygplates.GeoTimeInstant" title="pygplates.GeoTimeInstant"><tt class="xref py py-class docutils literal"><span class="pre">GeoTimeInstant</span></tt></a> with the returned <tt class="docutils literal"><span class="pre">float</span></tt> to check for <em>distant past</em> or <em>distant future</em> for example. See <a class="reference internal" href="pygplates.GmlTimeInstant.html#pygplates.GmlTimeInstant.get_time" title="pygplates.GmlTimeInstant.get_time"><tt class="xref py py-meth docutils literal"><span class="pre">GmlTimeInstant.get_time()</span></tt></a> for more details.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.GpmlTimeSample.get_value">
+<tt class="descname">get_value</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.GpmlTimeSample.get_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the property value of this time sample.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="pygplates.PropertyValue.html#pygplates.PropertyValue" title="pygplates.PropertyValue"><tt class="xref py py-class docutils literal"><span class="pre">PropertyValue</span></tt></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.GpmlTimeSample.is_disabled">
+<tt class="descname">is_disabled</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.GpmlTimeSample.is_disabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns whether this time sample is disabled or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+<p>For example, a disabled total reconstruction pole (in a GpmlIrregularSampling sequence) is ignored when interpolating rotations at some arbitrary time.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.GpmlTimeSample.is_enabled">
+<tt class="descname">is_enabled</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.GpmlTimeSample.is_enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns whether this time sample is enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+<p>For example, only enabled total reconstruction poles (in a GpmlIrregularSampling sequence) are considered when interpolating rotations at some arbitrary time.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.GpmlTimeSample.set_description">
+<tt class="descname">set_description</tt><big>(</big><span class="optional">[</span><em>description</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#pygplates.GpmlTimeSample.set_description" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the description associated with this time sample, or removes it if none specified.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>description</strong> (<em>string or None</em>) &#8211; description of the time sample</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.GpmlTimeSample.set_disabled">
+<tt class="descname">set_disabled</tt><big>(</big><span class="optional">[</span><em>is_disabled=True</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#pygplates.GpmlTimeSample.set_disabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets whether this time sample is disabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>is_disabled</strong> (<em>bool</em>) &#8211; whether time sample is disabled (defaults to <tt class="docutils literal"><span class="pre">True</span></tt>)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.GpmlTimeSample.set_enabled">
+<tt class="descname">set_enabled</tt><big>(</big><span class="optional">[</span><em>is_enabled=True</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#pygplates.GpmlTimeSample.set_enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets whether this time sample is enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>is_enabled</strong> (<em>bool</em>) &#8211; whether time sample is enabled (defaults to <tt class="docutils literal"><span class="pre">True</span></tt>)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.GpmlTimeSample.set_time">
+<tt class="descname">set_time</tt><big>(</big><em>time</em><big>)</big><a class="headerlink" href="#pygplates.GpmlTimeSample.set_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the time position associated with this time sample.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>time</strong> (float or <a class="reference internal" href="pygplates.GeoTimeInstant.html#pygplates.GeoTimeInstant" title="pygplates.GeoTimeInstant"><tt class="xref py py-class docutils literal"><span class="pre">GeoTimeInstant</span></tt></a>) &#8211; the time position associated with the property value</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.GpmlTimeSample.set_value">
+<tt class="descname">set_value</tt><big>(</big><em>property_value</em><big>)</big><a class="headerlink" href="#pygplates.GpmlTimeSample.set_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the property value associated with this time sample.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>property_value</strong> (<a class="reference internal" href="pygplates.PropertyValue.html#pygplates.PropertyValue" title="pygplates.PropertyValue"><tt class="xref py py-class docutils literal"><span class="pre">PropertyValue</span></tt></a>) &#8211; arbitrary property value</td>
+</tr>
+</tbody>
+</table>
+<p>This essentially replaces the previous property value. Note that an alternative is to directly modify the property value returned by <a class="reference internal" href="#pygplates.GpmlTimeSample.get_value" title="pygplates.GpmlTimeSample.get_value"><tt class="xref py py-meth docutils literal"><span class="pre">get_value()</span></tt></a> using its property value methods.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pygplates.GpmlPiecewiseAggregation.html"
+                        title="previous chapter">pygplates.GpmlPiecewiseAggregation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pygplates.GpmlTimeWindow.html"
+                        title="next chapter">pygplates.GpmlTimeWindow</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/generated/pygplates.GpmlTimeSample.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="pygplates.GpmlTimeWindow.html" title="pygplates.GpmlTimeWindow"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pygplates.GpmlPiecewiseAggregation.html" title="pygplates.GpmlPiecewiseAggregation"
+             >previous</a> |</li>
+        <li><a href="../index.html">pygplates 2.1.0.18 documentation</a> &raquo;</li>
+          <li><a href="../pygplates_reference.html" >Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright (C) 2003-2016 The University of Sydney, Australia
+(C) 2004-2016 California Institute of Technology
+(C) 2007-2016 The Geological Survey of Norway
+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

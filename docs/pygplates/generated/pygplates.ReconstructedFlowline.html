@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pygplates.ReconstructedFlowline &mdash; pygplates 2.1.0.18 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.1.0.18',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pygplates 2.1.0.18 documentation" href="../index.html" />
+    <link rel="up" title="Reference" href="../pygplates_reference.html" />
+    <link rel="next" title="pygplates.ReconstructedMotionPath" href="pygplates.ReconstructedMotionPath.html" />
+    <link rel="prev" title="pygplates.ReconstructedFeatureGeometry" href="pygplates.ReconstructedFeatureGeometry.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="pygplates.ReconstructedMotionPath.html" title="pygplates.ReconstructedMotionPath"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pygplates.ReconstructedFeatureGeometry.html" title="pygplates.ReconstructedFeatureGeometry"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">pygplates 2.1.0.18 documentation</a> &raquo;</li>
+          <li><a href="../pygplates_reference.html" accesskey="U">Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="pygplates-reconstructedflowline">
+<h1>pygplates.ReconstructedFlowline<a class="headerlink" href="#pygplates-reconstructedflowline" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pygplates.ReconstructedFlowline">
+<em class="property">class </em><tt class="descclassname">pygplates.</tt><tt class="descname">ReconstructedFlowline</tt><a class="headerlink" href="#pygplates.ReconstructedFlowline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pygplates.ReconstructionGeometry.html#pygplates.ReconstructionGeometry" title="pygplates.ReconstructionGeometry"><tt class="xref py py-class docutils literal"><span class="pre">pygplates.ReconstructionGeometry</span></tt></a></p>
+<p>The reconstructed history of plate motion away from a spreading ridge in the form of a path of points over geological time.</p>
+<p>The <a class="reference internal" href="pygplates.reconstruct.html#pygplates.reconstruct" title="pygplates.reconstruct"><tt class="xref py py-func docutils literal"><span class="pre">reconstruct()</span></tt></a> function can be used to generate <em>ReconstructedFlowline</em> instances.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<div class="last line-block">
+<div class="line">Although a single flowline <a class="reference internal" href="pygplates.Feature.html#pygplates.Feature" title="pygplates.Feature"><tt class="xref py py-class docutils literal"><span class="pre">feature</span></tt></a> has only a single seed geometry that seed geometry can be either a <a class="reference internal" href="pygplates.PointOnSphere.html#pygplates.PointOnSphere" title="pygplates.PointOnSphere"><tt class="xref py py-class docutils literal"><span class="pre">PointOnSphere</span></tt></a> or a <a class="reference internal" href="pygplates.MultiPointOnSphere.html#pygplates.MultiPointOnSphere" title="pygplates.MultiPointOnSphere"><tt class="xref py py-class docutils literal"><span class="pre">MultiPointOnSphere</span></tt></a>.</div>
+<div class="line">And since there is one <a class="reference internal" href="#pygplates.ReconstructedFlowline" title="pygplates.ReconstructedFlowline"><tt class="xref py py-class docutils literal"><span class="pre">reconstructed</span> <span class="pre">flowline</span></tt></a> per seed point there can be, in the case of a <a class="reference internal" href="pygplates.MultiPointOnSphere.html#pygplates.MultiPointOnSphere" title="pygplates.MultiPointOnSphere"><tt class="xref py py-class docutils literal"><span class="pre">MultiPointOnSphere</span></tt></a>, multiple <a class="reference internal" href="#pygplates.ReconstructedFlowline" title="pygplates.ReconstructedFlowline"><tt class="xref py py-class docutils literal"><span class="pre">reconstructed</span> <span class="pre">flowlines</span></tt></a> per flowline <a class="reference internal" href="pygplates.Feature.html#pygplates.Feature" title="pygplates.Feature"><tt class="xref py py-class docutils literal"><span class="pre">feature</span></tt></a>.</div>
+</div>
+</div>
+<dl class="method">
+<dt id="pygplates.ReconstructedFlowline.__init__">
+<tt class="descname">__init__</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.ReconstructedFlowline.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raises an exception
+This class cannot be instantiated from Python</p>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.ReconstructedFlowline.__init__" title="pygplates.ReconstructedFlowline.__init__"><tt class="xref py py-obj docutils literal"><span class="pre">__init__</span></tt></a></td>
+<td>Raises an exception</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.ReconstructedFlowline.get_feature" title="pygplates.ReconstructedFlowline.get_feature"><tt class="xref py py-obj docutils literal"><span class="pre">get_feature</span></tt></a>()</td>
+<td>Returns the feature associated with this <a class="reference internal" href="#pygplates.ReconstructedFlowline" title="pygplates.ReconstructedFlowline"><tt class="xref py py-class docutils literal"><span class="pre">ReconstructedFlowline</span></tt></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.ReconstructedFlowline.get_left_flowline" title="pygplates.ReconstructedFlowline.get_left_flowline"><tt class="xref py py-obj docutils literal"><span class="pre">get_left_flowline</span></tt></a>()</td>
+<td>Returns the flowline spread along the <em>left</em> plate from the reconstructed seed point.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.ReconstructedFlowline.get_present_day_seed_point" title="pygplates.ReconstructedFlowline.get_present_day_seed_point"><tt class="xref py py-obj docutils literal"><span class="pre">get_present_day_seed_point</span></tt></a>()</td>
+<td>Returns the present day seed point.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.ReconstructedFlowline.get_property" title="pygplates.ReconstructedFlowline.get_property"><tt class="xref py py-obj docutils literal"><span class="pre">get_property</span></tt></a>()</td>
+<td>Returns the feature property containing the seed point associated with this <a class="reference internal" href="#pygplates.ReconstructedFlowline" title="pygplates.ReconstructedFlowline"><tt class="xref py py-class docutils literal"><span class="pre">ReconstructedFlowline</span></tt></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.ReconstructedFlowline.get_reconstructed_seed_point" title="pygplates.ReconstructedFlowline.get_reconstructed_seed_point"><tt class="xref py py-obj docutils literal"><span class="pre">get_reconstructed_seed_point</span></tt></a>()</td>
+<td>Returns the reconstructed seed point.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.ReconstructedFlowline.get_reconstruction_time" title="pygplates.ReconstructedFlowline.get_reconstruction_time"><tt class="xref py py-obj docutils literal"><span class="pre">get_reconstruction_time</span></tt></a>()</td>
+<td>Returns the reconstruction time that this instance was created at.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.ReconstructedFlowline.get_right_flowline" title="pygplates.ReconstructedFlowline.get_right_flowline"><tt class="xref py py-obj docutils literal"><span class="pre">get_right_flowline</span></tt></a>()</td>
+<td>Returns the flowline spread along the <em>right</em> plate from the reconstructed seed point.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="pygplates.ReconstructedFlowline.get_feature">
+<tt class="descname">get_feature</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.ReconstructedFlowline.get_feature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the feature associated with this <a class="reference internal" href="#pygplates.ReconstructedFlowline" title="pygplates.ReconstructedFlowline"><tt class="xref py py-class docutils literal"><span class="pre">ReconstructedFlowline</span></tt></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="pygplates.Feature.html#pygplates.Feature" title="pygplates.Feature"><tt class="xref py py-class docutils literal"><span class="pre">Feature</span></tt></a></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Multiple <a class="reference internal" href="#pygplates.ReconstructedFlowline" title="pygplates.ReconstructedFlowline"><tt class="xref py py-class docutils literal"><span class="pre">reconstructed</span> <span class="pre">flowlines</span></tt></a> can be associated with the same flowline <a class="reference internal" href="pygplates.Feature.html#pygplates.Feature" title="pygplates.Feature"><tt class="xref py py-class docutils literal"><span class="pre">feature</span></tt></a> if its seed geometry is a <a class="reference internal" href="pygplates.MultiPointOnSphere.html#pygplates.MultiPointOnSphere" title="pygplates.MultiPointOnSphere"><tt class="xref py py-class docutils literal"><span class="pre">MultiPointOnSphere</span></tt></a>.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.ReconstructedFlowline.get_left_flowline">
+<tt class="descname">get_left_flowline</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.ReconstructedFlowline.get_left_flowline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the flowline spread along the <em>left</em> plate from the reconstructed seed point.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="pygplates.PolylineOnSphere.html#pygplates.PolylineOnSphere" title="pygplates.PolylineOnSphere"><tt class="xref py py-class docutils literal"><span class="pre">PolylineOnSphere</span></tt></a></td>
+</tr>
+</tbody>
+</table>
+<p>The returned points are on the <em>left</em> plate associated with <tt class="docutils literal"><span class="pre">get_feature().get_left_plate()</span></tt></p>
+<p>The first point in the returned <a class="reference internal" href="pygplates.PolylineOnSphere.html#pygplates.PolylineOnSphere" title="pygplates.PolylineOnSphere"><tt class="xref py py-class docutils literal"><span class="pre">PolylineOnSphere</span></tt></a> is the <a class="reference internal" href="#pygplates.ReconstructedFlowline.get_reconstructed_seed_point" title="pygplates.ReconstructedFlowline.get_reconstructed_seed_point"><tt class="xref py py-meth docutils literal"><span class="pre">reconstructed</span> <span class="pre">seed</span> <span class="pre">point</span></tt></a> and subsequent points are progressively further in the geological past.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is just one of the <em>left</em> flowlines associated with this <a class="reference internal" href="#pygplates.ReconstructedFlowline.get_feature" title="pygplates.ReconstructedFlowline.get_feature"><tt class="xref py py-meth docutils literal"><span class="pre">feature's</span></tt></a> seed geometry if that seed geometry is a <a class="reference internal" href="pygplates.MultiPointOnSphere.html#pygplates.MultiPointOnSphere" title="pygplates.MultiPointOnSphere"><tt class="xref py py-class docutils literal"><span class="pre">MultiPointOnSphere</span></tt></a>.</p>
+</div>
+<p>Iterate over the left flowline points:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">left_point</span> <span class="ow">in</span> <span class="n">reconstructed_flowline</span><span class="o">.</span><span class="n">get_left_flowline</span><span class="p">():</span>
+  <span class="o">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.ReconstructedFlowline.get_present_day_seed_point">
+<tt class="descname">get_present_day_seed_point</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.ReconstructedFlowline.get_present_day_seed_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the present day seed point.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="pygplates.PointOnSphere.html#pygplates.PointOnSphere" title="pygplates.PointOnSphere"><tt class="xref py py-class docutils literal"><span class="pre">PointOnSphere</span></tt></a></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is just one of the seed points in this <a class="reference internal" href="#pygplates.ReconstructedFlowline.get_feature" title="pygplates.ReconstructedFlowline.get_feature"><tt class="xref py py-meth docutils literal"><span class="pre">feature's</span></tt></a> seed geometry if that seed geometry is a <a class="reference internal" href="pygplates.MultiPointOnSphere.html#pygplates.MultiPointOnSphere" title="pygplates.MultiPointOnSphere"><tt class="xref py py-class docutils literal"><span class="pre">MultiPointOnSphere</span></tt></a>. The remaining seed points are associated with other <a class="reference internal" href="#pygplates.ReconstructedFlowline" title="pygplates.ReconstructedFlowline"><tt class="xref py py-class docutils literal"><span class="pre">ReconstructedFlowline</span></tt></a> instances.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.ReconstructedFlowline.get_property">
+<tt class="descname">get_property</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.ReconstructedFlowline.get_property" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the feature property containing the seed point associated with this <a class="reference internal" href="#pygplates.ReconstructedFlowline" title="pygplates.ReconstructedFlowline"><tt class="xref py py-class docutils literal"><span class="pre">ReconstructedFlowline</span></tt></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="pygplates.Property.html#pygplates.Property" title="pygplates.Property"><tt class="xref py py-class docutils literal"><span class="pre">Property</span></tt></a></td>
+</tr>
+</tbody>
+</table>
+<p>This is the <a class="reference internal" href="pygplates.Property.html#pygplates.Property" title="pygplates.Property"><tt class="xref py py-class docutils literal"><span class="pre">Property</span></tt></a> that the <a class="reference internal" href="#pygplates.ReconstructedFlowline.get_present_day_seed_point" title="pygplates.ReconstructedFlowline.get_present_day_seed_point"><tt class="xref py py-meth docutils literal"><span class="pre">present</span> <span class="pre">day</span> <span class="pre">seed</span> <span class="pre">point</span></tt></a> and the <a class="reference internal" href="#pygplates.ReconstructedFlowline.get_reconstructed_seed_point" title="pygplates.ReconstructedFlowline.get_reconstructed_seed_point"><tt class="xref py py-meth docutils literal"><span class="pre">reconstructed</span> <span class="pre">seed</span> <span class="pre">point</span></tt></a> are obtained from.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.ReconstructedFlowline.get_reconstructed_seed_point">
+<tt class="descname">get_reconstructed_seed_point</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.ReconstructedFlowline.get_reconstructed_seed_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the reconstructed seed point.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="pygplates.PointOnSphere.html#pygplates.PointOnSphere" title="pygplates.PointOnSphere"><tt class="xref py py-class docutils literal"><span class="pre">PointOnSphere</span></tt></a></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is just one of the seed points in this <a class="reference internal" href="#pygplates.ReconstructedFlowline.get_feature" title="pygplates.ReconstructedFlowline.get_feature"><tt class="xref py py-meth docutils literal"><span class="pre">feature's</span></tt></a> seed geometry if that seed geometry is a <a class="reference internal" href="pygplates.MultiPointOnSphere.html#pygplates.MultiPointOnSphere" title="pygplates.MultiPointOnSphere"><tt class="xref py py-class docutils literal"><span class="pre">MultiPointOnSphere</span></tt></a>. The remaining seed points are associated with other <a class="reference internal" href="#pygplates.ReconstructedFlowline" title="pygplates.ReconstructedFlowline"><tt class="xref py py-class docutils literal"><span class="pre">ReconstructedFlowline</span></tt></a> instances.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.ReconstructedFlowline.get_reconstruction_time">
+<tt class="descname">get_reconstruction_time</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.ReconstructedFlowline.get_reconstruction_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the reconstruction time that this instance was created at.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.ReconstructedFlowline.get_right_flowline">
+<tt class="descname">get_right_flowline</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.ReconstructedFlowline.get_right_flowline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the flowline spread along the <em>right</em> plate from the reconstructed seed point.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="pygplates.PolylineOnSphere.html#pygplates.PolylineOnSphere" title="pygplates.PolylineOnSphere"><tt class="xref py py-class docutils literal"><span class="pre">PolylineOnSphere</span></tt></a></td>
+</tr>
+</tbody>
+</table>
+<p>The returned points are on the <em>right</em> plate associated with <tt class="docutils literal"><span class="pre">get_feature().get_right_plate()</span></tt></p>
+<p>The first point in the returned <a class="reference internal" href="pygplates.PolylineOnSphere.html#pygplates.PolylineOnSphere" title="pygplates.PolylineOnSphere"><tt class="xref py py-class docutils literal"><span class="pre">PolylineOnSphere</span></tt></a> is the <a class="reference internal" href="#pygplates.ReconstructedFlowline.get_reconstructed_seed_point" title="pygplates.ReconstructedFlowline.get_reconstructed_seed_point"><tt class="xref py py-meth docutils literal"><span class="pre">reconstructed</span> <span class="pre">seed</span> <span class="pre">point</span></tt></a> and subsequent points are progressively further in the geological past.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is just one of the <em>right</em> flowlines associated with this <a class="reference internal" href="#pygplates.ReconstructedFlowline.get_feature" title="pygplates.ReconstructedFlowline.get_feature"><tt class="xref py py-meth docutils literal"><span class="pre">feature's</span></tt></a> seed geometry if that seed geometry is a <a class="reference internal" href="pygplates.MultiPointOnSphere.html#pygplates.MultiPointOnSphere" title="pygplates.MultiPointOnSphere"><tt class="xref py py-class docutils literal"><span class="pre">MultiPointOnSphere</span></tt></a>.</p>
+</div>
+<p>Iterate over the right flowline points:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">right_point</span> <span class="ow">in</span> <span class="n">reconstructed_flowline</span><span class="o">.</span><span class="n">get_right_flowline</span><span class="p">():</span>
+  <span class="o">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pygplates.ReconstructedFeatureGeometry.html"
+                        title="previous chapter">pygplates.ReconstructedFeatureGeometry</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pygplates.ReconstructedMotionPath.html"
+                        title="next chapter">pygplates.ReconstructedMotionPath</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/generated/pygplates.ReconstructedFlowline.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="pygplates.ReconstructedMotionPath.html" title="pygplates.ReconstructedMotionPath"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pygplates.ReconstructedFeatureGeometry.html" title="pygplates.ReconstructedFeatureGeometry"
+             >previous</a> |</li>
+        <li><a href="../index.html">pygplates 2.1.0.18 documentation</a> &raquo;</li>
+          <li><a href="../pygplates_reference.html" >Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright (C) 2003-2016 The University of Sydney, Australia
+(C) 2004-2016 California Institute of Technology
+(C) 2007-2016 The Geological Survey of Norway
+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

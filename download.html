@@ -1,0 +1,351 @@
+<!DOCTYPE html> <!--html5-->
+<html>
+	<head>
+		<title>GPlates: Download GPlates and Data</title>
+
+		<meta charset="UTF-8"/>
+        <meta name="page-id" content="download">        
+
+		<link type="image/png" rel="icon" href="img/GPlates-icon.png" />
+		<link type="text/css" rel="stylesheet" href="css/default.css" />
+		<link type="text/css" rel="stylesheet" href="css/navbars.css" />
+	    
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="js/header-footer-loader.js"></script>
+	</head>
+	
+	<body>
+		<div class="download-tab">
+			<h1>Download GPlates and Data</h1>
+			<h2>Download GPlates</h2>
+			<hr size="4" />
+
+			<p>
+				The current stable release of GPlates is <a
+				 href="news.html#gplates220" title="News: GPlates 2.2 released">GPlates
+				2.2</a>, released in August 2019...
+			</p>
+
+			<div class="rounded-box">
+				<div class="roundtop-11">
+					<img src="img/corners/tl-11.png" alt="" width="11" height="11" class="corner-11"
+					 style="display: none" />
+				</div>
+
+				<p class="download-box">
+					<strong><a
+					 href="http://sourceforge.net/projects/gplates/files/gplates/2.2/"
+					 title="GPlates 2.2 packages on SourceForge">
+					<img class="download-icon" src="img/GPlates-tango-actions-go-down-48.png" width="48" height="48" alt="Download" />
+					Download GPlates 2.2</a></strong><br /> (the latest &ldquo;stable&rdquo; release)
+				</p>
+
+				<div class="roundbottom-11">
+					<img src="img/corners/bl-11.png" alt="" width="11" height="11" class="corner-11"
+					 style="display: none" />
+				</div>
+			</div>
+
+			<p>
+				The current beta release of pyGPlates is <a
+				 href="news.html#gplates210" title="News: GPlates 2.1 and pyGPlates beta revision 18 released">PyGPlates beta revision 18</a>, released in August 2018...
+			</p>
+
+			<div class="rounded-box">
+				<div class="roundtop-11">
+					<img src="img/corners/tl-11.png" alt="" width="11" height="11" class="corner-11"
+					 style="display: none" />
+				</div>
+
+				<p class="download-box">
+					<strong><a
+					 href="http://sourceforge.net/projects/gplates/files/pygplates/beta-revision-18/"
+					 title="PyGPlates beta-revision-18 packages on SourceForge">
+					<img class="download-icon" src="img/GPlates-tango-actions-go-down-48.png" width="48" height="48" alt="Download" />
+					Download pyGPlates beta revision 18</a></strong><br /> (the latest &ldquo;beta&rdquo; release)
+				</p>
+
+				<div class="roundbottom-11">
+					<img src="img/corners/bl-11.png" alt="" width="11" height="11" class="corner-11"
+					 style="display: none" />
+				</div>
+			</div>
+
+			<p>
+				GPlates runs on <strong>Windows</strong>, <strong>Linux</strong> and
+				<strong>MacOS X</strong>.  We provide ready-to-use binary executables for both
+				Windows and MacOS X, enabling a GPlates user to download, install and use the
+				latest version of GPlates immediately.  The binaries also include the
+				GPlates-compatible data described below.
+			</p>
+
+			<ul class="p-list">
+				<li>
+					For <strong>Windows</strong>, we provide 32-bit and 64-bit <code>.msi</code> <strong>binary
+					installers</strong>.  Running the 32-bit installer program will install a 32-bit version of GPlates
+					on a 32-bit or 64-bit version of Windows 7/8/8.1/10. Running the 64-bit installer program will install
+					a 64-bit version of GPlates on a 64-bit version of Windows 7/8/8.1/10.
+					We also provide 32-bit and 64-bit <code>.zip</code> files, containing the GPlates executable
+					and its dependency files, for users who wish to use GPlates without installing it.
+				</li>
+
+				<li>
+					For <strong>MacOS X</strong>, we provide a <strong>64-bit bundle</strong> for
+					<strong>Snow Leopard (10.6)</strong> or above in a single <code>.dmg</code> file.
+					To install GPlates, simply: 
+					<ol>
+						<li>double-click on a <code>.dmg</code> file to open the disk image in
+						Finder</li>
+						<li>drag the GPlates binary into your Applications folder.</li>
+					</ol>
+				</li>
+
+				<li>
+					For <strong>Ubuntu</strong>, we provide <code>.deb</code> <strong>packages</strong>
+					for 64 and 32-bit architectures. To install GPlates, simply download the
+					appropriate package for your system and double-click to install.
+					<ul>
+						<li>If you are using a different Linux distribution please use the source code package.</li>
+						<li>The Ubuntu packages currently contain the sample data (in /usr/share/gplates/) along with the application - future releases may use separate packages for this.</li>
+					</ul>
+				</li>
+			</ul>
+
+			<p>
+				We provide source-code packages for Windows (the <code>winsrc</code>
+				zip-files) and Linux and MacOS X (the <code>unixsrc</code> tarballs).  The
+				source-code packages contain simple sample data, but the larger data files
+				(described below) will need to be downloaded separately.  To compile GPlates
+				from source, you will require:
+			</p>
+
+			<ul>
+				<li>
+					<b><a href="http://www.qtsoftware.com/"
+					 title="Qt - A cross-platform application and UI framework">Qt</a></b> 4.4.0 or
+					above (preferably 4.8)
+				</li>
+				
+				<li>
+					<b><a href="http://qwt.sourceforge.net/"
+					 title="Qwt - Qt Widgets for Technical Applications ">Qwt</a></b> 6.0.1 or
+					above
+				</li>
+				
+				<li>
+					<b>OpenGL</b>
+				</li>
+				
+				<li>
+					<b><a href="http://glew.sourceforge.net/"
+					 title="GLEW - OpenGL Extension Wrangler Library">GLEW</a></b>
+				</li>
+				
+				<li>
+					<b><a href="http://www.gdal.org/"
+					 title="GDAL - Geospatial Data Abstraction Library">GDAL</a></b> 1.3.2 or above (preferably 2.x)
+				</li>
+				
+				<li>
+					<b><a href="http://www.cgal.org/"
+					 title="CGAL - Computational Geometry Algorithms Library">CGAL</a></b> 3.5 or above
+				</li>
+				
+				<li>
+					<b><a href="http://trac.osgeo.org/proj/"
+					 title="PROJ.4 - Trac">PROJ.4</a></b> 4.6 or above
+				</li>
+				
+				<li>
+					<b><a href="http://www.boost.org/"
+					 title="Boost C++ Libraries">Boost</a></b> 1.34 or above
+				</li>
+				
+				<li>
+					<b><a href="http://www.cmake.org/"
+					 title="CMake - Cross Platform Make">CMake</a></b> 2.8.8 or above
+				</li>	
+			</ul>
+
+			<p>
+				Instructions on how to compile GPlates from source may be found in the GPlates source-code releases</a>, in the files:
+			</p>
+
+			<ul>
+				<li>
+					<code>DEPS.Linux</code> and <code>BUILD.Linux</code> (on Linux)
+				</li>
+				<li>
+					<code>DEPS.OSX</code> and <code>BUILD.OSX</code> (on MacOS X)
+				</li>
+				<li>
+					<code>DEPS.Windows</code> and <code>BUILD.Windows</code> (on Windows)
+				</li>
+			</ul>
+
+			<p>
+				GPlates is <a href="http://www.gnu.org/philosophy/free-sw.html"
+				 title="The Free Software Definition">free software</a> (also known as <a
+				 href="http://www.opensource.org/docs/definition.php"
+				 title="The Open Source Definition">open-source software</a>), licensed for
+				distribution under the GNU <a
+				 href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
+				 title="GNU General Public License, version 2">General Public License</a>
+				(GPL) version 2.
+			</p>
+
+			<h2 id="download_data">Download GPlates-compatible data</h2>
+			<hr size="4" />
+
+			<p>
+				Researchers in the <a title="Contact the developers of GPlates"
+				 href="contact.html">EarthByte Project</a> have made <a name="compatible-data"
+				 href="http://www.earthbyte.org/gplates-2-2-software-and-data-sets"
+				 title="EarthByte: GPlates">GPlates-compatible data</a> available for use with
+				GPlates.
+			</p>
+
+			<p>
+				A <a title="GPlates sample data"
+				 href="http://www.earthbyte.org/gplates-2-2-software-and-data-sets">sample set</a>
+				of these data-files are also contained within the GPlates installation packages, and will be
+				automatically installed with GPlates.  This data has been updated for the GPlates 2.2 release.
+				Thanks to the EarthByte Project for making these data-files available!
+			</p>
+
+			<p>
+				Researchers in the Geodynamics Team at the <a href="http://www.ngu.no/en" title="Norges geologiske unders&oslash;kelse">
+				Geological Survey of Norway</a> (NGU) have made
+				<a name="compatible-data" href="http://www.ngu.no/upload/gplates/dynamic_topography.zip">GPlates-compatible data</a>
+				available for use with GPlates; in particular:
+			</p>
+
+			<ul>
+				<li>
+					a sequence of time-dependent global <b>dynamic topography</b> raster images,
+					created by Bernhard Steinberger at NGU
+				</li>
+			</ul>
+
+			<p>
+				These data-files are also contained within the GPlates installation packages, and will be
+				automatically installed with GPlates.  Thanks to Bernhard Steinberger and the
+				Geodynamics Team for making these data-files available!
+			</p>
+
+			<p>
+				Researchers in the <a title="Caltech: Geological and Planetary Sciences"
+				 href="http://www.gps.caltech.edu/">California Institute of Technology</a> have made <a name="compatible-data"
+				 href="http://web.gps.caltech.edu/~gurnis/Old/GPlates/gplates.html">GPlates-compatible data</a>
+				 available for use with GPlates; in particular:
+			</p>
+
+			<ul>
+				<li>
+				Global reconstructions with <b>continuously closing plates</b> from 140 Ma to the present.
+				</li>
+			</ul>
+
+			<p>
+				These data files, along with a corresponding paper, can be found
+				<a name="compatible-data"
+				 href="http://web.gps.caltech.edu/~gurnis/Old/GPlates/gplates.html">here</a>.
+			</p>
+
+			<h2>Load data in GPlates</h2>
+			<hr size="4" />
+			 
+			<p>
+				To load the global coastline file and the rotation file in GPlates:
+			</p>
+
+			<ol>
+				<li>
+					Download each data file and save it to disk.
+				</li>
+				<li>
+					Pull down the GPlates <i>File</i> menu.
+				</li>
+				<li>
+					Select the operation <i>Open Feature Collection&hellip;</i>.
+				</li>
+			</ol>
+			 
+			<p>
+				To load a sequence of time-dependent raster images (for example, Bernhard
+				Steinberger's dynamic topography images) in GPlates:
+			</p>
+
+			<ol>
+				<li>
+					Download the file &ldquo;dynamic-topography.zip&rdquo;, save it to disk, and
+					unzip it.
+				</li>
+				<li>
+					Pull down the GPlates <i>File</i> menu and select the operation <i>Import
+					Time-dependent Raster&hellip;</i>.
+				</li>
+				<li>
+					Click the Add Directory button.
+				<li>
+					Choose the &ldquo;jpg&rdquo; folder inside the &ldquo;dynamic
+					topography&rdquo; folder.  (Don't browse <em>into</em> the &ldquo;jpg&rdquo;
+					folder; instead, click the folder once to select it, then press the
+					<i>Choose</i> button.)
+				</li>
+				<li>
+					Choose the Next button of the dialog to finish the import wizard.
+				</li>
+			</ol>
+
+			<p>
+				An animated screenshot of these data-sets may be found in the <a
+				 href="screenshots.html#animation092">Animations</a> section of the Screenshots
+				page.
+			</p>
+
+            <h2 id="download-stats">GPlates Download Statistics</h2>
+            <hr size="4" />
+            <p>
+                GPlates has been downloaded 
+                <span id="total" style="font-weight: bolder;font-size: 150%;color: blue;">N/A</span> 
+                times in <span id="region-num" style="font-weight: bolder;font-size: 150%;color: blue;">N/A</span> 
+                countries and regions since 2003. Click <a href="https://sourceforge.net/projects/gplates/files/gplates/stats/map?dates=2003-02-20+to+2118-05-24" target="_blank" style="font-size:120%;">here</a> for detailed GPlates download statistics on sourceforge.net.
+		        <div id="regions_div" style="margin-left:8%; margin-right:8%;"></div>
+            </p>       
+        </div>
+	</body>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var regionsArray = [['Country/Region', 'Downloads'],]
+
+        $.ajax({url: "https://sourceforge.net/projects/gplates/files/stats/json?start_date=2003-01-01&end_date=2114-11-04", success: function(result){
+          console.log(result);
+          $.each(result.countries, function( index, value ) {
+            regionsArray.push(value);
+          });
+          var data = google.visualization.arrayToDataTable(regionsArray);
+        
+          var options = {};
+
+          var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+          chart.draw(data, options);
+          $("#total").html(result.total);
+          $("#region-num").html(result.countries.length);
+        }});
+      }
+    </script>
+</html>

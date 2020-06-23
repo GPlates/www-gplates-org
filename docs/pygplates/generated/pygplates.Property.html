@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pygplates.Property &mdash; pygplates 2.1.0.18 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.1.0.18',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pygplates 2.1.0.18 documentation" href="../index.html" />
+    <link rel="up" title="Reference" href="../pygplates_reference.html" />
+    <link rel="next" title="pygplates.PropertyName" href="pygplates.PropertyName.html" />
+    <link rel="prev" title="pygplates.FeatureCollection" href="pygplates.FeatureCollection.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="pygplates.PropertyName.html" title="pygplates.PropertyName"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pygplates.FeatureCollection.html" title="pygplates.FeatureCollection"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">pygplates 2.1.0.18 documentation</a> &raquo;</li>
+          <li><a href="../pygplates_reference.html" accesskey="U">Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="pygplates-property">
+<h1>pygplates.Property<a class="headerlink" href="#pygplates-property" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pygplates.Property">
+<em class="property">class </em><tt class="descclassname">pygplates.</tt><tt class="descname">Property</tt><big>(</big><em>property_name</em>, <em>property_value</em><big>)</big><a class="headerlink" href="#pygplates.Property" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></tt></p>
+<p>Associates a property name with a property value.</p>
+<p>Properties are equality (<tt class="docutils literal"><span class="pre">==</span></tt>, <tt class="docutils literal"><span class="pre">!=</span></tt>) comparable (but not hashable - cannot be used as a key in a <tt class="docutils literal"><span class="pre">dict</span></tt>). This includes comparing the property value in the two properties being compared (see <a class="reference internal" href="pygplates.PropertyValue.html#pygplates.PropertyValue" title="pygplates.PropertyValue"><tt class="xref py py-class docutils literal"><span class="pre">PropertyValue</span></tt></a>) as well as the property name.</p>
+<dl class="method">
+<dt id="pygplates.Property.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>property_name</em>, <em>property_value</em><big>)</big><a class="headerlink" href="#pygplates.Property.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a property given a property name and a property value.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>property_name</strong> (<a class="reference internal" href="pygplates.PropertyName.html#pygplates.PropertyName" title="pygplates.PropertyName"><tt class="xref py py-class docutils literal"><span class="pre">PropertyName</span></tt></a>) &#8211; property name</li>
+<li><strong>property_value</strong> (<a class="reference internal" href="pygplates.PropertyValue.html#pygplates.PropertyValue" title="pygplates.PropertyValue"><tt class="xref py py-class docutils literal"><span class="pre">PropertyValue</span></tt></a>) &#8211; property value</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">property</span> <span class="o">=</span> <span class="n">pygplates</span><span class="o">.</span><span class="n">Property</span><span class="p">(</span><span class="n">property_name</span><span class="p">,</span> <span class="n">property_value</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.Property.__init__" title="pygplates.Property.__init__"><tt class="xref py py-obj docutils literal"><span class="pre">__init__</span></tt></a>(property_name,&nbsp;property_value)</td>
+<td>Create a property given a property name and a property value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.Property.clone" title="pygplates.Property.clone"><tt class="xref py py-obj docutils literal"><span class="pre">clone</span></tt></a>()</td>
+<td>Create a duplicate of this property instance.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.Property.get_name" title="pygplates.Property.get_name"><tt class="xref py py-obj docutils literal"><span class="pre">get_name</span></tt></a>()</td>
+<td>Returns the name of the property.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.Property.get_time_dependent_container" title="pygplates.Property.get_time_dependent_container"><tt class="xref py py-obj docutils literal"><span class="pre">get_time_dependent_container</span></tt></a>()</td>
+<td>Returns the time-dependent property value container.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.Property.get_value" title="pygplates.Property.get_value"><tt class="xref py py-obj docutils literal"><span class="pre">get_value</span></tt></a>([time=0])</td>
+<td>Extracts the value, of our possibly time-dependent property, at the reconstruction <em>time</em>.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="pygplates.Property.clone">
+<tt class="descname">clone</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.Property.clone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a duplicate of this property instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#pygplates.Property" title="pygplates.Property"><tt class="xref py py-class docutils literal"><span class="pre">Property</span></tt></a></td>
+</tr>
+</tbody>
+</table>
+<p>This clones the <a class="reference internal" href="pygplates.PropertyName.html#pygplates.PropertyName" title="pygplates.PropertyName"><tt class="xref py py-class docutils literal"><span class="pre">PropertyName</span></tt></a> and the <a class="reference internal" href="pygplates.PropertyValue.html#pygplates.PropertyValue" title="pygplates.PropertyValue"><tt class="xref py py-class docutils literal"><span class="pre">PropertyValue</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.Property.get_name">
+<tt class="descname">get_name</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.Property.get_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name of the property.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="pygplates.PropertyName.html#pygplates.PropertyName" title="pygplates.PropertyName"><tt class="xref py py-class docutils literal"><span class="pre">PropertyName</span></tt></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.Property.get_time_dependent_container">
+<tt class="descname">get_time_dependent_container</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.Property.get_time_dependent_container" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the time-dependent property value container.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="pygplates.PropertyValue.html#pygplates.PropertyValue" title="pygplates.PropertyValue"><tt class="xref py py-class docutils literal"><span class="pre">PropertyValue</span></tt></a> or None</td>
+</tr>
+</tbody>
+</table>
+<p>Returns a time-dependent property value (<a class="reference internal" href="pygplates.GpmlConstantValue.html#pygplates.GpmlConstantValue" title="pygplates.GpmlConstantValue"><tt class="xref py py-class docutils literal"><span class="pre">GpmlConstantValue</span></tt></a>, <a class="reference internal" href="pygplates.GpmlIrregularSampling.html#pygplates.GpmlIrregularSampling" title="pygplates.GpmlIrregularSampling"><tt class="xref py py-class docutils literal"><span class="pre">GpmlIrregularSampling</span></tt></a> or
+<a class="reference internal" href="pygplates.GpmlPiecewiseAggregation.html#pygplates.GpmlPiecewiseAggregation" title="pygplates.GpmlPiecewiseAggregation"><tt class="xref py py-class docutils literal"><span class="pre">GpmlPiecewiseAggregation</span></tt></a>), or <tt class="docutils literal"><span class="pre">None</span></tt> if the property value is not actually time-dependent.
+Alternatively you can use <a class="reference internal" href="#pygplates.Property.get_value" title="pygplates.Property.get_value"><tt class="xref py py-meth docutils literal"><span class="pre">get_value()</span></tt></a> for extracting a contained property value at a reconstruction time.</p>
+<p>This method is useful if you want to access the time-dependent property value container directly.
+An example is inspecting or modifying the time samples in a <a class="reference internal" href="pygplates.GpmlIrregularSampling.html#pygplates.GpmlIrregularSampling" title="pygplates.GpmlIrregularSampling"><tt class="xref py py-class docutils literal"><span class="pre">GpmlIrregularSampling</span></tt></a>.
+Otherwise <a class="reference internal" href="#pygplates.Property.get_value" title="pygplates.Property.get_value"><tt class="xref py py-meth docutils literal"><span class="pre">get_value()</span></tt></a> is generally more useful since it extracts a value from the container.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.Property.get_value">
+<tt class="descname">get_value</tt><big>(</big><span class="optional">[</span><em>time=0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#pygplates.Property.get_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extracts the value, of our possibly time-dependent property, at the reconstruction <em>time</em>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>time</strong> (float or <a class="reference internal" href="pygplates.GeoTimeInstant.html#pygplates.GeoTimeInstant" title="pygplates.GeoTimeInstant"><tt class="xref py py-class docutils literal"><span class="pre">GeoTimeInstant</span></tt></a>) &#8211; the time to extract value (defaults to present day)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="pygplates.PropertyValue.html#pygplates.PropertyValue" title="pygplates.PropertyValue"><tt class="xref py py-class docutils literal"><span class="pre">PropertyValue</span></tt></a> or None</td>
+</tr>
+</tbody>
+</table>
+<p>If this property has a time-dependent property value (<a class="reference internal" href="pygplates.GpmlConstantValue.html#pygplates.GpmlConstantValue" title="pygplates.GpmlConstantValue"><tt class="xref py py-class docutils literal"><span class="pre">GpmlConstantValue</span></tt></a>,
+<a class="reference internal" href="pygplates.GpmlIrregularSampling.html#pygplates.GpmlIrregularSampling" title="pygplates.GpmlIrregularSampling"><tt class="xref py py-class docutils literal"><span class="pre">GpmlIrregularSampling</span></tt></a> or <a class="reference internal" href="pygplates.GpmlPiecewiseAggregation.html#pygplates.GpmlPiecewiseAggregation" title="pygplates.GpmlPiecewiseAggregation"><tt class="xref py py-class docutils literal"><span class="pre">GpmlPiecewiseAggregation</span></tt></a>) then a nested property
+value is extracted at the reconstruction <em>time</em> and returned. Otherwise our property value
+instance is simply returned as is (since it&#8217;s not a time-dependent property value).
+See <a class="reference internal" href="pygplates.PropertyValue.html#pygplates.PropertyValue.get_value" title="pygplates.PropertyValue.get_value"><tt class="xref py py-meth docutils literal"><span class="pre">PropertyValue.get_value()</span></tt></a> for more details.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This method never returns a time-dependent property value (<a class="reference internal" href="pygplates.GpmlConstantValue.html#pygplates.GpmlConstantValue" title="pygplates.GpmlConstantValue"><tt class="xref py py-class docutils literal"><span class="pre">GpmlConstantValue</span></tt></a>,
+<a class="reference internal" href="pygplates.GpmlIrregularSampling.html#pygplates.GpmlIrregularSampling" title="pygplates.GpmlIrregularSampling"><tt class="xref py py-class docutils literal"><span class="pre">GpmlIrregularSampling</span></tt></a> or <a class="reference internal" href="pygplates.GpmlPiecewiseAggregation.html#pygplates.GpmlPiecewiseAggregation" title="pygplates.GpmlPiecewiseAggregation"><tt class="xref py py-class docutils literal"><span class="pre">GpmlPiecewiseAggregation</span></tt></a>).
+You can use <a class="reference internal" href="#pygplates.Property.get_time_dependent_container" title="pygplates.Property.get_time_dependent_container"><tt class="xref py py-meth docutils literal"><span class="pre">get_time_dependent_container()</span></tt></a> for that.</p>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="pygplates.PropertyValue.html#pygplates.PropertyValue.get_value" title="pygplates.PropertyValue.get_value"><tt class="xref py py-meth docutils literal"><span class="pre">PropertyValue.get_value()</span></tt></a></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pygplates.FeatureCollection.html"
+                        title="previous chapter">pygplates.FeatureCollection</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pygplates.PropertyName.html"
+                        title="next chapter">pygplates.PropertyName</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/generated/pygplates.Property.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="pygplates.PropertyName.html" title="pygplates.PropertyName"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pygplates.FeatureCollection.html" title="pygplates.FeatureCollection"
+             >previous</a> |</li>
+        <li><a href="../index.html">pygplates 2.1.0.18 documentation</a> &raquo;</li>
+          <li><a href="../pygplates_reference.html" >Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright (C) 2003-2016 The University of Sydney, Australia
+(C) 2004-2016 California Institute of Technology
+(C) 2007-2016 The Geological Survey of Norway
+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

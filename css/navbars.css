@@ -1,0 +1,100 @@
+#header-logo {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	/* This next line does not seem to be necessary. */
+	/* text-align: right; */
+	z-index: 2;
+}
+
+#nav-header {
+	background: #871e1e;
+	clear: left;
+	left: 0px;
+	margin: 0;
+	padding: 0;
+	padding-top: 1.4em;
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	z-index: 1;
+}
+#nav-footer {
+	background: #871e1e;
+	margin: 0;
+	padding: 0;
+	padding-bottom: 5px;
+	padding-top: 4px;
+}
+
+.nav-items {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+#nav-header .nav-items {
+	/* FIXME: Do we need this next line? */
+	/* border-bottom: 1px solid white; */
+	padding-right: 80px;
+}
+
+.nav-items li {
+	margin: 0;
+	padding: 0;
+	display: inline;
+	list-style-type: none;
+}
+#nav-header .nav-items li {
+	padding-left: .1em;
+	padding-right: .1em;
+}
+
+#nav-header .nav-items li#active a {
+	border-bottom: 2px solid white;
+}
+
+#nav-header .nav-items li a {
+	background: #e0e0e0;
+	border: 1px solid #c0c0c0;
+	color: #871e1e;
+	font-size: 8pt;
+	padding: .2em .9em;
+	text-decoration: none;
+}
+#nav-footer .nav-items li a {
+	border: 1px solid #871e1e;
+	color: white;
+	font-size: 8pt;
+	padding: .2em .9em;
+	text-decoration: none;
+}
+
+.nav-items li a#gplates-logo {
+	padding-top: 26px;
+}
+
+.nav-items li#active a {
+	background: white;
+	border-bottom: 1px solid white;
+}
+
+#nav-header .nav-items li a:hover {
+	background: #871e1e;
+	border: 1px solid white;
+	color: white;
+}
+#nav-footer .nav-items li a:hover {
+	background: #871e1e;
+	border: 1px solid white;
+	color: white;
+}
+
+.nav-items li#active a:hover {
+	background: #871e1e;
+	border-bottom: 1px solid white;
+	color: white;
+}
+.nav-items li a:visited {
+	text-decoration: none;
+}

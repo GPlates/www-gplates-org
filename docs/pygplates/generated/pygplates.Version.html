@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pygplates.Version &mdash; pygplates 2.1.0.18 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.1.0.18',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pygplates 2.1.0.18 documentation" href="../index.html" />
+    <link rel="up" title="Reference" href="../pygplates_reference.html" />
+    <link rel="prev" title="pygplates.GeoTimeInstant" href="pygplates.GeoTimeInstant.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="pygplates.GeoTimeInstant.html" title="pygplates.GeoTimeInstant"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">pygplates 2.1.0.18 documentation</a> &raquo;</li>
+          <li><a href="../pygplates_reference.html" accesskey="U">Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="pygplates-version">
+<h1>pygplates.Version<a class="headerlink" href="#pygplates-version" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pygplates.Version">
+<em class="property">class </em><tt class="descclassname">pygplates.</tt><tt class="descname">Version</tt><big>(</big><em>revision</em><big>)</big><a class="headerlink" href="#pygplates.Version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></tt></p>
+<p>A version of pyGPlates (GPlates Python API).</p>
+<p>All comparison operators (==, !=, &lt;, &lt;=, &gt;, &gt;=) are supported and Version is hashable (can be used as a key in a <tt class="docutils literal"><span class="pre">dict</span></tt>).</p>
+<div class="line-block">
+<div class="line">During the lifespan of pyGPlates, the <a class="reference internal" href="#pygplates.Version.get_imported_version" title="pygplates.Version.get_imported_version"><tt class="xref py py-meth docutils literal"><span class="pre">imported</span> <span class="pre">pyGPlates</span> <span class="pre">version</span></tt></a> has been incremented for each API change. So it can be used to ensure new API additions are present in the imported pyGPlates library.</div>
+<div class="line">For example, if we are using a new API function that was added in this revision (which is 18) then we can ensure we are using a sufficient API version by checking this at the beginning of our script:</div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">pygplates</span><span class="o">.</span><span class="n">Version</span><span class="o">.</span><span class="n">get_imported_version</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">pygplates</span><span class="o">.</span><span class="n">Version</span><span class="p">(</span><span class="mi">18</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s1">&#39;PyGPlates version </span><span class="si">%s</span><span class="s1"> is not supported&#39;</span> <span class="o">%</span> <span class="n">pygplates</span><span class="o">.</span><span class="n">Version</span><span class="o">.</span><span class="n">get_imported_version</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>To print the version string of the imported pyGPlates library:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">print</span> <span class="s1">&#39;imported pyGPlates version: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">pygplates</span><span class="o">.</span><span class="n">Version</span><span class="o">.</span><span class="n">get_imported_version</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>...which for pyGPlates revision 18 (associated with GPlates version 2.1.0) will print <tt class="docutils literal"><span class="pre">18</span> <span class="pre">(GPlates</span> <span class="pre">2.1.0)</span></tt>. However, note that the associated GPlates version is only printed when using <a class="reference internal" href="#pygplates.Version.get_imported_version" title="pygplates.Version.get_imported_version"><tt class="xref py py-meth docutils literal"><span class="pre">get_imported_version()</span></tt></a>. So the following example only prints the revision number <tt class="docutils literal"><span class="pre">18</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">print</span> <span class="s1">&#39;PyGPlates version: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">pygplates</span><span class="o">.</span><span class="n">Version</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>There is also a <tt class="docutils literal"><span class="pre">pygplates.__version__</span></tt> string equal to the concatenation of the GPlates version and the pyGPlates revision of the imported pyGPlates library. For pyGPlates revision 18 (associated with GPlates version 2.1.0) this would be <tt class="docutils literal"><span class="pre">'2.1.0.18'</span></tt>.</p>
+<dl class="method">
+<dt id="pygplates.Version.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>revision</em><big>)</big><a class="headerlink" href="#pygplates.Version.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a <em>Version</em> instance from a <em>revision</em> number.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>revision</strong> (<em>int</em>) &#8211; the revision number</td>
+</tr>
+</tbody>
+</table>
+<p>To check if the imported pyGPlates library is revision 18 or greater:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">pygplates</span><span class="o">.</span><span class="n">Version</span><span class="o">.</span><span class="n">get_imported_version</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">pygplates</span><span class="o">.</span><span class="n">Version</span><span class="p">(</span><span class="mi">18</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s1">&#39;PyGPlates version </span><span class="si">%s</span><span class="s1"> is not supported&#39;</span> <span class="o">%</span> <span class="n">pygplates</span><span class="o">.</span><span class="n">Version</span><span class="o">.</span><span class="n">get_imported_version</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.Version.__init__" title="pygplates.Version.__init__"><tt class="xref py py-obj docutils literal"><span class="pre">__init__</span></tt></a>(revision)</td>
+<td>Create a <em>Version</em> instance from a <em>revision</em> number.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.Version.get_imported_version" title="pygplates.Version.get_imported_version"><tt class="xref py py-obj docutils literal"><span class="pre">get_imported_version</span></tt></a>()</td>
+<td>[<em>staticmethod</em>] Return the version of the imported pyGPlates library.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.Version.get_revision" title="pygplates.Version.get_revision"><tt class="xref py py-obj docutils literal"><span class="pre">get_revision</span></tt></a>()</td>
+<td>Returns the integer revision number.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="pygplates.Version.get_imported_version">
+<tt class="descname">get_imported_version</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.Version.get_imported_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>[<em>staticmethod</em>] Return the version of the imported pyGPlates library.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a Version instance representing the <a class="reference internal" href="#pygplates.Version.get_revision" title="pygplates.Version.get_revision"><tt class="xref py py-meth docutils literal"><span class="pre">revision</span> <span class="pre">number</span></tt></a> of the imported pyGPlates library</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#pygplates.Version" title="pygplates.Version"><tt class="xref py py-class docutils literal"><span class="pre">Version</span></tt></a></td>
+</tr>
+</tbody>
+</table>
+<p>To check if the imported pyGPlates library is revision 18 or greater:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">pygplates</span><span class="o">.</span><span class="n">Version</span><span class="o">.</span><span class="n">get_imported_version</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">pygplates</span><span class="o">.</span><span class="n">Version</span><span class="p">(</span><span class="mi">18</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s1">&#39;PyGPlates version </span><span class="si">%s</span><span class="s1"> is not supported&#39;</span> <span class="o">%</span> <span class="n">pygplates</span><span class="o">.</span><span class="n">Version</span><span class="o">.</span><span class="n">get_imported_version</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.Version.get_revision">
+<tt class="descname">get_revision</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.Version.get_revision" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the integer revision number.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pygplates.GeoTimeInstant.html"
+                        title="previous chapter">pygplates.GeoTimeInstant</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/generated/pygplates.Version.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="pygplates.GeoTimeInstant.html" title="pygplates.GeoTimeInstant"
+             >previous</a> |</li>
+        <li><a href="../index.html">pygplates 2.1.0.18 documentation</a> &raquo;</li>
+          <li><a href="../pygplates_reference.html" >Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright (C) 2003-2016 The University of Sydney, Australia
+(C) 2004-2016 California Institute of Technology
+(C) 2007-2016 The Geological Survey of Norway
+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

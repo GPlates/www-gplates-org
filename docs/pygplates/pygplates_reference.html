@@ -1,0 +1,715 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Reference &mdash; pygplates 2.1.0.18 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.1.0.18',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pygplates 2.1.0.18 documentation" href="index.html" />
+    <link rel="next" title="pygplates.reconstruct" href="generated/pygplates.reconstruct.html" />
+    <link rel="prev" title="Foundations" href="pygplates_foundations.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="generated/pygplates.reconstruct.html" title="pygplates.reconstruct"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pygplates_foundations.html" title="Foundations"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">pygplates 2.1.0.18 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="reference">
+<span id="pygplates-reference"></span><h1>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h1>
+<p>This document lists the Python functions and classes that make up the GPlates Python <em>Application Programming Interface</em> (<em>API</em>) known as pyGPlates.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Please see the <a class="reference internal" href="pygplates_getting_started.html#pygplates-getting-started-installation"><em>installation</em></a> section for information on how to install pyGPlates.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Please see the <a class="reference internal" href="pygplates_getting_started.html#pygplates-getting-started-tutorial"><em>tutorial</em></a> section to help get you started using pyGPlates.</p>
+</div>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#reconstruction" id="id1">Reconstruction</a></li>
+<li><a class="reference internal" href="#topology" id="id2">Topology</a></li>
+<li><a class="reference internal" href="#velocity" id="id3">Velocity</a></li>
+<li><a class="reference internal" href="#rotation" id="id4">Rotation</a></li>
+<li><a class="reference internal" href="#plate-partitioning" id="id5">Plate Partitioning</a></li>
+<li><a class="reference internal" href="#file-i-o" id="id6">File I/O</a></li>
+<li><a class="reference internal" href="#feature" id="id7">Feature</a></li>
+<li><a class="reference internal" href="#feature-property" id="id8">Feature property</a></li>
+<li><a class="reference internal" href="#feature-property-value" id="id9">Feature property value</a></li>
+<li><a class="reference internal" href="#geometry" id="id10">Geometry</a></li>
+<li><a class="reference internal" href="#vector" id="id11">Vector</a></li>
+<li><a class="reference internal" href="#string" id="id12">String</a></li>
+<li><a class="reference internal" href="#utility" id="id13">Utility</a></li>
+</ul>
+</div>
+<div class="section" id="reconstruction">
+<h2><a class="toc-backref" href="#id1">Reconstruction</a><a class="headerlink" href="#reconstruction" title="Permalink to this headline">¶</a></h2>
+<p>Functions to reconstruct backward and forward in time:</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.reconstruct.html#pygplates.reconstruct" title="pygplates.reconstruct"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.reconstruct</span></tt></a>(...)</td>
+<td>Reconstruct regular geological features, motion paths or flowlines to a specific geological time.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pygplates.reverse_reconstruct.html#pygplates.reverse_reconstruct" title="pygplates.reverse_reconstruct"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.reverse_reconstruct</span></tt></a>(...)</td>
+<td>Reverse reconstruct geological features from a specific geological time.</td>
+</tr>
+</tbody>
+</table>
+<p>Classes resulting from <a class="reference internal" href="generated/pygplates.reconstruct.html#pygplates.reconstruct" title="pygplates.reconstruct"><tt class="xref py py-func docutils literal"><span class="pre">reconstructing</span></tt></a> regular
+<a class="reference internal" href="generated/pygplates.Feature.html#pygplates.Feature" title="pygplates.Feature"><tt class="xref py py-class docutils literal"><span class="pre">features</span></tt></a> at a particular reconstruction time.</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.ReconstructedFeatureGeometry.html#pygplates.ReconstructedFeatureGeometry" title="pygplates.ReconstructedFeatureGeometry"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.ReconstructedFeatureGeometry</span></tt></a></td>
+<td>The geometry of a feature reconstructed to a geological time.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pygplates.ReconstructedFlowline.html#pygplates.ReconstructedFlowline" title="pygplates.ReconstructedFlowline"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.ReconstructedFlowline</span></tt></a></td>
+<td>The reconstructed history of plate motion away from a spreading ridge in the form of a path of points over geological time.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.ReconstructedMotionPath.html#pygplates.ReconstructedMotionPath" title="pygplates.ReconstructedMotionPath"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.ReconstructedMotionPath</span></tt></a></td>
+<td>The reconstructed history of a plate&#8217;s motion in the form of a path of points over geological time.</td>
+</tr>
+</tbody>
+</table>
+<p>All three above reconstructed feature types inherit from:</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.ReconstructionGeometry.html#pygplates.ReconstructionGeometry" title="pygplates.ReconstructionGeometry"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.ReconstructionGeometry</span></tt></a></td>
+<td>The base class inherited by all derived reconstruction geometry classes.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="topology">
+<h2><a class="toc-backref" href="#id2">Topology</a><a class="headerlink" href="#topology" title="Permalink to this headline">¶</a></h2>
+<p>Functions to resolve topologies:</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.resolve_topologies.html#pygplates.resolve_topologies" title="pygplates.resolve_topologies"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.resolve_topologies</span></tt></a>(...)</td>
+<td>Resolve topological features (lines, boundaries and networks) to a specific geological time.</td>
+</tr>
+</tbody>
+</table>
+<p>Classes resulting from <a class="reference internal" href="generated/pygplates.resolve_topologies.html#pygplates.resolve_topologies" title="pygplates.resolve_topologies"><tt class="xref py py-func docutils literal"><span class="pre">resolving</span></tt></a> topological
+<a class="reference internal" href="generated/pygplates.Feature.html#pygplates.Feature" title="pygplates.Feature"><tt class="xref py py-class docutils literal"><span class="pre">features</span></tt></a> at a particular reconstruction time.</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.ResolvedTopologicalLine.html#pygplates.ResolvedTopologicalLine" title="pygplates.ResolvedTopologicalLine"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.ResolvedTopologicalLine</span></tt></a></td>
+<td>The geometry of a topological <em>line</em> feature resolved to a geological time.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pygplates.ResolvedTopologicalBoundary.html#pygplates.ResolvedTopologicalBoundary" title="pygplates.ResolvedTopologicalBoundary"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.ResolvedTopologicalBoundary</span></tt></a></td>
+<td>The geometry of a topological <em>boundary</em> feature resolved to a geological time.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.ResolvedTopologicalNetwork.html#pygplates.ResolvedTopologicalNetwork" title="pygplates.ResolvedTopologicalNetwork"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.ResolvedTopologicalNetwork</span></tt></a></td>
+<td>The geometry of a topological <em>network</em> feature resolved to a geological time.</td>
+</tr>
+</tbody>
+</table>
+<p>All three above resolved topology types inherit from:</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.ReconstructionGeometry.html#pygplates.ReconstructionGeometry" title="pygplates.ReconstructionGeometry"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.ReconstructionGeometry</span></tt></a></td>
+<td>The base class inherited by all derived reconstruction geometry classes.</td>
+</tr>
+</tbody>
+</table>
+<p>The following class represents a sub-segment of a <em>single</em> resolved topological line, boundary or network.</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.ResolvedTopologicalSubSegment.html#pygplates.ResolvedTopologicalSubSegment" title="pygplates.ResolvedTopologicalSubSegment"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.ResolvedTopologicalSubSegment</span></tt></a></td>
+<td>The subset of vertices of a reconstructed topological section that contribute to the geometry of a resolved topology.</td>
+</tr>
+</tbody>
+</table>
+<p>The following classes represent sub-segments <em>shared</em> by one or more resolved topological boundaries and/or networks.</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.ResolvedTopologicalSection.html#pygplates.ResolvedTopologicalSection" title="pygplates.ResolvedTopologicalSection"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.ResolvedTopologicalSection</span></tt></a></td>
+<td>The sequence of shared sub-segments of a reconstructed topological section that uniquely contribute to the <em>boundaries</em> of one or more resolved topologies.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pygplates.ResolvedTopologicalSharedSubSegment.html#pygplates.ResolvedTopologicalSharedSubSegment" title="pygplates.ResolvedTopologicalSharedSubSegment"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.ResolvedTopologicalSharedSubSegment</span></tt></a></td>
+<td>The shared subset of vertices of a reconstructed topological section that uniquely contribute to the <em>boundaries</em> of one or more resolved topologies.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="velocity">
+<h2><a class="toc-backref" href="#id3">Velocity</a><a class="headerlink" href="#velocity" title="Permalink to this headline">¶</a></h2>
+<p>Functions to calculate velocities:</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.calculate_velocities.html#pygplates.calculate_velocities" title="pygplates.calculate_velocities"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.calculate_velocities</span></tt></a>(...)</td>
+<td>Calculate velocities at a sequence of points assuming movement due to a finite rotation over a time interval.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="rotation">
+<h2><a class="toc-backref" href="#id4">Rotation</a><a class="headerlink" href="#rotation" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><tt class="docutils literal"><span class="pre">RotationModel</span></tt> is the main class for getting finite and stage rotations from rotation models/files.</div>
+<div class="line"><tt class="docutils literal"><span class="pre">FiniteRotation</span></tt> is a useful maths class for rotating geometries (and vectors).</div>
+</div>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.RotationModel.html#pygplates.RotationModel" title="pygplates.RotationModel"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.RotationModel</span></tt></a></td>
+<td>Query a finite rotation of a moving plate relative to any other plate, optionally between two instants in geological time.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pygplates.FiniteRotation.html#pygplates.FiniteRotation" title="pygplates.FiniteRotation"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.FiniteRotation</span></tt></a></td>
+<td>Represents the motion of plates on the surface of the globe.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><tt class="docutils literal"><span class="pre">ReconstructionTreeBuilder</span></tt> and <tt class="docutils literal"><span class="pre">ReconstructionTreeEdge</span></tt>
+are only needed for very advanced scenarios.</p>
+</div>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.ReconstructionTree.html#pygplates.ReconstructionTree" title="pygplates.ReconstructionTree"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.ReconstructionTree</span></tt></a></td>
+<td>Represents the plate-reconstruction hierarchy of total reconstruction poles at an instant in geological time.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pygplates.ReconstructionTreeBuilder.html#pygplates.ReconstructionTreeBuilder" title="pygplates.ReconstructionTreeBuilder"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.ReconstructionTreeBuilder</span></tt></a></td>
+<td>Enable incremental building of a reconstruction tree by inserting <em>total reconstruction poles</em>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.ReconstructionTreeEdge.html#pygplates.ReconstructionTreeEdge" title="pygplates.ReconstructionTreeEdge"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.ReconstructionTreeEdge</span></tt></a></td>
+<td>A reconstruction tree edge represents a moving/fixed plate pair in the graph of the plate-reconstruction hierarchy.</td>
+</tr>
+</tbody>
+</table>
+<p>Functions to find and fix finite rotation crossovers (transitions of fixed plate):</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.find_crossovers.html#pygplates.find_crossovers" title="pygplates.find_crossovers"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.find_crossovers</span></tt></a>(rotation_features,&nbsp;...)</td>
+<td>Find crossovers in rotation features.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pygplates.synchronise_crossovers.html#pygplates.synchronise_crossovers" title="pygplates.synchronise_crossovers"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.synchronise_crossovers</span></tt></a>(...)</td>
+<td>Synchronise crossovers in rotation features.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="plate-partitioning">
+<h2><a class="toc-backref" href="#id5">Plate Partitioning</a><a class="headerlink" href="#plate-partitioning" title="Permalink to this headline">¶</a></h2>
+<p>Functions to partition into plates:</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.partition_into_plates.html#pygplates.partition_into_plates" title="pygplates.partition_into_plates"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.partition_into_plates</span></tt></a>(...)</td>
+<td>Partition features into plates.</td>
+</tr>
+</tbody>
+</table>
+<p>Classes to partition into plates:</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.PlatePartitioner.html#pygplates.PlatePartitioner" title="pygplates.PlatePartitioner"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.PlatePartitioner</span></tt></a></td>
+<td>Partition features or geometries into plates.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="file-i-o">
+<h2><a class="toc-backref" href="#id6">File I/O</a><a class="headerlink" href="#file-i-o" title="Permalink to this headline">¶</a></h2>
+<p>Classes that read/write data from/to files:</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.FeatureCollection.html#pygplates.FeatureCollection" title="pygplates.FeatureCollection"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.FeatureCollection</span></tt></a></td>
+<td>The feature collection aggregates a set of features into a collection.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pygplates.FeatureCollectionFileFormatRegistry.html#pygplates.FeatureCollectionFileFormatRegistry" title="pygplates.FeatureCollectionFileFormatRegistry"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.FeatureCollectionFileFormatRegistry</span></tt></a></td>
+<td>Reads and writes <em>feature collections</em> from/to various <em>feature collection</em> file formats.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><tt class="docutils literal"><span class="pre">FeatureCollection</span></tt> is easier to use for
+<a class="reference internal" href="generated/pygplates.FeatureCollection.html#pygplates.FeatureCollection.read" title="pygplates.FeatureCollection.read"><tt class="xref py py-meth docutils literal"><span class="pre">reading</span></tt></a> and <a class="reference internal" href="generated/pygplates.FeatureCollection.html#pygplates.FeatureCollection.write" title="pygplates.FeatureCollection.write"><tt class="xref py py-meth docutils literal"><span class="pre">writing</span></tt></a>.</p>
+</div>
+</div>
+<div class="section" id="feature">
+<h2><a class="toc-backref" href="#id7">Feature</a><a class="headerlink" href="#feature" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">Feature</span></tt> is the main class to go to for querying/setting geological feature properties.</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.Feature.html#pygplates.Feature" title="pygplates.Feature"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.Feature</span></tt></a></td>
+<td>The feature is an abstract model of some geological or plate-tectonic object or concept of interest defined by the <a class="reference external" href="http://www.gplates.org/docs/gpgim">GPlates Geological Information Model</a> (GPGIM).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pygplates.FeatureCollection.html#pygplates.FeatureCollection" title="pygplates.FeatureCollection"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.FeatureCollection</span></tt></a></td>
+<td>The feature collection aggregates a set of features into a collection.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="feature-property">
+<h2><a class="toc-backref" href="#id8">Feature property</a><a class="headerlink" href="#feature-property" title="Permalink to this headline">¶</a></h2>
+<p>A <a class="reference internal" href="generated/pygplates.Feature.html#pygplates.Feature" title="pygplates.Feature"><tt class="xref py py-class docutils literal"><span class="pre">feature</span></tt></a> is essentially a list of <a class="reference internal" href="generated/pygplates.Property.html#pygplates.Property" title="pygplates.Property"><tt class="xref py py-class docutils literal"><span class="pre">properties</span></tt></a>
+where each property has a <a class="reference internal" href="generated/pygplates.PropertyName.html#pygplates.PropertyName" title="pygplates.PropertyName"><tt class="xref py py-class docutils literal"><span class="pre">name</span></tt></a> and a <a class="reference internal" href="generated/pygplates.PropertyValue.html#pygplates.PropertyValue" title="pygplates.PropertyValue"><tt class="xref py py-class docutils literal"><span class="pre">value</span></tt></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><tt class="docutils literal"><span class="pre">PropertyValueVisitor</span></tt> is only needed for very advanced scenarios.</p>
+</div>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.Property.html#pygplates.Property" title="pygplates.Property"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.Property</span></tt></a></td>
+<td>Associates a property name with a property value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pygplates.PropertyName.html#pygplates.PropertyName" title="pygplates.PropertyName"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.PropertyName</span></tt></a></td>
+<td>The namespace-qualified name of a property.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.PropertyValue.html#pygplates.PropertyValue" title="pygplates.PropertyValue"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.PropertyValue</span></tt></a></td>
+<td>The base class inherited by all derived property value classes.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pygplates.PropertyValueVisitor.html#pygplates.PropertyValueVisitor" title="pygplates.PropertyValueVisitor"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.PropertyValueVisitor</span></tt></a></td>
+<td>The base class inherited by all derived property value <em>visitor</em> classes.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="feature-property-value">
+<h2><a class="toc-backref" href="#id9">Feature property value</a><a class="headerlink" href="#feature-property-value" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">These classes represent the various types of property values that a <a class="reference internal" href="generated/pygplates.Feature.html#pygplates.Feature" title="pygplates.Feature"><tt class="xref py py-class docutils literal"><span class="pre">feature</span></tt></a> can contain.</div>
+<div class="line">Property values contain things such as plate IDs, geometries, finite rotations, strings, numbers, etc.
+All these property values inherit from <a class="reference internal" href="generated/pygplates.PropertyValue.html#pygplates.PropertyValue" title="pygplates.PropertyValue"><tt class="xref py py-class docutils literal"><span class="pre">PropertyValue</span></tt></a>.</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Some of these property values can be obtained more easily using <a class="reference internal" href="generated/pygplates.Feature.html#pygplates.Feature" title="pygplates.Feature"><tt class="xref py py-class docutils literal"><span class="pre">Feature</span></tt></a> directly.</p>
+</div>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.Enumeration.html#pygplates.Enumeration" title="pygplates.Enumeration"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.Enumeration</span></tt></a></td>
+<td>A property value that represents a finite set of accepted (string) values per enumeration type.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pygplates.GmlDataBlock.html#pygplates.GmlDataBlock" title="pygplates.GmlDataBlock"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.GmlDataBlock</span></tt></a></td>
+<td>A data block that associates each scalar type with a sequence of floating-point scalar values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.GmlLineString.html#pygplates.GmlLineString" title="pygplates.GmlLineString"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.GmlLineString</span></tt></a></td>
+<td>A property value representing a polyline geometry.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pygplates.GmlMultiPoint.html#pygplates.GmlMultiPoint" title="pygplates.GmlMultiPoint"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.GmlMultiPoint</span></tt></a></td>
+<td>A property value representing a multi-point geometry.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.GmlOrientableCurve.html#pygplates.GmlOrientableCurve" title="pygplates.GmlOrientableCurve"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.GmlOrientableCurve</span></tt></a></td>
+<td>A property value representing a polyline geometry with a positive or negative orientation.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pygplates.GmlPoint.html#pygplates.GmlPoint" title="pygplates.GmlPoint"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.GmlPoint</span></tt></a></td>
+<td>A property value representing a point geometry.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.GmlPolygon.html#pygplates.GmlPolygon" title="pygplates.GmlPolygon"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.GmlPolygon</span></tt></a></td>
+<td>A property value representing a polygon geometry.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pygplates.GmlTimeInstant.html#pygplates.GmlTimeInstant" title="pygplates.GmlTimeInstant"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.GmlTimeInstant</span></tt></a></td>
+<td>A property value representing an instant in geological time.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.GmlTimePeriod.html#pygplates.GmlTimePeriod" title="pygplates.GmlTimePeriod"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.GmlTimePeriod</span></tt></a></td>
+<td>A property value representing a period in geological time (time of appearance to time of disappearance).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pygplates.GpmlArray.html#pygplates.GpmlArray" title="pygplates.GpmlArray"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.GpmlArray</span></tt></a></td>
+<td>A sequence of property value elements.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.GpmlFiniteRotation.html#pygplates.GpmlFiniteRotation" title="pygplates.GpmlFiniteRotation"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.GpmlFiniteRotation</span></tt></a></td>
+<td>A property value that represents a finite rotation.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pygplates.GpmlKeyValueDictionary.html#pygplates.GpmlKeyValueDictionary" title="pygplates.GpmlKeyValueDictionary"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.GpmlKeyValueDictionary</span></tt></a></td>
+<td>A dictionary of key/value pairs that associates string keys with integer, float or string values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.GpmlOldPlatesHeader.html#pygplates.GpmlOldPlatesHeader" title="pygplates.GpmlOldPlatesHeader"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.GpmlOldPlatesHeader</span></tt></a></td>
+<td>A property value containing metadata inherited from imported PLATES data files.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pygplates.GpmlPlateId.html#pygplates.GpmlPlateId" title="pygplates.GpmlPlateId"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.GpmlPlateId</span></tt></a></td>
+<td>A property value that represents a plate id.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.GpmlPolarityChronId.html#pygplates.GpmlPolarityChronId" title="pygplates.GpmlPolarityChronId"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.GpmlPolarityChronId</span></tt></a></td>
+<td>A property value that identifies an <tt class="xref py py-class docutils literal"><span class="pre">Isochron</span></tt> or <tt class="xref py py-class docutils literal"><span class="pre">MagneticAnomalyIdentification</span></tt>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pygplates.XsBoolean.html#pygplates.XsBoolean" title="pygplates.XsBoolean"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.XsBoolean</span></tt></a></td>
+<td>A property value that represents a boolean value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.XsDouble.html#pygplates.XsDouble" title="pygplates.XsDouble"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.XsDouble</span></tt></a></td>
+<td>A property value that represents a <em>double</em>-precision floating-point number.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pygplates.XsInteger.html#pygplates.XsInteger" title="pygplates.XsInteger"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.XsInteger</span></tt></a></td>
+<td>A property value that represents an integer number.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.XsString.html#pygplates.XsString" title="pygplates.XsString"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.XsString</span></tt></a></td>
+<td>A property value that represents a string.</td>
+</tr>
+</tbody>
+</table>
+<p>The following subset of property value classes are time-dependent wrappers.
+These are what enable the above <a class="reference internal" href="generated/pygplates.PropertyValue.html#pygplates.PropertyValue" title="pygplates.PropertyValue"><tt class="xref py py-class docutils literal"><span class="pre">property</span> <span class="pre">values</span></tt></a> to vary over geological time.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">There is currently limited support for <em>time-dependent</em> properties.</p>
+</div>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.GpmlConstantValue.html#pygplates.GpmlConstantValue" title="pygplates.GpmlConstantValue"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.GpmlConstantValue</span></tt></a></td>
+<td>The most basic case of a time-dependent property value is one that is constant for all time.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pygplates.GpmlIrregularSampling.html#pygplates.GpmlIrregularSampling" title="pygplates.GpmlIrregularSampling"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.GpmlIrregularSampling</span></tt></a></td>
+<td>A time-dependent property consisting of a sequence of time samples irregularly spaced in time.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.GpmlPiecewiseAggregation.html#pygplates.GpmlPiecewiseAggregation" title="pygplates.GpmlPiecewiseAggregation"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.GpmlPiecewiseAggregation</span></tt></a></td>
+<td>A time-dependent property consisting of a sequence of time windows each with a <em>constant</em> property value.</td>
+</tr>
+</tbody>
+</table>
+<p>The following classes support <em>time-dependent</em> properties.
+Strictly speaking they are not actually <a class="reference internal" href="generated/pygplates.PropertyValue.html#pygplates.PropertyValue" title="pygplates.PropertyValue"><tt class="xref py py-class docutils literal"><span class="pre">property</span> <span class="pre">values</span></tt></a>.</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.GpmlTimeSample.html#pygplates.GpmlTimeSample" title="pygplates.GpmlTimeSample"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.GpmlTimeSample</span></tt></a></td>
+<td>A time sample associates an arbitrary property value with a specific time instant.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pygplates.GpmlTimeWindow.html#pygplates.GpmlTimeWindow" title="pygplates.GpmlTimeWindow"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.GpmlTimeWindow</span></tt></a></td>
+<td>A time window associates an arbitrary property value with a specific time period.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="geometry">
+<h2><a class="toc-backref" href="#id10">Geometry</a><a class="headerlink" href="#geometry" title="Permalink to this headline">¶</a></h2>
+<p>There are four types of geometry:</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.PointOnSphere.html#pygplates.PointOnSphere" title="pygplates.PointOnSphere"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.PointOnSphere</span></tt></a></td>
+<td>Represents a point on the surface of the unit length sphere in 3D cartesian coordinates.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pygplates.MultiPointOnSphere.html#pygplates.MultiPointOnSphere" title="pygplates.MultiPointOnSphere"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.MultiPointOnSphere</span></tt></a></td>
+<td>Represents a multi-point (collection of points) on the surface of the unit length sphere.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.PolylineOnSphere.html#pygplates.PolylineOnSphere" title="pygplates.PolylineOnSphere"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.PolylineOnSphere</span></tt></a></td>
+<td>Represents a polyline on the surface of the unit length sphere.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pygplates.PolygonOnSphere.html#pygplates.PolygonOnSphere" title="pygplates.PolygonOnSphere"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.PolygonOnSphere</span></tt></a></td>
+<td>Represents a polygon on the surface of the unit length sphere.</td>
+</tr>
+</tbody>
+</table>
+<p>All four above geometry types inherit from:</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.GeometryOnSphere.html#pygplates.GeometryOnSphere" title="pygplates.GeometryOnSphere"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.GeometryOnSphere</span></tt></a></td>
+<td>The base class inherited by all derived classes representing geometries on the sphere.</td>
+</tr>
+</tbody>
+</table>
+<p>A <a class="reference internal" href="generated/pygplates.PolylineOnSphere.html#pygplates.PolylineOnSphere" title="pygplates.PolylineOnSphere"><tt class="xref py py-class docutils literal"><span class="pre">polyline</span></tt></a> or a <a class="reference internal" href="generated/pygplates.PolygonOnSphere.html#pygplates.PolygonOnSphere" title="pygplates.PolygonOnSphere"><tt class="xref py py-class docutils literal"><span class="pre">polygon</span></tt></a> is
+both a sequence of <a class="reference internal" href="generated/pygplates.PointOnSphere.html#pygplates.PointOnSphere" title="pygplates.PointOnSphere"><tt class="xref py py-class docutils literal"><span class="pre">points</span></tt></a> and a sequence of
+<a class="reference internal" href="generated/pygplates.GreatCircleArc.html#pygplates.GreatCircleArc" title="pygplates.GreatCircleArc"><tt class="xref py py-class docutils literal"><span class="pre">segments</span></tt></a> (between adjacent points).
+Each <em>segment</em> is a great circle arc:</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.GreatCircleArc.html#pygplates.GreatCircleArc" title="pygplates.GreatCircleArc"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.GreatCircleArc</span></tt></a></td>
+<td>A great-circle arc on the surface of the unit globe.</td>
+</tr>
+</tbody>
+</table>
+<p>There is also a latitude/longitude version of a point:</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.LatLonPoint.html#pygplates.LatLonPoint" title="pygplates.LatLonPoint"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.LatLonPoint</span></tt></a></td>
+<td>Represents a point in 2D geographic coordinates (latitude and longitude).</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="vector">
+<h2><a class="toc-backref" href="#id11">Vector</a><a class="headerlink" href="#vector" title="Permalink to this headline">¶</a></h2>
+<p>A vector class, and conversions between global cartesian and local magnitude/azimuth/inclination:</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.LocalCartesian.html#pygplates.LocalCartesian" title="pygplates.LocalCartesian"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.LocalCartesian</span></tt></a></td>
+<td>A local cartesian coordinate system located at a point on the sphere.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pygplates.Vector3D.html#pygplates.Vector3D" title="pygplates.Vector3D"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.Vector3D</span></tt></a></td>
+<td>Represents a vector in 3D cartesian coordinates.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="string">
+<h2><a class="toc-backref" href="#id12">String</a><a class="headerlink" href="#string" title="Permalink to this headline">¶</a></h2>
+<p>String-type classes used in various areas of pyGPlates:</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.EnumerationType.html#pygplates.EnumerationType" title="pygplates.EnumerationType"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.EnumerationType</span></tt></a></td>
+<td>The namespace-qualified type of an enumeration.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pygplates.FeatureId.html#pygplates.FeatureId" title="pygplates.FeatureId"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.FeatureId</span></tt></a></td>
+<td>A feature ID acts as a persistent unique identifier for a feature.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.FeatureType.html#pygplates.FeatureType" title="pygplates.FeatureType"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.FeatureType</span></tt></a></td>
+<td>The namespace-qualified type of a feature.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pygplates.PropertyName.html#pygplates.PropertyName" title="pygplates.PropertyName"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.PropertyName</span></tt></a></td>
+<td>The namespace-qualified name of a property.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.ScalarType.html#pygplates.ScalarType" title="pygplates.ScalarType"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.ScalarType</span></tt></a></td>
+<td>The namespace-qualified type of scalar values.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="utility">
+<h2><a class="toc-backref" href="#id13">Utility</a><a class="headerlink" href="#utility" title="Permalink to this headline">¶</a></h2>
+<p>General utility classes:</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.DateLineWrapper.html#pygplates.DateLineWrapper" title="pygplates.DateLineWrapper"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.DateLineWrapper</span></tt></a></td>
+<td>Wraps geometries to the dateline.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pygplates.Earth.html#pygplates.Earth" title="pygplates.Earth"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.Earth</span></tt></a></td>
+<td>Various Earth-related parameters (such as radius).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.FeaturesFunctionArgument.html#pygplates.FeaturesFunctionArgument" title="pygplates.FeaturesFunctionArgument"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.FeaturesFunctionArgument</span></tt></a></td>
+<td>A utility class for extracting features from collections and files.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pygplates.GeoTimeInstant.html#pygplates.GeoTimeInstant" title="pygplates.GeoTimeInstant"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.GeoTimeInstant</span></tt></a></td>
+<td>Represents an instant in geological time.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pygplates.Version.html#pygplates.Version" title="pygplates.Version"><tt class="xref py py-obj docutils literal"><span class="pre">pygplates.Version</span></tt></a></td>
+<td>A version of pygplates (GPlates Python API).</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Reference</a><ul>
+<li><a class="reference internal" href="#reconstruction">Reconstruction</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#topology">Topology</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#velocity">Velocity</a></li>
+<li><a class="reference internal" href="#rotation">Rotation</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#plate-partitioning">Plate Partitioning</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#file-i-o">File I/O</a></li>
+<li><a class="reference internal" href="#feature">Feature</a></li>
+<li><a class="reference internal" href="#feature-property">Feature property</a></li>
+<li><a class="reference internal" href="#feature-property-value">Feature property value</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#geometry">Geometry</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#vector">Vector</a></li>
+<li><a class="reference internal" href="#string">String</a></li>
+<li><a class="reference internal" href="#utility">Utility</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pygplates_foundations.html"
+                        title="previous chapter">Foundations</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="generated/pygplates.reconstruct.html"
+                        title="next chapter">pygplates.reconstruct</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/pygplates_reference.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="generated/pygplates.reconstruct.html" title="pygplates.reconstruct"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pygplates_foundations.html" title="Foundations"
+             >previous</a> |</li>
+        <li><a href="index.html">pygplates 2.1.0.18 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright (C) 2003-2016 The University of Sydney, Australia
+(C) 2004-2016 California Institute of Technology
+(C) 2007-2016 The Geological Survey of Norway
+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pygplates.GpmlPolarityChronId &mdash; pygplates 2.1.0.18 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.1.0.18',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pygplates 2.1.0.18 documentation" href="../index.html" />
+    <link rel="up" title="Reference" href="../pygplates_reference.html" />
+    <link rel="next" title="pygplates.XsBoolean" href="pygplates.XsBoolean.html" />
+    <link rel="prev" title="pygplates.GpmlPlateId" href="pygplates.GpmlPlateId.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="pygplates.XsBoolean.html" title="pygplates.XsBoolean"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pygplates.GpmlPlateId.html" title="pygplates.GpmlPlateId"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">pygplates 2.1.0.18 documentation</a> &raquo;</li>
+          <li><a href="../pygplates_reference.html" accesskey="U">Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="pygplates-gpmlpolaritychronid">
+<h1>pygplates.GpmlPolarityChronId<a class="headerlink" href="#pygplates-gpmlpolaritychronid" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pygplates.GpmlPolarityChronId">
+<em class="property">class </em><tt class="descclassname">pygplates.</tt><tt class="descname">GpmlPolarityChronId</tt><big>(</big><span class="optional">[</span><em>era</em><span class="optional">]</span><span class="optional">[</span>, <em>major_region</em><span class="optional">]</span><span class="optional">[</span>, <em>minor_region</em><span class="optional">]</span><span class="optional">[</span>, <em>verify_information_model=VerifyInformationModel.yes</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#pygplates.GpmlPolarityChronId" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pygplates.PropertyValue.html#pygplates.PropertyValue" title="pygplates.PropertyValue"><tt class="xref py py-class docutils literal"><span class="pre">pygplates.PropertyValue</span></tt></a></p>
+<p>A property value that identifies an <a class="reference internal" href="pygplates.FeatureType.html#pygplates.FeatureType" title="pygplates.FeatureType"><tt class="xref py py-class docutils literal"><span class="pre">Isochron</span></tt></a> or <a class="reference internal" href="pygplates.FeatureType.html#pygplates.FeatureType" title="pygplates.FeatureType"><tt class="xref py py-class docutils literal"><span class="pre">MagneticAnomalyIdentification</span></tt></a>.</p>
+<dl class="method">
+<dt id="pygplates.GpmlPolarityChronId.__init__">
+<tt class="descname">__init__</tt><big>(</big><span class="optional">[</span><em>era</em><span class="optional">]</span><span class="optional">[</span>, <em>major_region</em><span class="optional">]</span><span class="optional">[</span>, <em>minor_region</em><span class="optional">]</span><span class="optional">[</span>, <em>verify_information_model=VerifyInformationModel.yes</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#pygplates.GpmlPolarityChronId.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a polarity chron id property value.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>era</strong> (<em>string</em>) &#8211; the era of the chron (&#8216;Cenozoic&#8217; or &#8216;Mesozoic&#8217;)</li>
+<li><strong>major_region</strong> (<em>int</em>) &#8211; the number indicating the major region the chron is in - Cenozoic isochrons have been classified into broad regions identified by the numbers 1 to 34, Mesozoic isochrons use the numbers 1 to 29</li>
+<li><strong>minor_region</strong> (<em>string</em>) &#8211; the sequence of letters indicating the sub-region the chron is located in - the letters a-z are used for the initial sub-region, and if further polarity reversals have been discovered within that chron, a second letter is appended, and so on</li>
+<li><strong>verify_information_model</strong> (<em>VerifyInformationModel.yes</em> or <em>VerifyInformationModel.no</em>) &#8211; whether to check the information model for valid <em>era</em></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">InformationModelError if <em>verify_information_model</em> is <em>VerifyInformationModel.yes</em> and <em>era</em> is not a recognised era value</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Create the identifier &#39;C34ad&#39; for Cenozoic isochron, major region 34, sub region a, sub region d:</span>
+<span class="n">polarity_chron_id_property</span> <span class="o">=</span> <span class="n">pygplates</span><span class="o">.</span><span class="n">GpmlPolarityChronId</span><span class="p">(</span><span class="s1">&#39;Cenozoic&#39;</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="s1">&#39;ad&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.GpmlPolarityChronId.__init__" title="pygplates.GpmlPolarityChronId.__init__"><tt class="xref py py-obj docutils literal"><span class="pre">__init__</span></tt></a>([era],&nbsp;[major_region],&nbsp;...)</td>
+<td>Create a polarity chron id property value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.GpmlPolarityChronId.accept_visitor" title="pygplates.GpmlPolarityChronId.accept_visitor"><tt class="xref py py-obj docutils literal"><span class="pre">accept_visitor</span></tt></a>(visitor)</td>
+<td>Accept a property value visitor so that it can visit this property value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.GpmlPolarityChronId.clone" title="pygplates.GpmlPolarityChronId.clone"><tt class="xref py py-obj docutils literal"><span class="pre">clone</span></tt></a>()</td>
+<td>Create a duplicate of this property value (derived) instance, including a recursive copy of any nested property values that this instance might contain.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.GpmlPolarityChronId.get_era" title="pygplates.GpmlPolarityChronId.get_era"><tt class="xref py py-obj docutils literal"><span class="pre">get_era</span></tt></a>()</td>
+<td>Returns the era.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.GpmlPolarityChronId.get_geometry" title="pygplates.GpmlPolarityChronId.get_geometry"><tt class="xref py py-obj docutils literal"><span class="pre">get_geometry</span></tt></a>()</td>
+<td>Extracts the <a class="reference internal" href="pygplates.GeometryOnSphere.html#pygplates.GeometryOnSphere" title="pygplates.GeometryOnSphere"><tt class="xref py py-class docutils literal"><span class="pre">geometry</span></tt></a> if this property value contains a geometry.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.GpmlPolarityChronId.get_major_region" title="pygplates.GpmlPolarityChronId.get_major_region"><tt class="xref py py-obj docutils literal"><span class="pre">get_major_region</span></tt></a>()</td>
+<td>Returns the major region.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.GpmlPolarityChronId.get_minor_region" title="pygplates.GpmlPolarityChronId.get_minor_region"><tt class="xref py py-obj docutils literal"><span class="pre">get_minor_region</span></tt></a>()</td>
+<td>Returns the minor region.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.GpmlPolarityChronId.get_value" title="pygplates.GpmlPolarityChronId.get_value"><tt class="xref py py-obj docutils literal"><span class="pre">get_value</span></tt></a>([time=0])</td>
+<td>Extracts the value, of this possibly time-dependent property value, at the reconstruction <em>time</em>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.GpmlPolarityChronId.set_era" title="pygplates.GpmlPolarityChronId.set_era"><tt class="xref py py-obj docutils literal"><span class="pre">set_era</span></tt></a>(era,&nbsp;...)</td>
+<td>Sets the era.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.GpmlPolarityChronId.set_major_region" title="pygplates.GpmlPolarityChronId.set_major_region"><tt class="xref py py-obj docutils literal"><span class="pre">set_major_region</span></tt></a>(major_region)</td>
+<td>Sets the major region.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.GpmlPolarityChronId.set_minor_region" title="pygplates.GpmlPolarityChronId.set_minor_region"><tt class="xref py py-obj docutils literal"><span class="pre">set_minor_region</span></tt></a>(minor_region)</td>
+<td>Sets the minor region.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="pygplates.GpmlPolarityChronId.accept_visitor">
+<tt class="descname">accept_visitor</tt><big>(</big><em>visitor</em><big>)</big><a class="headerlink" href="#pygplates.GpmlPolarityChronId.accept_visitor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accept a property value visitor so that it can visit this property value. As part of the visitor pattern, this enables the visitor instance to discover the derived class type of this property. Note that there is no common interface shared by all property value types, hence the visitor pattern provides one way to find out which type of property value is being visited.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>visitor</strong> (<a class="reference internal" href="pygplates.PropertyValueVisitor.html#pygplates.PropertyValueVisitor" title="pygplates.PropertyValueVisitor"><tt class="xref py py-class docutils literal"><span class="pre">PropertyValueVisitor</span></tt></a>) &#8211; the visitor instance visiting this property value</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.GpmlPolarityChronId.clone">
+<tt class="descname">clone</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.GpmlPolarityChronId.clone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a duplicate of this property value (derived) instance, including a recursive copy of any nested property values that this instance might contain.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="pygplates.PropertyValue.html#pygplates.PropertyValue" title="pygplates.PropertyValue"><tt class="xref py py-class docutils literal"><span class="pre">PropertyValue</span></tt></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.GpmlPolarityChronId.get_era">
+<tt class="descname">get_era</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.GpmlPolarityChronId.get_era" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the era.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the era, or None if the era was not initialised</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string or None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.GpmlPolarityChronId.get_geometry">
+<tt class="descname">get_geometry</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.GpmlPolarityChronId.get_geometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extracts the <a class="reference internal" href="pygplates.GeometryOnSphere.html#pygplates.GeometryOnSphere" title="pygplates.GeometryOnSphere"><tt class="xref py py-class docutils literal"><span class="pre">geometry</span></tt></a> if this property value contains a geometry.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="pygplates.GeometryOnSphere.html#pygplates.GeometryOnSphere" title="pygplates.GeometryOnSphere"><tt class="xref py py-class docutils literal"><span class="pre">GeometryOnSphere</span></tt></a> or None</td>
+</tr>
+</tbody>
+</table>
+<p>This function searches for a geometry in the following standard geometry property value types:</p>
+<ul class="simple">
+<li><a class="reference internal" href="pygplates.GmlPoint.html#pygplates.GmlPoint" title="pygplates.GmlPoint"><tt class="xref py py-class docutils literal"><span class="pre">GmlPoint</span></tt></a></li>
+<li><a class="reference internal" href="pygplates.GmlMultiPoint.html#pygplates.GmlMultiPoint" title="pygplates.GmlMultiPoint"><tt class="xref py py-class docutils literal"><span class="pre">GmlMultiPoint</span></tt></a></li>
+<li><a class="reference internal" href="pygplates.GmlPolygon.html#pygplates.GmlPolygon" title="pygplates.GmlPolygon"><tt class="xref py py-class docutils literal"><span class="pre">GmlPolygon</span></tt></a></li>
+<li><a class="reference internal" href="pygplates.GmlLineString.html#pygplates.GmlLineString" title="pygplates.GmlLineString"><tt class="xref py py-class docutils literal"><span class="pre">GmlLineString</span></tt></a></li>
+<li><a class="reference internal" href="pygplates.GmlOrientableCurve.html#pygplates.GmlOrientableCurve" title="pygplates.GmlOrientableCurve"><tt class="xref py py-class docutils literal"><span class="pre">GmlOrientableCurve</span></tt></a> (a possible wrapper around <a class="reference internal" href="pygplates.GmlLineString.html#pygplates.GmlLineString" title="pygplates.GmlLineString"><tt class="xref py py-class docutils literal"><span class="pre">GmlLineString</span></tt></a>)</li>
+<li><a class="reference internal" href="pygplates.GpmlConstantValue.html#pygplates.GpmlConstantValue" title="pygplates.GpmlConstantValue"><tt class="xref py py-class docutils literal"><span class="pre">GpmlConstantValue</span></tt></a> (a possible wrapper around any of the above)</li>
+</ul>
+<p>If this property value does not contain a geometry then <tt class="docutils literal"><span class="pre">None</span></tt> is returned.</p>
+<p>Time-dependent geometry properties are <em>not</em> yet supported, so the only time-dependent property value wrapper currently supported by this function is <a class="reference internal" href="pygplates.GpmlConstantValue.html#pygplates.GpmlConstantValue" title="pygplates.GpmlConstantValue"><tt class="xref py py-class docutils literal"><span class="pre">GpmlConstantValue</span></tt></a>.</p>
+<p>To extract geometry from a specific feature property:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">property_value</span> <span class="o">=</span> <span class="n">feature</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">pygplates</span><span class="o">.</span><span class="n">PropertyName</span><span class="o">.</span><span class="n">gpml_pole_position</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">property_value</span><span class="p">:</span>
+    <span class="n">geometry</span> <span class="o">=</span> <span class="n">property_value</span><span class="o">.</span><span class="n">get_geometry</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>...however <a class="reference internal" href="pygplates.Feature.html#pygplates.Feature.get_geometry" title="pygplates.Feature.get_geometry"><tt class="xref py py-meth docutils literal"><span class="pre">Feature.get_geometry()</span></tt></a> provides an easier way to extract geometry from a feature with:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">geometry</span> <span class="o">=</span> <span class="n">feature</span><span class="o">.</span><span class="n">get_geometry</span><span class="p">(</span><span class="n">pygplates</span><span class="o">.</span><span class="n">PropertyName</span><span class="o">.</span><span class="n">gpml_pole_position</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To extract all geometries from a feature (regardless of which properties they came from):</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">all_geometries</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="nb">property</span> <span class="ow">in</span> <span class="n">feature</span><span class="p">:</span>
+    <span class="n">property_value</span> <span class="o">=</span> <span class="nb">property</span><span class="o">.</span><span class="n">get_value</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">property_value</span><span class="p">:</span>
+        <span class="n">geometry</span> <span class="o">=</span> <span class="n">property_value</span><span class="o">.</span><span class="n">get_geometry</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">geometry</span><span class="p">:</span>
+            <span class="n">all_geometries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">geometry</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>...however again <a class="reference internal" href="pygplates.Feature.html#pygplates.Feature.get_geometry" title="pygplates.Feature.get_geometry"><tt class="xref py py-meth docutils literal"><span class="pre">Feature.get_geometry()</span></tt></a> does this more easily with:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">all_geometries</span> <span class="o">=</span> <span class="n">feature</span><span class="o">.</span><span class="n">get_geometry</span><span class="p">(</span><span class="k">lambda</span> <span class="nb">property</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span> <span class="n">pygplates</span><span class="o">.</span><span class="n">PropertyReturn</span><span class="o">.</span><span class="n">all</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.GpmlPolarityChronId.get_major_region">
+<tt class="descname">get_major_region</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.GpmlPolarityChronId.get_major_region" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the major region.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the major region, or None if the major region was not initialised</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int or None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.GpmlPolarityChronId.get_minor_region">
+<tt class="descname">get_minor_region</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.GpmlPolarityChronId.get_minor_region" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the minor region.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the minor region, or None if the minor region was not initialised</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string or None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.GpmlPolarityChronId.get_value">
+<tt class="descname">get_value</tt><big>(</big><span class="optional">[</span><em>time=0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#pygplates.GpmlPolarityChronId.get_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extracts the value, of this possibly time-dependent property value, at the reconstruction <em>time</em>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>time</strong> (float or <a class="reference internal" href="pygplates.GeoTimeInstant.html#pygplates.GeoTimeInstant" title="pygplates.GeoTimeInstant"><tt class="xref py py-class docutils literal"><span class="pre">GeoTimeInstant</span></tt></a>) &#8211; the time to extract value (defaults to present day)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="pygplates.PropertyValue.html#pygplates.PropertyValue" title="pygplates.PropertyValue"><tt class="xref py py-class docutils literal"><span class="pre">PropertyValue</span></tt></a> or None</td>
+</tr>
+</tbody>
+</table>
+<p>If this property value is a time-dependent property (<a class="reference internal" href="pygplates.GpmlConstantValue.html#pygplates.GpmlConstantValue" title="pygplates.GpmlConstantValue"><tt class="xref py py-class docutils literal"><span class="pre">GpmlConstantValue</span></tt></a>,
+<a class="reference internal" href="pygplates.GpmlIrregularSampling.html#pygplates.GpmlIrregularSampling" title="pygplates.GpmlIrregularSampling"><tt class="xref py py-class docutils literal"><span class="pre">GpmlIrregularSampling</span></tt></a> or <a class="reference internal" href="pygplates.GpmlPiecewiseAggregation.html#pygplates.GpmlPiecewiseAggregation" title="pygplates.GpmlPiecewiseAggregation"><tt class="xref py py-class docutils literal"><span class="pre">GpmlPiecewiseAggregation</span></tt></a>) then a nested property
+value is extracted at the reconstruction <em>time</em> and returned. Otherwise this property value
+instance is simply returned as is (since it&#8217;s not a time-dependent property value).</p>
+<p>Returns <tt class="docutils literal"><span class="pre">None</span></tt> if this property value is a time-dependent property (<a class="reference internal" href="pygplates.GpmlConstantValue.html#pygplates.GpmlConstantValue" title="pygplates.GpmlConstantValue"><tt class="xref py py-class docutils literal"><span class="pre">GpmlConstantValue</span></tt></a>,
+<a class="reference internal" href="pygplates.GpmlIrregularSampling.html#pygplates.GpmlIrregularSampling" title="pygplates.GpmlIrregularSampling"><tt class="xref py py-class docutils literal"><span class="pre">GpmlIrregularSampling</span></tt></a> or <a class="reference internal" href="pygplates.GpmlPiecewiseAggregation.html#pygplates.GpmlPiecewiseAggregation" title="pygplates.GpmlPiecewiseAggregation"><tt class="xref py py-class docutils literal"><span class="pre">GpmlPiecewiseAggregation</span></tt></a>) and <em>time</em> is outside its
+time range (of time samples or time windows).</p>
+<p>Note that if this property value is a <a class="reference internal" href="pygplates.GpmlIrregularSampling.html#pygplates.GpmlIrregularSampling" title="pygplates.GpmlIrregularSampling"><tt class="xref py py-class docutils literal"><span class="pre">GpmlIrregularSampling</span></tt></a> instance then the extracted
+property value is interpolated (at reconstruction <em>time</em>) if property value can be interpolated
+(currently only <a class="reference internal" href="pygplates.GpmlFiniteRotation.html#pygplates.GpmlFiniteRotation" title="pygplates.GpmlFiniteRotation"><tt class="xref py py-class docutils literal"><span class="pre">GpmlFiniteRotation</span></tt></a> and <a class="reference internal" href="pygplates.XsDouble.html#pygplates.XsDouble" title="pygplates.XsDouble"><tt class="xref py py-class docutils literal"><span class="pre">XsDouble</span></tt></a>), otherwise <tt class="docutils literal"><span class="pre">None</span></tt> is returned.</p>
+<p>The following example demonstrates extracting an interpolated finite rotation from a
+<a class="reference internal" href="pygplates.GpmlIrregularSampling.html#pygplates.GpmlIrregularSampling" title="pygplates.GpmlIrregularSampling"><tt class="xref py py-class docutils literal"><span class="pre">total</span> <span class="pre">reconstruction</span> <span class="pre">pole</span></tt></a> at time 20Ma:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">gpml_finite_rotation_20Ma</span> <span class="o">=</span> <span class="n">total_reconstruction_pole</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">gpml_finite_rotation_20Ma</span><span class="p">:</span>
+  <span class="k">print</span> <span class="s1">&#39;Interpolated finite rotation at 20Ma: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">gpml_finite_rotation_20Ma</span><span class="o">.</span><span class="n">get_finite_rotation</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.GpmlPolarityChronId.set_era">
+<tt class="descname">set_era</tt><big>(</big><em>era</em><span class="optional">[</span>, <em>verify_information_model=VerifyInformationModel.yes</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#pygplates.GpmlPolarityChronId.set_era" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the era.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>era</strong> (<em>string</em>) &#8211; the era of the chron (&#8216;Cenozoic&#8217; or &#8216;Mesozoic&#8217;)</li>
+<li><strong>verify_information_model</strong> (<em>VerifyInformationModel.yes</em> or <em>VerifyInformationModel.no</em>) &#8211; whether to check the information model for valid <em>era</em></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">InformationModelError if <em>verify_information_model</em> is <em>VerifyInformationModel.yes</em> and <em>era</em> is not a recognised era string value</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.GpmlPolarityChronId.set_major_region">
+<tt class="descname">set_major_region</tt><big>(</big><em>major_region</em><big>)</big><a class="headerlink" href="#pygplates.GpmlPolarityChronId.set_major_region" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the major region.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>major_region</strong> (<em>int</em>) &#8211; the number indicating the major region the chron is in - Cenozoic isochrons have been classified into broad regions identified by the numbers 1 to 34, Mesozoic isochrons use the numbers 1 to 29</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.GpmlPolarityChronId.set_minor_region">
+<tt class="descname">set_minor_region</tt><big>(</big><em>minor_region</em><big>)</big><a class="headerlink" href="#pygplates.GpmlPolarityChronId.set_minor_region" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the minor region.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>minor_region</strong> (<em>string</em>) &#8211; the sequence of letters indicating the sub-region the chron is located in - the letters a-z are used for the initial sub-region, and if further polarity reversals have been discovered within that chron, a second letter is appended, and so on</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pygplates.GpmlPlateId.html"
+                        title="previous chapter">pygplates.GpmlPlateId</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pygplates.XsBoolean.html"
+                        title="next chapter">pygplates.XsBoolean</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/generated/pygplates.GpmlPolarityChronId.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="pygplates.XsBoolean.html" title="pygplates.XsBoolean"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pygplates.GpmlPlateId.html" title="pygplates.GpmlPlateId"
+             >previous</a> |</li>
+        <li><a href="../index.html">pygplates 2.1.0.18 documentation</a> &raquo;</li>
+          <li><a href="../pygplates_reference.html" >Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright (C) 2003-2016 The University of Sydney, Australia
+(C) 2004-2016 California Institute of Technology
+(C) 2007-2016 The Geological Survey of Norway
+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

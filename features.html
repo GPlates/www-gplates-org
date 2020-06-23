@@ -1,0 +1,440 @@
+<!DOCTYPE html> <!--html5-->
+<html>
+	<head>
+		<title>GPlates: Features</title>
+		
+        <meta charset="UTF-8"/>
+        <meta name="page-id" content="features">
+
+        <link type="image/png" rel="icon" href="img/GPlates-icon.png" />
+		<link type="text/css" rel="stylesheet" href="css/default.css" />
+		<link type="text/css" rel="stylesheet" href="css/navbars.css" />
+	    
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="js/header-footer-loader.js"></script>
+   </head>
+	
+	<body>
+		<div class="features-tab">
+			<h1>Features of GPlates</h1>
+
+			<h2>What is GPlates?</h2>
+			<hr size="4" />
+
+			<!-- VIDEO -->
+			<div class="float-right video">
+				<object width="480" height="385">
+				<param name="movie" value="//www.youtube.com/v/mMnziH1RBlg?fs=1&amp;hl=en_US"></param>
+				<param name="allowFullScreen" value="true"></param>
+				<param name="allowscriptaccess" value="always"></param>
+				<embed src="//www.youtube.com/v/mMnziH1RBlg?fs=1&amp;hl=en_US"
+					type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"
+					width="480" height="385">
+				</embed>
+				</object>
+			</div>
+
+			<p>
+				GPlates is desktop software for the interactive visualisation of
+				plate-tectonics.
+			</p>
+
+			<p>
+				GPlates offers a novel combination of interactive <b>plate-tectonic
+				reconstructions</b>, geographic information system (GIS) functionality and
+				<b>raster data visualisation</b>.  GPlates enables both the visualisation and
+				the manipulation of plate-tectonic reconstructions and associated data through
+				geological time.  GPlates runs on <b>Windows</b>, <b>Linux</b> and <b>MacOS
+				X</b>.
+			</p>
+
+			<p>
+				The goals of GPlates are:
+			</p>
+
+			<ul>
+				<li>
+					to handle and visualise data in a variety of geometries and formats, including
+					raster data
+				</li>
+				<li>
+					to link plate kinematics to geodynamic models
+				</li>
+				<li>
+					to serve as an interactive client in a grid-computing network
+				</li>
+				<li>
+					to facilitate the production of high-quality paleo-geographic maps. 
+				</li>
+			</ul>
+
+			<!-- Ensure we are clear after the video float -->
+			<div style="clear: right;" />
+
+			<p class="info-box">
+				<span class="question">What is a plate-tectonic reconstruction?</span><br />
+				<br />
+				The motions of tectonic plates through geological time may be described and
+				simulated using <b>plate-tectonic reconstructions</b>.  Plate-tectonic
+				reconstructions are the calculations of the probable positions, orientations
+				and motions of tectonic plates through time, based upon the relative
+				(plate-to-plate) positions of plates at various times in the past which may be
+				inferred from other data.  Geological, geophysical and paleo-geographic data
+				may be attached to the simulated plates, enabling a researcher to trace the
+				motions and interactions of these data through time.
+			</p>
+
+			<p>
+				The GPlates program is accompanied by royalty-free <a href="download.html"
+				 title="Download GPlates and GPlates-compatible data">data</a> and a
+				comprehensive <a href="docs.html"
+				 title="Read the user-manual and other GPlates documentation">user manual</a>.
+			</p>
+
+			<h2>What can GPlates do?</h2>
+			<hr size="4" />
+
+			<p>
+				As of <a href="news.html#gplates220" title="News: GPlates 2.2 released"
+				 >GPlates 2.2</a>, GPlates functionality includes:
+			</p>
+
+			<ul>
+				<li>
+					loading and saving geological, geographic and tectonic feature data:
+					<ul>
+						<li>
+							<strong>loading feature data</strong> from the following formats:
+							<ul>
+								<li>
+									<a href="gpml.html" title="Learn about GPML">GPML</a> / compressed GPML
+								</li>
+								<li>
+									<span style="font-variant: small-caps">Plates4</span> line-format
+								</li>
+								<li>
+									ESRI Shapefile (including the ability to map shape attributes in a
+									Shapefile to feature properties in GPlates on a user-specified, per-Shapefile
+									basis)
+								</li>
+								<li>
+									<a href="http://www.geodynamics.no/GMAP/GmapHelp2001.htm" title="ngu@gmap">GMAP</a> VGP (Virtual Geomagnetic Pole) data files.
+								</li>
+							</ul>
+						</li>
+
+						<li>
+							<strong>saving feature data</strong> in the following formats:
+							<ul>
+								<li>
+									<a href="gpml.html" title="Learn about GPML">GPML</a> / compressed GPML
+								</li>
+								<li>
+									<span style="font-variant: small-caps">Plates4</span> line-format
+								</li>
+								<li>
+									ESRI Shapefile
+								</li>
+								<li>
+									GMT &ldquo;xy&rdquo; format, with a variety of options for headers
+								</li>
+							</ul>
+						</li>
+
+						<li>
+							recording and restoring previous <strong>sessions</strong> of files opened by the user
+						</li>
+
+						<li>
+							<strong>cookie-cutting</strong> and <strong>assigning plate IDs</strong> to loaded data using plate polygons
+						</li>
+					</ul>
+				</li>
+				<li>
+					loading and saving reconstruction poles (finite rotations which enable
+					geological, geographic and tectonic features to be reconstructed through
+					geological time):
+					<ul>
+						<li>
+							<strong>loading reconstruction poles</strong> from the following formats:
+							<ul>
+								<li>
+									<a href="gpml.html" title="Learn about GPML">GPML</a> / compressed GPML
+								</li>
+								<li>
+									<span style="font-variant: small-caps">Plates4</span> rotation-format
+								</li>
+							</ul>
+						</li>
+						<li>
+							<strong>saving reconstruction poles</strong> in the following formats:
+							<ul>
+								<li>
+									<a href="gpml.html" title="Learn about GPML">GPML</a> / compressed GPML
+								</li>
+								<li>
+									<span style="font-variant: small-caps">Plates4</span> rotation-format
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					displaying raster images:
+					<ul>
+						<li>
+							<strong>loading multiple raster images</strong> in JPEG and NetCDF format, including
+							<strong>time-sequences</strong> of raster images, to enable visualisation of
+							&ldquo;gridded&rdquo; geophysical data such as mantle density anomalies, mantle
+							convection-driven dynamic surface topography and the <a href="download.html"
+							title="Download GPlates and GPlates-compatible data">crustal age or spreading
+							rate of the ocean floor</a>
+							&mdash; both:
+							<ul>
+								<li>
+									global raster images, which are assumed to cover the whole globe, from
+									-180 to +180 degrees longitude and -90 to +90 latitude, and
+								</li>
+								<li>
+									smaller rasters with regional georeferencing and potentially projected spatial reference system
+								</li>
+							</ul>
+						</li>
+						<li>
+							<strong>cookie-cutting</strong> raster images using static plate polygons.
+						</li>
+						<li>
+							<strong>reconstructing</strong> raster images along with vector data.
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					viewing feature data and raster images in a graphical display:
+					<ul>
+						<li>
+							displaying geological, geographic and tectonic features, as well as raster
+							images, on the globe, in any of the following map-projections:
+							<ul>
+								<li>3-D Orthographic Globe</li>
+								<li>Rectangular</li>
+								<li>Mercator</li>
+								<li>Mollweide</li>
+								<li>Robinson</li>
+							</ul>
+						</li>
+						<li>
+							moving and re-orienting the camera (the viewpoint of the user), by
+							&ldquo;dragging&rdquo; the mouse on the globe, using the keyboard arrow keys,
+							or specifying the desired viewpoint in a dialog box
+						</li>
+						<li>
+							activating a <strong>full-screen presentation mode</strong>, by pressing F11 to switch to a minimalist
+							interface ideal for demonstrating data and animations on digital projectors
+						</li>
+						<li>
+							zooming the camera, using the scroll-wheel of the mouse, the Zoom In tool, or
+							the slider on the right-hand-side of the reconstruction view
+						</li>
+						<li>
+							choosing different colouring schemes for vector features and for NetCDF gridded data
+						</li>
+						<li>
+							<strong>exporting a 2-D geometry snapshot</strong> of the current projected
+							contents of the reconstruction view in Scalable Vector Graphics (SVG) format,
+							for later viewing in a web-browser or vector-graphics editor such as Adobe
+							Illustrator
+						</li>
+						<li>
+							annotating the view with text including the current reconstruction time
+						</li>
+						<li>
+							managing loaded data as a series of <strong>layers</strong> allowing fine control over feature visibility
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					calculating and displaying plate-tectonic reconstructions:
+					<ul>
+						<li>
+							<strong>reconstructing features</strong> to a desired geological time-instant,
+							or animating over a period of geological time
+						</li>
+						<li>
+							<strong>exporting</strong> &ldquo;<strong>reconstructed
+							geometries</strong>&rdquo; (feature geometries at a particular reconstruction
+							time in the past) in the following formats:
+							<ul>
+								<li>
+									ESRI Shapefile
+								</li>
+								<li>
+									GMT &ldquo;xy&rdquo; format, with a variety of options for headers
+								</li>
+							</ul>
+						</li>
+						<li>
+							calculating <strong>velocity fields</strong> according to plate motions
+						</li>
+						<li>
+							displaying <strong>flowlines</strong> and <strong>motion paths</strong> visualising plate motion
+						</li>
+						<li>
+							exporting &ldquo;<strong>data animations</strong>&rdquo; &mdash; each frame of
+							a reconstruction animation saved automatically to disk in a sequence of files:
+							<ul>
+								<li>
+									all reconstructed feature geometries (as GMT .xy files or Shapefiles)
+								</li>
+								<li>
+									a 2-D vector graphics snapshot of the view (as SVG files)
+								</li>
+								<li>
+									a 2-D bitmap image snapshot of the view (as PNG, etc. files)
+								</li>
+								<li>
+									numerical raster data (as NetCDF, GeoTIFF, etc. files) in rectangular projection
+								</li>
+								<li>
+									colour raster data (as PNG, etc. files) in rectangular projection
+								</li>
+								<li>
+									all velocity fields (as GPML files)
+								</li>
+								<li>
+									resolved topologies as a sequence of static polygons (as GMT .xy files)
+								</li>
+								<li>
+									equivalent total and stage rotation data
+								</li>
+								<li>
+									flowlines and motion paths
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					interacting with features graphically:
+					<ul>
+						<li>
+							<strong>choosing a feature</strong>, to <strong>query</strong> or
+							<strong>edit</strong> its properties, by clicking upon its displayed geometry
+						</li>
+						<li>
+							<strong>digitisation</strong> of new geometries for the creation of <strong>new
+							features</strong>
+						</li>
+						<li>
+							modifying the geometry of a feature interactively by <strong>dragging
+							vertices</strong>, <strong>inserting vertices</strong>, <strong>deleting
+							vertices</strong>, or <strong>splitting</strong> a feature into two at a given point.
+						</li>
+						<li>
+							<strong>measuring distances</strong>, along the geometry of existing features, during
+							digitisation, or between arbitrary user-chosen points on the globe.
+						</li>
+						<li>
+							<strong>cloning</strong> features to modify copies of a feature
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					tabular display of data:
+					<ul>
+						<li>
+							listing <strong>tables of reconstruction poles</strong> (finite rotations) for
+							the current reconstruction time:
+							<ul>
+								<li>
+									relative and equivalent rotations for each plate
+								</li>
+								<li>
+									a tree-like representation of the rotation hierarchy
+								</li>
+								<li>
+									the circuit between any plate and the stationary reference frame
+								</li>
+							</ul>
+						</li>
+						<li>
+							listing <strong>total reconstruction sequences</strong> for loaded rotation files:
+							<ul>
+								<li>
+									displaying metadata associated with GPlates Rotation (GROT) files
+								</li>
+								<li>
+									editing total reconstruction poles and inserting new ones
+								</li>
+							</ul>
+						</li>
+						<li>
+							<strong>exporting</strong> tables of <strong>reconstruction poles</strong> in
+							CSV (comma-separated value) format, for later viewing in a spreadsheet such as
+							Microsoft Excel.
+						</li>
+						<li>
+							listing <strong>tables of Shapefile attributes</strong> on a per-file basis,
+							with one attribute per column
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					modifying reconstructions graphically:
+					<ul>
+						<li>
+							<strong>manipulation of reconstruction poles</strong> by dragging the mouse
+							cursor to move plates, including the ability to constrain the latitude, or constrain to a stage pole, during the interactive adjustment.
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					interactive <strong>plate-boundary closure</strong>, enabling GPlates to
+					generate plate-tectonic boundary conditions for geodynamic models in software
+					such as:
+					<ul>
+						<li>
+							the widely-used, open-source, spherical mantle-convection package <a
+							href="http://www.geodynamics.org:8080/cig/software/packages/"
+							title="GIG - Software Packages">CitComS</a>
+						</li>
+						<li>
+							the next-generation AuScope-funded mantle-convection package
+							<a href="http://www.underworldproject.org/" title="Underworld">Underworld</a>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					a suite of <strong>virtual geomagnetic pole</strong> tools:
+					<ul>
+						<li>create new VGPs</li>
+						<li>calculate reconstruction poles based on VGPs</li>
+						<li>configure the visualisation of VGP data</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h2>What's next in GPlates?</h2>
+			<hr size="4" />
+
+			<p>
+				Future functionality will include:
+			</p>
+
+			<ul>
+				<li>
+					Improved symbology (line symbols, polygon fill patterns, map symbols to feature properties)
+				</li>
+				<li>
+					Another Python library for GPlates
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

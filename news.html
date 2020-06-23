@@ -1,0 +1,2599 @@
+<!DOCTYPE html> <!--html5-->
+<html>
+	<head>
+		<title>GPlates: News</title>
+
+		<meta charset="UTF-8"/>
+        <meta name="page-id" content="news">
+
+        <link type="image/png" rel="icon" href="img/GPlates-icon.png" />
+		<link type="text/css" rel="stylesheet" href="css/default.css" />
+		<link type="text/css" rel="stylesheet" href="css/navbars.css" />
+	    
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="js/header-footer-loader.js"></script>
+  </head>
+	
+	<body>
+		<div class="news-tab">
+			<h1>News</h1>
+
+
+			<h2 class="news">2019-08-30: <a id="gplates220">GPlates 2.2 released</a></h2>
+			<hr size="4" />
+			<div class="center">
+				<table class="screenshot-row">
+					 <tr>
+						 <td class="thumb">
+							 <a href="screenshots.html" title="View GPlates screenshots"><img
+							  src="screenshots/2.2.0/SATL_ExponentialStretching_650x380.png" width="650" height="380"
+							  alt="Screenshots from GPlates 2.2"
+							  /></a>
+						 </td>
+				 </tr>
+				</table>
+			</div>
+
+			<p>
+			A few points to note regarding this release:-
+			<ul>
+				<li>The Sample Data includes the Matthews et al. (2016) model, which has been updated to include the corrections to the Pacific rotations prior to 83 Ma according to Torsvik et al. (2019). <b>Please update your local datasets.</b>
+					<ul>
+						<li>Matthews, K. J., Maloney, K. T., Zahirovic, S., Williams, S. E., Seton, M., and Müller, R. D., 2016, Global plate boundary evolution and kinematics since the late Paleozoic: Global and Planetary Change, DOI: 10.1016/j.gloplacha.2016.10.002</li>
+						<li>Torsvik, T.H., Steinberger, B., Shephard, G.E., Doubrovine, P.V., Gaina, C., Domeier, M., Conrad, C.P. and Sager, W.W., 2019. Pacific-Panthalassic reconstructions: Overview, errata and the way forward. Geochemistry, Geophysics, Geosystems, DOI:10.1029/2019GC008402</li>
+					</ul>
+				</li>
+				<li>There is now a 64-bit version of GPlates for Windows:
+					<ul>
+						<li>The 64-bit Windows installer works on 64-bit versions of Windows 7/8/8.1/10.</li>
+						<li>The 32-bit Windows installer works on 32-bit and 64-bit versions of Windows 7/8/8.1/10.</li>
+					</ul>
+				</li>
+				<li>Currently there are some issues with 3D scalar fields on macOS Mojave (10.14) and above:
+					<ul>
+						<li>This happens on some Macs with AMD graphics (specifically we've noticed AMD Radeon Pro 460).</li>
+						<li>3D scalar fields render incorrectly and then crash in the graphics driver.</li>
+						<li>Note that disabling automatic GPU switching does not help, since this always uses the discrete graphics (eg, AMD) and not the integrated graphics (eg, Intel HD).</li>
+					</ul>
+				</li>
+				<li>Also, the first time you open GPlates on macOS 10.12 Sierra (and above) you will need to Control-click (or right click) and select Open.</li>
+			</ul>
+			</p>
+
+			<p>
+			What's new in GPlates 2.2:-
+			<ul>
+				<li>Deformation:
+					<ul>
+						<li>Option to generate 'exponential' stretching profiles across rifts (instead of default constant stretching).
+							<ul>
+								<li>Activated by adding 'rift' left/right plate IDs to any deforming network.</li>
+								<li>Optionally specify three control parameters:
+									<ul>
+										<li>One parameter controls the exponential constant.</li>
+										<li>The other two parameters control how closely to approximate exponential curve (with better approximations running slower).</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>Calculate, visualize and export strain rate "style":
+							<ul>
+								<li>A unit-less quantity defined in Kreemer et al. 2014, categorizing extension, contraction and strike-slip.</li>
+							</ul>
+						</li>
+						<li>Support deforming networks in Net Rotation export (in addition to rigid plates).</li>
+						<li>Option to generate deforming mesh points inside interior rigid blocks in deforming networks.</li>
+					</ul>
+				</li>
+				<li>Topologies:
+					<ul>
+						<li>Updated CitcomS topology export:
+							<ul>
+								<li>Option to export all (plate/network/slab) polygons and all (plate/network/slab) boundary segments.</li>
+								<li>Fixed missing plates (that were not of type TopologicalClosedPlateBoundary; eg, OceanicCrust).</li>
+							</ul>
+						</li>
+						<li>Updated General topology export:
+							<ul>
+								<li>Option to export boundary segments.
+									<ul>
+										<li>Including separate subduction, subduction left/right, ridge/transform files (similar to CitcomS topology export).</li>
+									</ul>
+								</li>
+								<li>Boundary segments are not duplicated.</li>
+							</ul>
+						</li>
+						<li>Robust determination of velocities along topological boundaries (of rigid plates and deforming networks):
+							<ul>
+								<li>Notably in the presence of deforming *lines* (eg, topological lines made from independently moving points).</li>
+								<li>Results in robust strain rates in topological networks (especially at intersecting boundary corners).</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>Projects and recent sessions:
+					<ul>
+						<li>Save time slider range to project/session.
+							<ul>
+								<li>Also extend default time range to 410Ma (from 200Ma) for rotation model in sample data.</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>File formats:
+					<ul>
+						<li>Can load/save GeoPackage geometry files.</li>
+						<li>All non-GPML geometry formats (Shapefile, etc) no longer force a feature to have all mapped properties:
+							<ul>
+								<li>Avoids adding a property to a feature that it didn't have (eg, conjugate plate ID).</li>
+							</ul>
+						</li>
+						<li>Support UTF8 when loading (and saving) PLATES4 line and rotation formats.
+							<ul>
+								<li>Useful when rotation comments contain non-ASCII characters.</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>Rendering:
+					<ul>
+						<li>Can show/hide rasters, 3D scalar fields and scalar coverages.
+							<ul>
+								<li>In "View > Geometry Visibility" menu.</li>
+							</ul>
+						</li>
+						<li>Can show/hide topological lines, polygons and networks (in same menu).
+							<ul>
+								<li>Can also show/hide topological 'sections' (those geometries contributing to topological boundaries/interiors).
+									<ul>
+										<li>So only see final continuously-closed topological boundaries.</li>
+									</ul>
+								<li>GPlates now hides these dangling pieces by default (advanced users can change the default though).</li>
+							</ul>
+						</li>
+						<li>Velocity layers can calculate/visualize velocities on *domains* that are topology layers (as opposed to *surfaces*).
+							<ul>
+								<li>At the *vertices* of topological lines, polygons and networks.</li>
+							</ul>
+						</li>
+						<li>Render clicked (white) geometries on top of non-clicked (grey) geometries (belonging to the same feature).
+							<ul>
+								<li>Useful when the feature's geometries overlap.</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>GPlates Geological Information Model (GPGIM):
+					<ul>
+						<li>Added new GPGIM feature type 'DeformingRegionEdge' that is edge of a deforming region but not also a plate boundary.</li>
+						<li>Allow MeshNode feature to contain a point geometry (previously only allowed a multi-point).
+							<ul>
+								<li>Enables single point to automatically create a velocity layer (because only MeshNode features do this).</li>
+							</ul>
+						</li>
+						<li>Added properties for rift exponential stretching:
+							<ul>
+								<li>'riftLeftPlate' and 'riftRightPlate' - conjugate rigid plates bounding a rift topological network.</li>
+								<li>'riftExponentialStretchingConstant' - controls exponential variation across rift stretching profile.</li>
+								<li>'riftEdgeLengthThresholdDegrees' and 'riftStrainRateResolutionLog10' - control approximation to true exponential curve.</li>
+							</ul>
+						</li>
+						<li>Removed topological network properties 'networkMaxEdge' and 'networkShapeFactor' (no longer used).</li>
+					</ul>
+				</li>
+				<li>Geometry tests:
+					<ul>
+						<li>Assigning plate IDs is much faster (especially dense geometries like coastlines).</li>
+						<li>Robust polyline intersection testing, and significantly faster.</li>
+						<li>Distances to polygons (from another geometry) now take into account any interior rings of the polygon.</li>
+					</ul>
+				</li>
+				<li>Bug fixes:
+					<ul>
+						<li>Fixed hang on start up on some Mac systems (where network interface appears active but network is unavailable).</li>
+						<li>Fixed time-dependent raster import (and 3D scalar field import) not accepting filenames with uppercase extensions.</li>
+						<li>Fixed crash triggered when exporting total strains.</li>
+						<li>Fixed crash when exiting GPlates on some Ubuntu versions (due to freeing same memory twice).</li>
+						<li>Fixed crash when saving a rotation feature with a 'gml:name' or 'gml:description' property to a PLATES4 rotation file.</li>
+						<li>Fix crash loading a GPML file containing a feature property that cannot be interpreted using any property defined in the GPGIM.</li>
+					</ul>
+				</li>
+				<li>Build:
+					<ul>
+						<li>Support Visual Studio 2015/2017 (GDAL 2.3 uses C++11 which requires VS2015), and update Windows build docs accordingly.</li>
+						<li>Fixed incorrect 90 degree rotation of rasters with inbuilt projections (eg, Lambert Conformal Conic) when GPlates compiled with GDAL 3.0.</li>
+						<li>Upgraded support to new Proj6 API (also support deprecated Proj4 API).</li>
+						<li>Added SQLite3 dependency library (due to adding support for GeoPackage vector format).</li>
+						<li>Support Boost 1.66 (added x32/x64 architecture tags) and Boost 1.67 (added Python version suffix 'python27').</li>
+						<li>Fixed CMake error finding GMP library on Windows (recent CGAL versions already link to GMP, so GPlates doesn't need to).</li>
+						<li>Work around internal compiler error (gcc 5.4) on Ubuntu Xenial (16.04).</li>
+						<li>No longer combine '-ansi' (equivalent to '-std=c++98') and '-std=c++11' flags (first noticed on gcc 9.1).</li>
+						<li>No longer turn warnings into errors:
+							<ul>
+								<li>There are lots of warnings generated by dependency libraries (that we can't easily fix), and by new compilers.</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<p>
+				...and other changes listed in the CHANGELOG file in the <a href="download.html" title="Download GPlates">GPlates source-code releases</a>.
+			</p>
+			</p>
+
+			<p>
+				GPlates 2.2 compiles and runs on Windows 7/8/8.1/10, Linux and MacOS X.
+				<p>Download GPlates 2.2 from the <a href="download.html" title="Download GPlates and GPlates-compatible data">Download</a> page. </p>
+				<p>
+					GPlates-compatible data have been made available, and has been updated for the GPlates 2.2 release.
+					For more information, see the <a href="download.html#compatible-data" title="Download GPlates and GPlates-compatible data">Download</a> page.
+				</p>
+			</p>
+			
+			<div class="blank-space">
+			</div>
+
+
+			<h2 class="news">2018-08-08: <a id="gplates210">GPlates 2.1 and pyGPlates beta revision 18 released</a></h2>
+			<hr size="4" />
+			<div class="center">
+				<table class="screenshot-row">
+					 <tr>
+						 <td class="thumb">
+							 <a href="screenshots.html" title="View GPlates screenshots"><img
+							  src="screenshots/2.1.0/SATL_CrustalStretching_650x380.png" width="650" height="380"
+							  alt="Screenshots from GPlates 2.1"
+							  /></a>
+						 </td>
+				 </tr>
+				</table>
+			</div>
+
+			<p>
+				This release contains both GPlates 2.1 and pyGPlates beta revision 18.
+				<ul>
+					<li><b>Please use this pyGPlates release when working with any data saved by GPlates 2.0 or GPlates 2.1 (especially topologies).</b>
+						<ul>
+							<li>This will avoid incorrect reconstruction of half-stage rotation features (such as mid-ocean ridges) created by GPlates 2.0 (or above).</li>
+							<li>There are no major new features in this pyGPlates release, it is mostly for compatibility with GPlates 2.0 (and above).</li>
+						</ul>
+					</li>
+				</ul>
+			</p>
+			
+			<p>
+			What's new in GPlates 2.1:-
+			<ul>
+				<li>Velocity legend:
+					<ul>
+						<li>Visual indicator of velocity arrow lengths in a target velocity layer.</li>
+						<li>Displays a single arrow and its velocity (in cm/yr).</li>
+						<li>Legend velocity can be constant (eg, 2 cm/yr), or variable (to keep arrow length within reasonable limits).
+							<ul>
+								<li>Legend arrow length changes in response to velocity scaling in the target layer.</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>Projects and recent sessions:
+					<ul>
+						<li>Fixed problems loading projects saved on computers with different locales:
+							<ul>
+								<li>The following backward/forward compatibility rules now apply:
+									<ul>
+										<li>Can load the following on 2.1:
+											<ul>
+												<li>Projects saved with 2.1 on any locale:
+													<ul>
+														<li>For example, (English or Chinese)->(English or Chinese).</li>
+													</ul>
+												</li>
+												<li>Only projects saved with 2.0 on English locale or same locale (if not English):
+													<ul>
+														<li>For example, English->(English or Chinese), or Chinese->Chinese.</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li>Can load the following on 2.0:
+											<ul>
+												<li>Projects saved with 2.1 on any locale, but must be loaded on English locale.
+													<ul>
+														<li>For example, (English or Chinese)->English.</li>
+													</ul>
+												</li>
+												<li>Only projects saved with 2.0 on matching locale.
+													<ul>
+														<li>For example, English->English or Chinese->Chinese.</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>Save anchored plate ID, background colour and graticule settings to project/session.</li>
+						<li>When asked to locate a missing data file, show directory where missing file should have been.</li>
+					</ul>
+				</li>
+				<li>Deformation:
+					<ul>
+						<li>Topological networks:
+							<ul>
+								<li>Can now use mid-ocean ridges as boundary/interior sections.</li>
+								<li>Added triangulation *draw* mode in topology network (brown) layers.
+									<ul>
+										<li>Can draw boundary, mesh or fill (independently of colour mode).
+											<ul>
+												<li>Display mesh by default (instead of boundaries).</li>
+												<li>Better visual indicator of deforming regions.</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>Deforming meshes now appear in 2D map views when strain rate smoothing enabled.</li>
+							</ul>
+						</li>
+						<li>Strain rate and accumulated strain:
+							<ul>
+								<li>Added total strain rate.
+									<ul>
+										<li>Visualize and export.</li>
+										<li>Uses geodesy definition of second invariant in Kreemer et al. 2014.</li>
+									</ul>
+								</li>
+								<li>Added exports for the following accumulated strain quantities:
+									<ul>
+										<li>Strain dilatation.</li>
+										<li>Principal strain and stretch.
+											<ul>
+												<li>Exports triplet (angle/azimuth, major axis and minor axis).</li>
+												<li>Major/minor axes are strain (extension positive; compression negative) or stretch (1.0 + strain; always positive).</li>
+												<li>Plot stretch ellipses in GMT (with psxy).</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>Added optional strain rate clamping:
+									<ul>
+										<li>Useful for excessively high strain rates in some triangles of deforming mesh.</li>
+										<li>Clamps *total* strain rate, since includes both normal and shear components.</li>
+									</ul>
+								</li>
+								<li>All strain rate and accumulated strain quantities now calculated in spherical coordinates (instead of 2D cartesian).</li>
+								<li>Finite strain is now correctly accumulated.
+									<ul>
+										<li>By integrating deformation gradient tensor over time, using spatial gradients of velocity.</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>Crustal thinning:
+							<ul>
+								<li>Fixed crustal thinning (gamma) factor.
+									<ul>
+										<li>Should be '1 - T/T_initial' instead of 'T/T_initial'.</li>
+										<li>Automatically convert crustal thinning factors created by GPlates 2.0 (when loading GPML file).</li>
+									</ul>
+								</li>
+								<li>Added crustal stretching (beta) factor 'T_initial/T'.</li>
+								<li>All three crustal thickness types now created when generating crustal thickness points.
+									<ul>
+										<li>Thickness (kms), stretching (beta) factor and thinning (gamma) factor.</li>
+										<li>Independently visualize and export.</li>
+									</ul>
+								</li>
+								<li>Can optionally generate points within a lat-lon box.</li>
+								<li>Calculate statistics using entire history of crustal thicknesses/factors (instead of just at initial time).
+									<ul>
+										<li>Provides a better mapping of palette colours.</li>
+									</ul>
+								</li>
+								<li>Fixed missing IMPORT_AGE attribute in OGR vector formats (eg, Shapefile).
+									<ul>
+										<li>Required for crustal thickness points to work propertly (and half-stage rotations).</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>Added option to remove points from within a deforming network as soon as they fall outside.</li>
+						<li>Fixed symbols not working for points when they are reconstructed using topologies.</li>
+					</ul>
+				</li>
+				<li>Rasters:
+					<ul>
+						<li>Enable import and export of NetCDF version 4 rasters (via GDAL library version 2).
+							<ul>
+								<li>Interoperable with GMT version 5.</li>
+								<li>Optionally compress exported NetCDF.</li>
+							</ul>
+						</li>
+						<li>Support export of *gridline* registered rasters.
+							<ul>
+								<li>Eg, global raster where left and right pixel columns overlap on dateline.</li>
+							</ul>
+						</li>
+						<li>Support greater than 8-bit per channel RGBA rasters (including floating-point).</li>
+						<li>Import generates transparency for RGBA rasters supporting no-data values (in each R,G,B,A band).</li>
+						<li>Time-dependent raster (and 3D scalar field) import now supports times (depths) anywhere in filenames.
+							<ul>
+								<li>For ambiguous cases (eg, multiple decimal points) place times (depths) at end of filename (after '_' or '-').</li>
+							</ul>
+						</li>
+						<li>Fixed incorrect half-pixel shift downwards (North to South) for *gridline* registered global GMT grids.
+							<ul>
+								<li>Has been incorrectly shifting since GPlates 1.4.</li>
+							</ul>
+						</li>
+						<li>Fixed semi-transparent vertical seam near North and South poles at longitude 0 or -180.
+							<ul>
+								<li>Happened in 2D map views (and in 3D globe view when reconstructing raster).</li>
+							</ul>
+						</li>
+						<li>Fixed slow rendering of very coarse rasters in 2D map views.</li>
+					</ul>
+				</li>
+				<li>Velocities:
+					<ul>
+						<li>Make GMT velocity export compatible with GMT psxy "-Sv" and "-SV" command-line options.
+							<ul>
+								<li>Angle/azimuth now in column 3 and magnitude in column 4.</li>
+								<li>Optional plate ID now in column 5.</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>Colouring:
+					<ul>
+						<li>CPT files:
+							<ul>
+								<li>Support GMT5 "C/M/Y/K" colours and CMYK "COLOR_MODEL".</li>
+								<li>Support different colour types on a single line (eg, "R/G/B" and "gray80").</li>
+								<li>Added button to reload CPT file in colouring/draw styles.</li>
+							</ul>
+						</li>
+						<li>Assign *all* known feature types a random colour in Feature Type draw style.
+							<ul>
+								<li>From GPlates 1.3 to 2.0 inclusive, all but 11 feature types were incorrectly assigned the default navy colour.</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>Digitization:
+					<ul>
+						<li>Fixed vertex edits not modifying topologies.
+							<ul>
+								<li>Eg, moving vertices of a feature used as a topological section in a topological network.</li>
+							</ul>
+						</li>
+						<li>Digitize New Geometries:
+							<ul>
+								<li>No longer offer Reconstruction/Conjugate Plate IDs for topological networks and topological lines.
+									<ul>
+										<li>Only meaningful for topological polygons (eg, to calculate non-deforming plate velocities).</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>Geometry tests:
+					<ul>
+						<li>Point-in-polygon test now considers points *on* a polygon edge (within extremely small tolerance) to be inside polygon.
+							<ul>
+								<li>Helps ensure points lying exactly on dateline are inside a polygon that has an edge exactly aligned with dateline.</li>
+							</ul>
+						</li>
+						<li>Fixed Assign Plate IDs retaining only first geometry in each feature when using 'copy by overlap'.</li>
+						<li>Fixed point proximity to a polyline/polygon in rare situations.
+							<ul>
+								<li>Resulted in incorrect selection with Choose Feature tool.</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>Topology tools:
+					<ul>
+						<li>Build topology tools are now always enabled (makes it easier to build topologies at any time).</li>
+					</ul>
+				</li>
+				<li>GPlates Geological Information Model (GPGIM):
+					<ul>
+						<li>Loosen constraints on properties that can be loaded from a GPML file.
+							<ul>
+								<li>Any feature type can now contain any property defined in the GPGIM.</li>
+								<li>Can have feature types not defined in GPGIM.</li>
+								<li>More aligned with current ability to add any property to any feature type (albeit with a warning message).</li>
+								<li>Also more aligned with Shapefiles (which can load any property, in Shapefile mapping, into any feature type).</li>
+							</ul>
+						</li>
+						<li>Allow multiple 'gpml:boundary' polygons per feature.</li>
+					</ul>
+				</li>
+				<li>Graphics (OpenGL):
+					<ul>
+						<li>Only disable surface mask functionality in 3D scalar fields for problematic graphics driver/hardware.
+							<ul>
+								<li>Only affects surface masking of scalar fields (not all scalar field functionality).</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>Support up to 10-digit plate IDs (essentially 32-bit signed integers) in all Plate ID spin boxes.</li>
+				<li>Fixed inability to save PLATES rotation files using non-ASCII (unicode) filenames (in some cases).</li>
+				<li>Fixed inability to save/load OGR formats (eg, Shapefile) to/from non-ASCII (unicode) filenames.</li>
+			</ul>
+			<p>
+				...and other changes listed in the CHANGELOG file in the <a href="download.html" title="Download GPlates">GPlates source-code releases</a>.
+			</p>
+			</p>
+
+			<p>
+				GPlates 2.1 compiles and runs on Windows 7/8/8.1/10, Linux and MacOS X.
+				<p>Download GPlates 2.1 from the <a href="download.html" title="Download GPlates and GPlates-compatible data">Download</a> page. </p>
+				<p>
+					GPlates-compatible data have been made available, and has been updated and extended in many ways for the GPlates 2.1 release.
+					For more information, see the <a href="download.html#compatible-data" title="Download GPlates and GPlates-compatible data">Download</a> page.
+				</p>
+			</p>
+
+			<p>
+				PyGPlates enables access to GPlates functionality via the <a href="https://www.python.org" title="Python">Python</a> programming language.
+				This may be of particular use to researchers requiring more flexibility than is provided by the GPlates user interface.
+				<p>The pyGPlates binaries currently require Python 2.7, however the pyGPlates source code now works with Python 3. PyGPlates compiles and runs on Windows 7/8/8.1, Linux and MacOS X.</p>
+				<p>Download pyGPlates beta revision 18 from the <a href="download.html" title="Download GPlates and GPlates-compatible data">Download</a> page. </p>
+				<p>
+					The pyGPlates documentation and tutorials are available on the
+					<a href="docs.html" title="User Documentation">User Documentation</a> page and includes:
+					<ul>
+						<li>an introduction to pyGPlates,</li>
+						<li>an installation guide,</li>
+						<li>a 'Getting Started' tutorial,</li>
+						<li>documented sample code,</li>
+						<li>foundations of pyGPlates, and</li>
+						<li>a detailed reference of pyGPlates functions and classes.</li>
+					</ul>
+					<p>
+						The pyGPlates tutorials are Jupyter Notebooks that analyse and visualise real-world data using pyGPlates.
+						These tutorials complement the sample code in the pyGPlates documentation by providing a more research-oriented focus.
+					</p>
+				</p>
+			</p>
+			
+			<div class="blank-space">
+			</div>
+
+			<h2 class="news">2016-11-18: <a id="gplates200">GPlates 2.0 released</a></h2>
+			<hr size="4" />
+			<div class="center">
+				<table class="screenshot-row">
+					 <tr>
+						 <td class="thumb">
+							 <a href="screenshots.html" title="View GPlates screenshots"><img
+							  src="screenshots/2.0.0/NAM_strain_rate_500x460.png" width="500" height="460"
+							  alt="Screenshots from GPlates 2.0"
+							  /></a>
+						 </td>
+				 </tr>
+				</table>
+			</div>
+
+			<p>
+			What's new in version 2.0:-
+			<ul>
+				<li>Projects and recent sessions:
+					<ul>
+						<li>Now saves and restores all layer information:
+							<ul>
+								<li>Including layer order, visibility and all settings within each layer (such as colour styles and colour palette filenames).</li>
+							</ul>
+						</li>
+						<li>Open projects using File menu, drag'n'drop, double-clicking or command-line.</li>
+						<li>Project name displayed in window title.</li>
+						<li>Copy a project to another computer. For example:
+							<ul>
+								<li>Zip up a folder containing project file and associated data files (including colour palette files).</li>
+								<li>Unzip to another computer and open project file.</li>
+							</ul>
+						</li>
+						<li>Option to locate missing data files (when loading project or recent session):
+							<ul>
+								<li>Useful when data files moved since project or session was saved.</li>
+							</ul>
+						</li>
+						<li>Option to resolve ambiguous data filenames (when loading relocated project):
+							<ul>
+								<li>Useful when data files exist in both original and relocated locations.</li>
+							</ul>
+						</li>
+						<li>GPlates 2.0 can open projects and recent sessions saved by all prior versions of GPlates:
+							<ul>
+								<li>However information saved by earlier versions is limited.</li>
+							</ul>
+						</li>
+						<li>GPlates 1.5 can open projects and recent sessions saved by GPlates 2.0:
+							<ul>
+								<li>However restored information is limited (to what GPlates 1.5 can understand).</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>Deformation:
+					<ul>
+						<li>Topological networks:
+							<ul>
+								<li>Boundary is similar to a topological closed plate boundary, but also has:
+									<ul>
+										<li>A deforming interior region (due to individual deforming points).</li>
+										<li>Optional interior rigid blocks.</li>
+									</ul>
+								</li>
+								<li>Build New Network Topology tool now publicly available (without requiring command-line switch to enable).</li>
+								<li>Export topological network boundaries in general Resolved Topologies export.</li>
+								<li>Query and visualise velocities and strain rates at arbitrary points in networks.</li>
+								<li>Optionally display total (accumulated) strain at arbitrary points:
+									<ul>
+										<li>Displays principal components and orientation.</li>
+										<li>Outward-facing red arrows for extension.</li>
+										<li>Inward-facing blue arrows for compression.</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>Reconstructing regular features using topologies:
+							<ul>
+								<li>Use both topological rigid plates and deforming networks to reconstruct regular features.</li>
+								<li>Incrementally reconstructs by plate ID in topological rigid plates.</li>
+								<li>Incrementally deforms in topological deforming networks.</li>
+								<li>Begin incremental reconstruction at a feature's time of appearance, digitisation time or present day.</li>
+								<li>Use specific topological layers or default to all loaded topologies.</li>
+								<li>Option to detect lifetime of each point in a geometry:
+									<ul>
+										<li>Oceanic points appear (mid-ocean ridges) and disappear (subduct).</li>
+										<li>Based on convergence velocity and distance to plate boundary during a plate/network transition.</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>Scalar coverages:
+							<ul>
+								<li>A new geometry type in a new layer type.</li>
+								<li>Each point in a multipoint/polyline/polygon has a scalar value associated with it.</li>
+								<li>For example, visualise mid-ocean ridge spreading rates and asymmetry calculated externally using pyGPlates.</li>
+							</ul>
+						</li>
+						<li>Crustal thinning:
+							<ul>
+								<li>A specific type of scalar coverage containing crustal thickness values.</li>
+								<li>GPlates recognises this coverage type internally:
+									<ul>
+										<li>Uses deformation strain rates to evolve crustal thickness over time.</li>
+									</ul>
+								</li>
+								<li>An input dialog generates initial crustal thickness points:
+									<ul>
+										<li>Uniform distribution of points within a topological rigid plate or deforming network boundary (with optional random offset).</li>
+										<li>Specify initial constant/flat crustal thickness at a past geological time.</li>
+									</ul>
+								</li>
+								<li>Choose from a selection of built-in colour palettes to visualise crustal thickness variations over time.</li>
+								<li>Export crustal thickness values to GMT(xy) or GPML format.</li>
+								<li>Also added a separate export for deformation (strain rates).</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>New Hellinger tool:
+					<ul>
+						<li>GPlates has a new workflow to determine best-fitting poles by the method of Hellinger:
+							<ul>
+								<li>Import and export data files compatible with the FORTRAN programs of Chang and co-workers.</li>
+								<li>Edit and create magnetic pick data points, via the canvas or tabularly via the Hellinger dialog.</li>
+								<li>Adjust segmentation of magnetic picks.</li>
+								<li>Enable/disable magnetic picks from inclusion in the fitting algorithms.</li>
+								<li>Specify pole and angle estimates via the canvas or via the Hellinger dialog.</li>
+								<li>Perform fitting using a python implementation the FORTRAN programs.</li>
+								<li>Visualise resulting fit and uncertainty on the canvas.</li>
+								<li>Export fit and uncertainty data to text file.</li>
+							</ul>
+						</li>
+					</li>
+					</ul>
+				</li>
+				<li>Net rotation export:
+					<ul>
+						<li>GPlates now calculates and exports net rotation of the lithosphere (based on the method of Torsvik et al., 2010) using global coverages of dynamic plate polygons.</li>
+						<li>Net rotations are exported via the standard "Export…" tool, and by selecting the "Net rotation" export type.</li>
+						<li>Any dynamic plate-polygon data sets currently active in GPlates will be used as the basis for net rotation calculations.</li>
+					</ul>
+				</li>
+				<li>Official public release of volume visualisation:
+					<ul>
+						<li>No longer require command-line switch to enable importing of 3D scalar fields.</li>
+						<li>Latest improvements:
+							<ul>
+								<li>Reads georeferencing and spatial reference system (SRS) from first depth layer during import.</li>
+								<li>Frees disk space after import (removes cached depth layer rasters).</li>
+								<li>Fixed flickering cross-sections.</li>
+								<li>Fixed SVG export of isosurfaces (on Mac OS X).</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>Improved OGR spatial reference system (SRS) support:
+					<ul>
+						<li>GPlates now has more complete support for OGR-supported files (e.g. ESRI shape file, OGR-GMT and others) which provide spatial reference system / projection information.</li>
+						<li>Any SRSs supported by the PROJ4 library should now be accepted by GPlates.</li>
+						<li>When saving to a file which had a non-WGS84 SRS associated with it, GPlates will prompt the user to export in either the original SRS, or in WGS84.</li>
+						<li>All other forms of file export in GPlates continue to use WGS84.</li>
+					</ul>
+				</li>
+				<li>Donut polygons:
+					<ul>
+						<li>Contain interior holes.</li>
+						<li>Supported in file input/output, raster reconstruction, filled polygons, 3D scalar fields, etc.</li>
+					</ul>
+				</li>
+				<li>Colour palette improvements:
+					<ul>
+						<li>Available in raster, 3D scalar field and scalar coverage layers.</li>
+						<li>Remap the range using mean and standard deviation of the layer data (raster, 3D scalar field or scalar coverage).</li>
+						<li>Added a variety of built-in colour palettes based on ColorBrewer sequential and diverging colour scales.</li>
+					</ul>
+				</li>
+				<li>Raster reconstruction improvements:
+					<ul>
+						<li>Improved stability and speed when connecting raster layer to polygons layer.</li>
+						<li>Removed raster seams/cracks between adjacent polygons.</li>
+					</ul>
+				</li>
+				<li>Toggle visibility of all layers:
+					<ul>
+						<li>Using the new visibility icons in the Layers dialog.</li>
+					</ul>
+				</li>
+				<li>Combine multiple rotation layers into one layer.</li>
+				<li>Added velocity time interval options to velocity layers.</li>
+				<li>New half-stage reconstruction (version 3) for mid-ocean ridges:
+					<ul>
+						<li>Changes to spreading asymmetry, after digitisation, no longer incorrectly reposition ridge.</li>
+					</ul>
+				</li>
+				<li>Improved handling of import / export directories:
+					<ul>
+						<li>GPlates now stores the last used directory for Project files.</li>
+						<li>In addition, there is more fine-grained support for both Feature Collection and Project folder preferences.</li>
+						<li>These can be adjust through the Preferences (Ctrl+,) dialog.</li>
+					</ul>
+				</li>
+				<li>Added named ages with timescale information and uncertainty tracking:
+					<ul>
+						<li>Supported for various feature types in GPlates Geological Information Model (GPGIM).</li>
+						<li>Find-as-you-type named ages with timescale colouring.</li>
+					</ul>
+				</li>
+			</ul>
+			<p>
+			...and other changes listed in the CHANGELOG file in the <a
+			 href="download.html" title="Download GPlates">GPlates source-code releases</a>.
+			</p>
+			</p>
+
+			<p>
+			GPlates 2.0 compiles and runs on Windows 7/8/8.1/10, Linux and MacOS
+			X. Download GPlates 2.0 from the
+			<a href="download.html"
+			 title="Download GPlates and GPlates-compatible data">Download</a> page.
+			</p>
+
+			<p>
+			GPlates-compatible data have been made available.  For more information, see
+			the <a href="download.html#compatible-data"
+			 title="Download GPlates and GPlates-compatible data">Download</a> page.
+			</p>
+			 
+			<div class="blank-space">
+			</div>
+
+
+			<h2 class="news">2016-02-04: <a id="pygplates_rev12">PyGPlates beta revision 12 released</a></h2>
+			<hr size="4" />
+			<div class="center">
+				<table class="screenshot-row">
+					 <tr>
+						 <td class="thumb">
+							 <a href="docs/pygplates/index.html" title="PyGPlates documentation"><img
+							  src="img/pygplates_doc_contents.png" width="1004" height="403"
+							  alt="PyGPlates documentation"
+							  /></a>
+						 </td>
+				 </tr>
+				</table>
+			</div>
+
+			<p>
+				Welcome to the first <b>beta</b> release of the GPlates Python library known as pyGPlates.
+			</p>
+
+			<p>
+				PyGPlates enables access to GPlates functionality via the
+				<a href="https://www.python.org" title="Python">Python</a> programming language.
+				This may be of particular use to researchers requiring more flexibility than is provided by the GPlates user interface.
+			</p>
+			
+			<p>
+				The following pyGPlates functionality is available:-
+				<ul>
+					<li>Load and save feature data (GPML, Shapefile, etc).</li>
+					<li>Create/modify/query feature data.</li>
+					<li>Traverse/modify/query plate rotation hierarchy.</li>
+					<li>Partition into plates and assign plate properties.</li>
+					<li>Reconstruct geometries, flowlines, motion paths.</li>
+					<li>Resolve topological plates and query their boundary sections (ridges/subductions).</li>
+					<li>Calculate velocities.</li>
+					<li>Distance between geometries (region-of-interest queries).</li>
+					<li>Geometry queries (length, point-in-polygon, area, centroid, tessellate, interpolate, join, partition).</li>
+				</ul>
+				<p>
+				Download this release from the <a href="download.html" title="Download GPlates and GPlates-compatible data">Download</a> page.
+				It supports Python 2.7. And compiles and runs on Windows 7/8/8.1, Linux and MacOS X.
+				</p>
+			</p>
+
+			<p>
+				The pyGPlates documentation and tutorials are available on the
+				<a href="docs.html" title="User Documentation">User Documentation</a> page.
+			</p>
+
+			<p>
+				The pyGPlates documentation includes:
+				<ul>
+					<li>an introduction to pyGPlates,</li>
+					<li>an installation guide,</li>
+					<li>a 'Getting Started' tutorial,</li>
+					<li>documented sample code,</li>
+					<li>foundations of pyGPlates, and</li>
+					<li>a detailed reference of pyGPlates functions and classes.</li>
+				</ul>
+				<p>
+					The pyGPlates tutorials are Jupyter Notebooks that analyse and visualise real-world data using pyGPlates.
+					These tutorials complement the sample code in the pyGPlates documentation by providing a more research-oriented focus.
+				</p>
+			</p>
+			
+			 
+			<div class="blank-space">
+			</div>
+
+
+			<h2 class="news">2015-03-11: <a id="gplates150_hellinger_testing">GPlates 1.5 + hellinger-testing released</a></h2>
+			<hr size="4" />
+			<div class="center">
+				<table class="screenshot-row">
+					 <tr>
+						 <td class="thumb">
+							 <a href="screenshots.html" title="View GPlates screenshots"><img
+							  src="screenshots/1.5.0+hellinger-testing/GPlates_1_5_HellingerTesting_fitting_tool-500x400.png" width="500" height="400"
+							  alt="Screenshots from GPlates 1.5 + hellinger-testing"
+							  /></a>
+						 </td>
+				 </tr>
+				</table>
+			</div>
+
+			<p>
+			What's new in version 1.5 + hellinger-testing:-
+			<ul>
+				<li>New Hellinger tool:
+					<ul>
+						<li>Added new workflow to determine best-fitting poles by the method of Hellinger:</li>
+							<ul>
+								<li>Import and export data files compatible with the FORTRAN programs of Chang and co-workers.</li>
+								<li>Edit and create magnetic pick data points, via the canvas or tabularly via the Hellinger dialog.</li>
+								<li>Adjust segmentation of magnetic picks.</li>
+								<li>Enable/disable magnetic picks from inclusion in the fitting algorithms.</li>
+								<li>Specify pole and angle estimates via the canvas or via the Hellinger dialog.</li>
+								<li>Perform fitting using a Python implementation the FORTRAN programs.</li>
+								<li>Visualise resulting fit and uncertainty on the canvas.</li>
+								<li>Export fit and uncertainty data to text file.</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			</p>
+
+			<p>
+			This <b>experimental</b> release of GPlates contains a new Hellinger tool in addition to all functionality available
+			in the recent <a href="news.html#gplates150"> GPlates 1.5 <i>official</i> release</a>.
+			</p>
+
+			<p>
+			This release compiles and runs on Windows 7/8/8.1, Linux and MacOS
+			X. Download this release from the
+			<a href="download.html"
+			 title="Download GPlates and GPlates-compatible data">Download</a> page.
+			</p>
+
+			<p>
+			GPlates-compatible data have been made available.  For more information, see
+			the <a href="download.html#compatible-data"
+			 title="Download GPlates and GPlates-compatible data">Download</a> page.
+			</p>
+			 
+			<div class="blank-space">
+			</div>
+
+
+			<h2 class="news">2015-02-14: <a id="gplates150">GPlates 1.5 released</a></h2>
+			<hr size="4" />
+			<div class="center">
+				<table class="screenshot-row">
+					 <tr>
+						 <td class="thumb">
+							 <a href="screenshots.html" title="View GPlates screenshots"><img
+							  src="screenshots/1.5.0/GPlates_1_5_kinematics_tool-500x308.png" width="500" height="308"
+							  alt="Screenshots from GPlates 1.5"
+							  /></a>
+						 </td>
+				 </tr>
+				</table>
+			</div>
+
+			<p>
+			What's new in version 1.5:-
+			<ul>
+				<li>Projects:
+					<ul>
+						<li>Save and restore your sessions with project files.</li>
+					</ul>
+				</li>
+				<li>New kinematics tool:
+					<ul>
+						<li>Displays table of latitude, longitude, velocity, and velocity-related quantities for a given lat-lon point, plate ID, and range of times.</li>
+						<li>Displays graph of above quantities against time.</li>
+						<li>Exports table to text file.</li>
+						<li>Kinematic tool settings dialog to change details of the velocity calcliations.</li>
+						<li>Kinematic tool settings are saved in user preferences.</li>
+						<li>Auto-fills point data from focussed feature.</li>
+						<li>Auto-fills time ranges from animation settings.</li>
+					</ul>
+				</li>
+				<li>Import and export GeoJSON format feature collections.</li>
+			</ul>
+			<p>
+			...and other changes listed in the CHANGELOG file in the <a
+			 href="download.html" title="Download GPlates">GPlates source-code releases</a>.
+			</p>
+			</p>
+
+			<p>
+			GPlates 1.5 compiles and runs on Windows 7/8/8.1, Linux and MacOS
+			X. Download GPlates 1.5 from the
+			<a href="download.html"
+			 title="Download GPlates and GPlates-compatible data">Download</a> page.
+			</p>
+
+			<p>
+			GPlates-compatible data have been made available.  For more information, see
+			the <a href="download.html#compatible-data"
+			 title="Download GPlates and GPlates-compatible data">Download</a> page.
+			</p>
+			 
+			<div class="blank-space">
+			</div>
+
+			<h2 class="news">2014-04-18: <a id="gplates140">GPlates 1.4 released</a></h2>
+			<hr size="4" />
+			<div class="center">
+				<table class="screenshot-row">
+					 <tr>
+						 <td class="thumb">
+							 <a href="screenshots.html" title="View GPlates screenshots"><img
+							  src="screenshots/1.4.0/GPlates_1_4_move_pole_tool-398x363.png" width="398" height="363"
+							  alt="Screenshots from GPlates 1.4"
+							  /></a>
+						 </td>
+				 </tr>
+				</table>
+			</div>
+
+			<p>
+			What's new in version 1.4:-
+			<ul>
+				<li>Export numerical and colour reconstructed rasters:
+					<ul>
+						<li>Exports each visible raster layer to a separate raster file.
+							<ul>
+								<li>User specified latitude/longitude export region and pixel resolution.</li>
+							</ul>
+						</li>
+						<li>Numerical export writes floating-point data:
+							<ul>
+								<li>Supported raster formats: NetCDF, GMT NetCDF, GeoTIFF and Erdas Imagine.</li>
+								<li>Standard use of not-a-number (NaN) for pixels not covered by reconstructed raster.</li>
+							</ul>
+						</li>
+						<li>Colour export:
+							<ul>
+								<li>New supported colour raster formats: GeoTIFF and Erdas Imagine.</li>
+								<li>Uses per-layer colour palette as needed.</li>
+								<li>Includes surface relief lighting.</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>Import raster improvements:
+					<ul>
+						<li>New import raster formats: ERMapper, Erdas Imagine and GeoTIFF.</li>
+						<li>Imports georeferencing from source raster file.</li>
+						<li>Supports inbuilt raster spatial reference system:
+							<ul>
+								<li>Includes projections (for example, Lambert Conformal Conic).</li>
+							</ul>
+						</li>
+						<li>Improved performance when importing very large rasters and displaying in 2D map views.</li>
+					</ul>
+				</li>
+				<li>New Move Pole canvas tool:
+					<ul>
+						<li>Supports Modify Reconstruction Pole canvas tool:
+							<ul>
+								<li>by allowing user to specify location of pole used for rotation adjustments.</li>
+							</ul>
+						</li>
+						<li>Drag pole location with mouse or enter text coordinates.</li>
+						<li>Optionally constrain pole location to moving/fixed stage pole of clicked feature.
+							<ul>
+								<li>Includes tracking stage pole over time.</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>Velocity smoothing near plate boundaries.</li>
+				<li>Mid-ocean ridges:
+					<ul>
+						<li>Supports spreading asymmetry.</li>
+						<li>More accurate half-stage rotation.
+							<ul>
+								<li>Needed in some rare cases.</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>Volume visualisation of 3D scalar fields (continued early preview functionality):
+					<ul>
+						<li>To be officially released in GPlates 1.5.</li>
+						<li>This release (1.4) adds preview functionality (since 1.3) available to advanced users:
+							<ul>
+								<li>Requires the "--enable-scalar-field-import" command-line switch to enable scalar field import.</li>
+								<li>For example, "cd C:\Program Files (x86)\GPlates\GPlates 1.4.0" and "gplates-1.4.0.exe --enable-scalar-field-import".</li>
+								<li>Enables menu item 'File -> Import -> Import 3D Scalar Field...'</li>
+							</ul>
+						</li>
+						<li>Preliminary support for 'regional' (non-global) scalar fields.
+						<li>Colour palette improvements:
+							<ul>
+								<li>Optionally remap scalar/gradient palette range.</li>
+								<li>Adjust range using mean and standard deviation of scalar field.</li>
+							</ul>
+						</li>
+						<li>Supports transparent colours for isosurface and cross sections.</li>
+					</ul>
+				</li>
+			</ul>
+			<p>
+			...and other changes listed in the CHANGELOG file in the <a
+			 href="download.html" title="Download GPlates">GPlates source-code releases</a>.
+			</p>
+			</p>
+
+			<p>
+			GPlates 1.4 compiles and runs on Windows 7/8/8.1, Linux and MacOS
+			X. Download GPlates 1.4 from the
+			<a href="download.html"
+			 title="Download GPlates and GPlates-compatible data">Download</a> page.
+			</p>
+
+			<p>
+			GPlates-compatible data have been made available.  For more information, see
+			the <a href="download.html#compatible-data"
+			 title="Download GPlates and GPlates-compatible data">Download</a> page.
+			</p>
+			 
+			<div class="blank-space">
+			</div>
+
+			<h2 class="news">2013-10-22: <a id="gplatesnewsletter">GPlates News Quarterly Updates</a></h2>
+			<hr size="4" />
+			<div class="center">
+			<table class="screenshot-row">
+			 <tr>
+			 <td class="thumb">
+			 <a href="http://www.earthbyte.org/gplates-newsletter/" title="GPlates News Quarterly Updates"><img
+			  src="img/GPlates-Newsletter.png" width="225" height="627"
+			  alt="Subscribe to GPlates News Quarterly Updates"
+			  /></a>
+			 </td>
+			 </tr>
+			</table>
+			</div>
+
+			<p>
+			A newsletter regarding recent GPlates related research, information on tutorials, new GPlates compatible data and plate models, and other news from the research group is now available at <a href="http://www.earthbyte.org/gplates-newsletter/">GPlates News Quarterly Updates</a>. This is the first in a series of quarterly newsletter updates so please subscribe at <a href="http://www.earthbyte.org/gplates-newsletter/">GPlates News Quarterly Updates</a> to receive these regular updates.
+			</p>
+			 
+			<div class="blank-space">
+			</div>
+
+			<h2 class="news">2013-05-29: <a id="gplates130">GPlates 1.3 released</a></h2>
+			<hr size="4" />
+			<div class="center">
+			<table class="screenshot-row">
+			 <tr>
+			 <td class="thumb">
+			 <a href="screenshots.html" title="View GPlates screenshots"><img
+			  src="screenshots/1.3.0/GPlates_MantleTemperature_isosurface_walls_deviation-398x363.png" width="398" height="363"
+			  alt="Screenshots from GPlates 1.3"
+			  /></a>
+			 </td>
+			 </tr>
+			</table>
+			</div>
+
+
+			<p>
+			What's new in version 1.3:-
+			<ul>
+			 <li>Integration of <a href="http://orange.biolab.si/" title="Orange - Data Mining">Orange</a> and GPlates as a data mining toolkit suite.
+				<ul>
+				<li>Includes Orange widgets to obtain pre-processed (co-registration) data from GPlates via network socket requests.</li>
+				</ul>
+			 </li>
+			 <li>New GPlates Rotation (GROT) file format:
+				<ul>
+				<li>Extends PLATES4 rotation format to include a much richer set of metadata attributes.</li>
+				<li>Please visit the <a href="grot/index.html" title="GPlates Rotation (GROT)">GPlates Rotation (GROT)</a> page for more details.</li>
+				</ul>
+			 </li>
+			 <li>Surface relief lighting:
+				<ul>
+				<li>Visually transpose one raster onto another in the form of relief/height map shading.</li>
+				</ul>
+			 </li>
+			 <li>Volume visualisation of 3D scalar fields (early preview functionality):
+				<ul>
+				<li>Developed in collaboration with Tobias Pfaffelmoser (Technical University Munich).</li>
+				<li>For more details please see <a href="publications/IGC_2012_GPlates_Volume_Visualisation_Poster_Portrait.pdf"
+			title="A Custom Implementation for Visualizing Sub-surface 3D Scalar Fields in GPlates">
+			A Custom Implementation for Visualizing Sub-surface 3D Scalar Fields in GPlates</a></li>
+				<li>To be officially released in GPlates 1.4.</li>
+				<li>This release (1.3) contains preview functionality available to advanced users:
+					<ul>
+					<li>Requires the "--enable-scalar-field-import" command-line switch to enable scalar field import.</li>
+					<li>For example, "cd C:\Program Files (x86)\GPlates\GPlates 1.3.0" and "gplates-1.3.0.exe --enable-scalar-field-import".</li>
+					<li>Enables menu item 'File -> Import -> Import 3D Scalar Field...'</li>
+					</ul>
+				</li>
+				</ul>
+			 </li>
+			 <li>SVG export includes rasters, 3D scalar fields and filled polygons.</li>
+			 <li>Export arbitrary resolution rasters (eg, 3,000 x 3,000 pixels).</li>
+			 <li>Support for reading the OGRGMT file format ('.gmt').</li>
+			 <li>New finite rotation calculator utilities.</li>
+			 <li>New velocity imports/exports:
+				<ul>
+				<li>Velocity domain generators for Terra and Lat/Lon meshes.</li>
+				<li>Export velocities to Terra (text), CitcomS global and GMT formats.</li>
+				</ul>
+			 </li>
+			 <li>Calculate velocities in "Calculated Velocity Fields" layer:
+				<ul>
+				<li>'of domain points' - calculate velocities of reconstructed points.</li>
+				<li>'of surfaces' - calculate velocities of surfaces that intersect domain points.</li>
+				</ul>
+			 </li>
+			 <li>Enhanced velocity arrow display controls including screen space density and arrow scaling.</li>
+			 <li>New topological 'line' tool creates dynamic polylines.</li>
+			 <li>Canvas tools grouped into workflow tabs.</li>
+			 <li>Centralised GPlates Geological Information Model (GPGIM):
+				<ul>
+				<li>GPGIM stored in a single XML file.</li>
+				<li>All GPlates dialogs now conform to this central GPGIM.</li>
+				<li>Features can now have either topological (dynamic) geometries or static geometries.</li>
+				</ul>
+			 </li>
+			 <li>Upgrades to Manage Feature Collections dialog including sort-by-filename and group selections.</li>
+			 <li>GPlates now contains a small assortment of commands (on the command-line):
+				<ul>
+				<li>Commands are specified on the command-line and do not invoke the graphical interface of GPlates.</li>
+				<li>Run GPlates with "--help" to list the commands and the options available to each command.</li>
+				<li>However, in future, we will be recommending our GPlates Python programming interface (work in progress).</li>
+				</ul>
+			 </li>
+			 <li>Filled polygons in 2D map views.</li>
+			 <li>Improved filled polygon performance.</li>
+			 <li>Filled polygon opacity and intensity controls.</li>
+			 <li>Raster reconstruction now works with 'self-intersecting' polygons:
+				<ul>
+				<li>Should mostly fix holes in reconstructed rasters due to missing polygons.</li>
+				</ul>
+			 </li>
+			 <li>'age' colour palette button in raster layer (to use when loaded raster is an age grid).</li>
+			</ul>
+			<p>
+			...and many other changes that are listed in the CHANGELOG file in the <a
+			 href="download.html" title="Download GPlates">GPlates source-code releases</a>.
+			</p>
+			</p>
+
+			<p>
+			GPlates 1.3 compiles and runs on Windows 7/Vista/XP, Linux and MacOS
+			X. Download GPlates 1.3 from the
+			<a href="download.html"
+			 title="Download GPlates and GPlates-compatible data">Download</a> page.
+			</p>
+
+			<p>
+			GPlates-compatible data have been made available.  For more information, see
+			the <a href="download.html#compatible-data"
+			 title="Download GPlates and GPlates-compatible data">Download</a> page.
+			</p>
+			 
+			<div class="blank-space">
+			</div>
+
+
+
+
+			<h2 class="news"><a id="gplates130_coming_soon">Coming soon in GPlates...</a></h2>
+			<hr size="4" />
+			<div class="center">
+			<table class="screenshot-row">
+			 <tr>
+			 <td class="thumb">
+			 <a title="Cross sections of mantle temperature field"><img src="screenshots/ComingSoon/GPlates_MantleTemperature_cross_section_isovalue_colour.png"/></a>
+			 </td>
+			 <td class="thumb">
+			 <a title="Double isosurface showing upwellings and subducting slabs"><img src="screenshots/ComingSoon/GPlates_Shephard2012EPSL_double_deviation_surface_freq_depth_restrict_inverted_depth_colours.png"/></a>
+			 </td>
+			 <td class="thumb">
+			 <a title="Visualizing 3D mantle structure from seismic tomography and geodynamic model predictions of the India-Eurasia and East Asia convergence zone"><img src="screenshots/ComingSoon/Cannon_etal_3D-Vis_AGU2012.png"/></a>
+			 </td>
+			 </tr>
+			 <tr>
+			 <td class="thumb">
+			 <a title="Age grid with no surface lighting"><img src="screenshots/ComingSoon/GPlates_age_grid_cpt_with_no_lighting.png"/></a>
+			 </td>
+			 <td class="thumb">
+			 <a title="Age grid with age grid surface lighting"><img src="screenshots/ComingSoon/GPlates_age_grid_cpt_with_age_lighting.png"/></a>
+			 </td>
+			 <td class="thumb">
+			 <a title="Age grid with bathymetry surface lighting"><img src="screenshots/ComingSoon/GPlates_age_grid_cpt_with_bathymetry_lighting.png"/></a>
+			 </td>
+			 </tr>
+			</table>
+			</div>
+
+
+			<p>
+			Some of the new features coming soon to GPlates are:-
+			<ul>
+			 <li> Volume visualization of 3D scalar fields:
+				<ul>
+				<li> Visualize scalar field as isosurfaces or 2D vertical cross-sections.</li>
+				<li> Import scalar field from a sequence of 2D depth layers/rasters.</li>
+				</ul>
+			 </li>
+			 <li> Raster surface lighting:
+			   <ul>
+			   <li> Visually transpose one raster onto another to combine details of two rasters.</li>
+			   <li> One raster generates colour and the other acts like a heightfield to generate lighting.</li>
+			   </ul>
+			 </li>
+			 <li> And many other features including:
+				<ul>
+				<li> New topological line tool to support construction of topological features using other topologies.</li>
+				<li> Improved PLATES-based rotation file format providing richer metadata attributes.</li>
+				<li> Export arbitrary (eg, 3,000 x 3,000 pixels) rasters to SVG and PNG/JPEG/etc.</li>
+				<li> Export to a variety of velocity formats including Terra, CitcomS and GMT.</li>
+				<li> Better integration of GPlates Geological Information Model (GPGIM) throughout GPlates.</li>
+				</ul>
+			 </li>
+			</ul>
+			</p>
+
+			<p>
+			Please see <a href="publications.html#conference_publications"
+			 title="Conference publications related to GPlates">Conference publications</a> for examples using GPlates volume visualization.
+			</p>
+
+
+			<h2 class="news">2012-10-24: <a id="michaelchin">GPlates wins NeCTAR/ANDS #nadojo competition.</a></h2>
+
+			<hr size="4" />
+			<div class="center">
+			<table class="screenshot-row">
+			 <tr>
+			 <td class="thumb">
+			 <a href="http://115.146.92.189/" title="GPlates Web Prototype"><img
+			  src="img/GPlates_web_cloud.png" width="399" 
+			  alt="GPlates Web Prototype"
+			  /></a>
+			 </td>
+			 </tr>
+			</table>
+			</div>
+
+			<p>Congratulations to GPlates team on winning this year's NeCTAR/ANDS #nadojo competition. The award-winning work demonstrated a new web-enabled GPlates prototype on the NECTAR/ANDS eResearch computing infrastructure, porting some of the powerful plate reconstruction capabilities to the web. The new GPlates competed with several other candidates from universities and research institutes in Australia, and winning on the basis of the novelty and future potential. A judge was quoted as saying:
+					"...being able to look at tectonic plates and how they move over 140Ma years ago brought me back to that child-like awe of wonder and amazement, like the first time you look up at the stars and realise how many (light?) years away they are..."
+
+					Well done GPlates team!</p>
+
+
+			<h2 class="news">2012-01-30: <a id="gplates120">GPlates 1.2 released</a></h2>
+			<hr size="4" />
+			<div class="center">
+			<table class="screenshot-row">
+			 <tr>
+			 <td class="thumb">
+			 <a href="screenshots.html" title="View GPlates screenshots"><img
+			  src="screenshots/1.2.0/WorldTopoBathyReconstructedInMapViewWithSmallCircle-399x389.png" width="399" height="389"
+			  alt="Screenshots from GPlates 1.2"
+			  /></a>
+			 </td>
+			 </tr>
+			</table>
+			</div>
+
+
+			<p>
+			What's new in version 1.2:-
+			<ul>
+			 <li> New Small Circle tool:
+				<ul>
+				<li> Create small circles directly on the globe or map using the mouse.</li>
+				<li> Create small circles by specifying the centre and radii, and generating the centre from a stage pole if desired.</li>
+				<li> Create small circle features which can be: exported to gpml, imported from gpml, and visualised as a layer.</li>
+				<li> Query and edit small cirles through the Click Feature canvas tool.</li>
+				</ul>
+			 </li>
+			 <li> The Total Reconstruction Sequence dialog has been extended to allow:
+			   <ul>
+			   <li> Creation, editing and deletion of Total Reconstuction Sequences (TRSs).</li>
+			   <li> Saving TRSs to existing rotation files, or to a new rotation file.</li>
+			   </ul>
+			 </li>
+			 <li> Rasters can now be visualized in the map views:
+				<ul>
+				<li> Supports all raster variations (reconstructed, time-dependent, age-grid and combinations of these).</li>
+				</ul>
+			 </li>
+			 <li> Raster opacity (and intensity) can be adjusted per layer to control semi-transparency.</li>
+			 <li> Python colouring (see user manual for details):
+				<ul>
+				<li> Power users can create/register their own Python colouring scripts.</li>
+				<li> Can use preliminary Python Application Programming Interface (API) to query feature properties.</li>
+				</ul>
+			 </li>
+			 <li> Option to dateline wrap Shapefiles when saving and exporting.</li>
+			 <li> New Log dialog displays low-level debug, warning and error messages.</li>
+			 <li> New Preferences dialog provides an interface to view and modify settings and parameters used in GPlates.</li>
+			 <li> Improved interactivity for very high resolution rasters (eg, approx. 1 minute resolution).
+				<ul>
+				<li> New GPlates raster streaming tiled file format (files ending with ".gplates.cache").</li>
+				</ul
+			 </li>
+			 <li> Clone Geometry tool can clone topological plate polygons.</li>
+			 <li> The Calculate Rotation Pole tool has its field automatically filled from an already-selected pmag VGP.</li>
+			 <li> Fixed slow saving to Shapefiles.</li>
+			 <li> Fixed rotation taking the longer path around a pole on rare occasions.</li>
+			 <li> Fixed holes appearing in large filled polygons.</li>
+			 <li> Fixed extremely long running time for Assign Plate ID assignment.</li>
+			 <li> Fixed exponential loading times when restoring many files during a session restore.</li>
+			 <li> ... Plus a number of other improvements and bug fixes.</li>
+			</ul>
+			</p>
+
+			<p>
+			GPlates 1.2 compiles and runs on Windows 7/Vista/XP, Linux and MacOS
+			X. Download GPlates 1.2 from the
+			<a href="download.html"
+			 title="Download GPlates and GPlates-compatible data">Download</a> page.
+			</p>
+
+			<p>
+			GPlates-compatible data have been made available.  For more information, see
+			the <a href="download.html#compatible-data"
+			 title="Download GPlates and GPlates-compatible data">Download</a> page.
+			</p>
+			 
+			<div class="blank-space">
+			</div>
+
+			<h2 class="news">2011-07-04: <a id="gplates111">GPlates 1.1.1 released</a></h2>
+			<hr size="4" />
+			<div class="center">
+			<table class="screenshot-row">
+			 <tr>
+			 <td class="thumb">
+			 <a href="screenshots.html" title="View GPlates screenshots"><img
+			  src="screenshots/1.1.0/screenie-composition.png" width="447" height="300"
+			  alt="Screenshots from GPlates 1.1"
+			  /></a>
+			 </td>
+			 </tr>
+			</table>
+			</div>
+
+			<p>
+			Many bugs were fixed in version 1.1.1:-
+			<ul>
+			 <li> Added back missing age-grid smoothing of raster reconstruction. </li>
+			 <li> Fixed a number of issues with session save/restore of pre-1.1 sessions. </li>
+			 <li> Fixed a number of focused feature highlights issues including:
+				<ul>
+				<li> Losing highlight when reconstruction time changes.   </li>
+				<li> Other geometries associated with focused feature not getting highlighted. </li>
+				</ul>
+			 </li>
+			 <li> Fixed a number of problems building/editing topologies: 
+				<ul>
+				<li> Topological sections not getting inserted.   </li>
+				<li> Incorrect auto-segment reversal.   </li>
+				<li> Inability to add same topological section more than once to topological boundary.   </li>
+				<li> Inability to add point geometries to boundary of topological network. </li>
+				</ul>
+			 </li>
+			 <li> Fixed a few update issues including:
+				<ul>
+				<li> Globe not updating after changing the anchor Plate ID.   </li>
+				<li> Resolved topological boundaries not updated after editing a boundary feature's geometry. </li>
+				</ul>
+			 </li>
+			 <li> Filled polygons related fixes include:
+				<ul>
+				<li> 'Fill polygons' option toggling wrong layer.   </li>
+				<li> Filled polygons rendered as square tiles for high zoom levels.   </li>
+				<li> Small improvement in rendering speed. </li>
+				</ul>
+			 </li>
+			 <li> A few export related issues including:
+				<ul>
+				<li> Not exporting full motion path.   </li>
+				<li> Option to export resolved topologies to OGRGMT format removed (not supported).  </li>
+				<li> OGRGMT format now supports option to export to a single file.   </li>
+				<li> Resolved topologies not exporting when only "Export each Plate Polygon to a separate file" checkbox is ticked.   </li>
+				<li> Missing export of topological network boundaries. </li>
+				<li> Inappropriate default directory for exported files.</li>
+				<li> Exporting a single snapshot now does not modify current animation range.</li>
+				</ul>
+			 </li>
+			 <li> A couple of feature creation bugs fixed:
+				<ul>
+				<li> Fixed incorrectly creating a conjugate isochron feature when creating a mid-ocean ridge feature is created.   </li>
+				<li> Fixed incorrectly adding a 'reconstruction' plate ID and conjugate plate ID to a new mid-ocean ridge feature. </li>
+				</ul>
+			 </li>
+
+			</ul>
+			</p>
+
+			<p>
+			GPlates 1.1.1 compiles and runs on Windows 7/Vista/XP, Linux and MacOS
+			X. Download GPlates 1.1.1 from the
+			<a href="download.html"
+			 title="Download GPlates and GPlates-compatible data">Download</a> page.
+			</p>
+
+			<p>
+			GPlates-compatible data have been made available.  For more information, see
+			the <a href="download.html#compatible-data"
+			 title="Download GPlates and GPlates-compatible data">Download</a> page.
+			</p>
+			 
+			<div class="blank-space">
+			</div>
+
+
+
+
+			<h2 class="news">2011-05-21: <a id="gplates110">GPlates 1.1 released</a></h2>
+			<hr size="4" />
+			<div class="center">
+			<table class="screenshot-row">
+			<tr>
+			<td class="thumb">
+			<a href="screenshots.html" title="View GPlates screenshots"><img
+			 src="screenshots/1.1.0/Basins-330x343-shadow.png" width="330" height="343"
+			 alt="Screenshots from GPlates 1.1"
+			 /></a>
+			</td>
+			</tr>
+			</table>
+			</div>
+
+			<p>
+			What's new in version 1.1:-
+			<ul>
+			 <li>The Recent Session menu can now restore the layer connections you were using.</li>
+			 <li> Can display filled polygons for dynamic and static polygons (per-layer).</li>
+			 <li> Added new OGRGMT file format ('.gmt') compatible with OGR library and ogr2ogr tool.</li>
+			 <li> Improvements to topology build/edit tools including:
+			   <ul>
+			   <li> Ability to add sections to interior and boundary of topological networks. </li>
+			   <li> Options to visualise triangulations associated with each network. </li>
+			   </ul>
+			 </li>
+			 <li> Velocity layers now calculate velocities inside static polygons (in addition to topological plate polygons). </li>
+			 <li> Velocity layers can now calculate velocities at the vertices of polyline/polygon geometries.</li>
+			 <li> Can now load and display higher resolution rasters, including up to 0.3 minute resolution global rasters for the JPEG format. </li>
+			 <li> GPlates fitted with a novel cube 'loose' quad tree spatial partition, supporting region-of-interest queries, fast insertion of reconstructed geometries, hierarchical visibility culling.    </li>
+			 <li> Improved layers user interface including:
+			   <ul>
+			   <li> A button (in top-right of Layers dialog) to open the Colouring dialog.</li>
+			   <li> Layers grouped by layer type.</li>
+			   <li> A 'tick' icon for 'Reconstruction Tree' layers to toggle default layer. </li>
+			   <li> Can prevent the default 'Reconstruction Tree' layer from changing when opening a new rotation file. </li>
+			   </ul>
+			 </li>
+			 <li> Improved file load/unload performance when many compute-heavy files already loaded - for example, dense velocity mesh cap files.</li>
+			 <li> Improved export dialog general user interface.</li>
+			 <li> New export options to control granularity of exports.</li>
+			 <li> New OGRGMT exports for reconstructed geometries, flowlines and motion paths.</li>
+			 <li> Export resolved topologies to Shapefile format.</li>
+			 <li> Improved rendering performance for flowlines.</li>
+			 <li> ... Plus a lot of other behind-the-scenes work to prepare for exciting future functionality.</li>
+			</ul>
+			</p>
+
+			<p>
+			GPlates 1.1 compiles and runs on Windows 7/Vista/XP, Linux and MacOS
+			X. Download GPlates 1.1 from the
+			<a href="download.html"
+			 title="Download GPlates and GPlates-compatible data">Download</a> page.
+			</p>
+
+			<p>
+			GPlates-compatible data have been made available.  For more information, see
+			the <a href="download.html#compatible-data"
+			 title="Download GPlates and GPlates-compatible data">Download</a> page.
+			</p>
+			 
+			<div class="blank-space">
+			</div>
+
+			<h2 class="news">2010-12-20: <a id="gplates100">GPlates 1.0.0 released</a></h2>
+			<hr size="4" />
+			<div class="center">
+			<table class="screenshot-row">
+			<tr>
+			<td class="thumb">
+			<a href="screenshots.html" title="View GPlates screenshots"><img
+			 src="screenshots/1.0.0/screenie-composition.png" width="510" height="383"
+			 alt="Screenshots from GPlates 1.0.0"
+			 /></a>
+			</td>
+			</tr>
+			</table>
+			</div>
+
+			<p>
+			What's new in version 1.0:-
+			<ul>
+			 <li>The ability to create and visualise flowlines and motion paths of points across plates.</li>
+			 <li>A new Small Circle tool, to help visualise stage rotations.</li>
+			 <li>When closing, GPlates will remember the files that you had loaded. The new Recent Session menu allows you to re-open files from a previous session.</li>
+			 <li>The viewport can now be annotated with text including the current reconstruction time.</li>
+			 <li>The background colour of the globe and graticule resolution can be configured.</li>
+			 <li>Layers can now be toggled on and off in the Layers dialog.</li>
+			 <li>The default Rotation layer can also be controlled directly from the Layers dialog.</li>
+			 <li>A preview of a new Total Reconstruction Sequences dialog to enable more powerful control over the rotations.</li>
+
+			 <li>...as well as a host of other improvements throughout the application.</li>
+			</ul>
+			</p>
+
+			<p>
+			GPlates 1.0 compiles and runs on Windows Vista, Windows XP, Linux and MacOS
+			X. Download GPlates 1.0 from the
+			<a href="download.html"
+			 title="Download GPlates and GPlates-compatible data">Download</a> page.
+			</p>
+
+			<p>
+			GPlates-compatible data have been made available.  For more information, see
+			the <a href="download.html#compatible-data"
+			 title="Download GPlates and GPlates-compatible data">Download</a> page.
+			</p>
+			 
+			<div class="blank-space">
+			</div>
+
+
+
+
+
+
+			<h2 class="news">2010-08-31: <a id="gplates0910">GPlates 0.9.10 released</a></h2>
+			<hr size="4" />
+			<div class="center">
+			<table class="screenshot-row">
+			<tr>
+			<td class="thumb">
+			<a href="screenshots.html" title="View GPlates screenshots"><img
+			 src="screenshots/0.9.10/screenie-composition.png" width="460" height="280"
+			 alt="Screenshots from GPlates 0.9.10"
+			 /></a>
+			</td>
+			</tr>
+			</table>
+			</div>
+
+
+			<p>
+			This release is a preview of raster reconstructions and layers. 
+			We have implemented raster reconstructions to take advantage of 
+			the majority of graphics systems so please let us know if you are 
+			having difficulty on your system.
+			</p>
+			<p>
+			If you want to reconstruct a raster, and try out the new layers system, the sample data 
+			in this release contains the following files to demonstrate this: 
+			<ul>
+			 <li>
+				present-day plate polygons (in <code>SampleData/FeatureCollections/StaticPolygons/</code>) 
+			   - <code>Global_Earthbyte_GPlates_PresentDay_PlatePolygons_20100826.gpml</code>, 
+			 </li>
+			 <li>
+			   a rotation file (in <code>SampleData/FeatureCollections/Rotations/</code>) 
+			   - <code>Global_Earthbyte_GPlates_Rotation_20091015.rot</code>, 
+			 </li>
+			 <li>
+			   a global marine gravity raster (in <code>SampleData/Rasters/</code>) 
+			   - <code>DNSC08GRA_6m.gpml</code>, 
+			 </li>
+			 <li>
+			   an ocean-floor age grid (in <code>SampleData/Rasters/</code>) 
+			   - <code>agegrid_6m.gpml</code>. 
+			 </li>
+			</ul>
+			</p>
+			<p>
+			To reconstruct the above gravity raster load all the above files into GPlates 
+			using "Open Feature Collection" from the "File" menu. And then connect the 
+			present-day plate polygons to the "Polygon features" input channel of the 
+			gravity raster. The gravity raster should now reconstruct. 
+			</p>
+			<p>
+			For a high-detail reconstruction you can also connect the age grid raster 
+			to the "Age grid feature" input channel of the gravity raster. 
+			</p>
+
+
+			<!-- VIDEO -->
+			<div class="float-right video">
+			 <object width="480" height="385">
+			  <param name="movie" value="//www.youtube.com/v/mMnziH1RBlg?fs=1&amp;hl=en_US"></param>
+			  <param name="allowFullScreen" value="true"></param>
+			  <param name="allowscriptaccess" value="always"></param>
+			  <embed src="//www.youtube.com/v/mMnziH1RBlg?fs=1&amp;hl=en_US"
+			   type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"
+			   width="480" height="385">
+			  </embed>
+			 </object>
+			</div>
+
+			<p>
+			With the release of GPlates 0.9.10, we have prepared a video presentation introducing all the new
+			features which are now available:-
+			 <ul>
+			  <li>A completely new Raster Import workflow</li>
+			  <li>Cookie-cutting of rasters with polygons</li>
+			  <li>The new Layers dialog</li>
+			  <li>Age grid support</li>
+			  <li>NetCDF grid support</li>
+			  <li>Half-stage rotation reconstruction method</li>
+			  <li>Snap nearby vertices tool</li>
+			 </ul>
+			</p>
+
+			<p>
+			GPlates 0.9.10 compiles and runs on Windows Vista, Windows XP, Linux and MacOS
+			X.  Qt 4.4.0 (or above) and CMake 2.6 are required.  Download GPlates 0.9.10 from the
+			<a href="download.html"
+			 title="Download GPlates and GPlates-compatible data">Download</a> page.
+			</p>
+
+			<!-- Ensure we are clear after the video float -->
+			<div style="clear: right;" />
+
+			<p>
+			GPlates-compatible data have been made available.  For more information, see
+			the <a href="download.html#compatible-data"
+			 title="Download GPlates and GPlates-compatible data">Download</a> page.
+			</p>
+			 
+			<div class="blank-space">
+			</div>
+
+
+
+
+			<h2 class="news">2010-05-03: <a id="gplates099">GPlates 0.9.9 released</a></h2>
+			<hr size="4" />
+			<div class="center">
+			<table class="screenshot-row">
+			<tr>
+			<td class="thumb">
+			<a href="screenshots.html" title="View GPlates screenshots"><img
+			 src="screenshots/0.9.9/screenie-composition.png" width="500" height="267"
+			 alt="Screenshots from GPlates 0.9.9"
+			 /></a>
+			</td>
+			</tr>
+			</table>
+			</div>
+
+
+			<p>
+			Changes since 0.9.8:
+			</p>
+			 
+			<ul>
+
+			<li>
+			 New paleomagnetic functionality including the ability to:
+			 <ul>
+			  <li> create a Virtual Geomeomagnetic Pole (VGP) feature,</li>
+			  <li> generate a total rotation pole adjustment between the VGP and the geographic pole,</li>
+			  <li> specify when Virtual Geomeomagnetic Pole features are displayed.</li>
+			 </ul>
+			</li>
+
+			<li>
+			 Colouring improvements including the ability to:
+			 <ul>
+			  <li> preview the effects of each colouring option,</li>
+			  <li> load colour tables from GMT CPT files for user-defined colouring,</li>
+			  <li> change colouring globally or per feature collection.</li>
+			 </ul>
+			</li>
+
+			<li>
+			 New tools to delete, split and clone features.
+			</li>
+
+			<li>
+			 Support for "unsaved changes" to feature collections:
+			 <ul>
+			  <li> highlight feature collections with unsaved changes in red,</li>
+			  <li> new icons in the GPlates main window to indicate unsaved changes and file loading errors,</li>
+			  <li> exiting GPlates brings up a dialog with options to save unsaved changes.</li>
+			 </ul>
+			</li>
+
+			<li>
+			 Export improvements:
+			 <ul>
+			  <li> all exports (including time-sequence and single snapshot exports) have been unified into a single dialog,</li>
+			  <li> <em>new export method:</em> - export the globe view as a single image (or time-sequence of images),</li>
+			  <li> <em>new export method:</em> - export total rotation poles for each plate id relative to the anchor plate or relative to the next plate in the circuit,</li>
+			  <li> filenames of exports (notably time-sequence exports) can have parameters (such as reconstruction time) inserted in them.</li>
+			 </ul>
+			</li>
+
+			<li>
+			 Generate CitcomS 3.1 meshes inside GPlates.
+			</li>
+
+			<li>
+			 Cookie-cutting and plate id assignment has been extended:
+			 <ul>
+			  <li> to regular static polygon features (in addition to topological closed plate boundary features),</li>
+			  <li> to assign time of appearance/disappearance (in addition to plate ids).</li>
+			 </ul>
+			</li>
+
+			<li>
+			 Topological closed plate boundary improvements including:
+			 <ul>
+			  <li> automated reversal of topological line sections,</li>
+			  <li> support for feature ids in Shapefiles,</li>
+			  <li> more flexibility when adding topological line sections (such as adding same section multiple times to a boundary).</li>
+			 </ul>
+			</li>
+
+			<li>
+			 Option to rotate daughter/children plates in the "Modify Reconstruction Pole" tool.
+			</li>
+
+			<li>
+			 Other improvements including:
+			 <ul>
+			  <li> conjugate plate id option in "Create Feature" dialog for the relevant features,</li>
+			  <li> read/write 4-digit plate ids from/to PLATES line format files,</li>
+			  <li> multipoint support in PLATES line format (eg, hotspots),</li>
+			  <li> root of time-dependent raster filenames can vary, for example, "imageA" and "imageB" in "imageA-0.jpg" and "imageB-1.jpg".</li>
+			 </ul>
+			</li>
+
+			</ul>
+
+			<p>
+			GPlates 0.9.9 compiles and runs on Windows Vista, Windows XP, Linux and MacOS
+			X.  Qt 4.3.2 (or above) and CMake are required.  Download GPlates 0.9.9 from the
+			<a href="download.html"
+			 title="Download GPlates and GPlates-compatible data">Download</a> page.
+			</p>
+
+			<p>
+			GPlates-compatible data have been made available.  For more information, see
+			the <a href="download.html#compatible-data"
+			 title="Download GPlates and GPlates-compatible data">Download</a> page.
+			</p>
+			 
+			<div class="blank-space">
+			</div>
+
+
+
+			<h2 class="news">2009-12-17: <a id="gplates098">GPlates 0.9.8 released</a></h2>
+			<hr size="4" />
+			<div class="center">
+			<table class="screenshot-row">
+			<tr>
+			<td class="thumb">
+			<a href="screenshots.html" title="View GPlates screenshots"><img
+			 src="screenshots/0.9.8/screenie-composition-1-small.png" width="450" height="251"
+			 alt="Screenshots from GPlates 0.9.8"
+			 /></a>
+			</td>
+			</tr>
+			</table>
+			</div>
+
+
+			<p>
+			Changes since 0.9.7.1:
+			</p>
+			 
+			<ul>
+
+			<li>
+			The new 0.9.8 release of GPlates can use a loaded topological plate polygon data set to "<strong>cookie-cut</strong>" a feature collection
+			and <strong>assign Plate IDs</strong> to the data based on which plate polygon intersects them. This enables users to load data
+			files that do not have Plate ID or reconstruction time information, and then manipulate that data with the
+			loaded reconstruction model.
+			</li>
+
+			<li>
+			<div>
+				Support for <strong>virtual geomagnetic pole data</strong> is ongoing. As a special preview of GPlates paleo-mag functionality,
+			GPlates is now able to import data from the <strong>IAGA Global Paleomagnetic
+			Database</strong> created by Mike McElhinny and Jo Lock, later maintained by Sergei
+			Pisarevsky. GPlates can then assign Plate IDs from a topological plate polygon data set and
+			then display the reconstructed virtual geomagnetic pole locations on the
+			globe. The database is available online here: <a href="http://www.ngu.no/geodynamics/gpmdb/">http://www.ngu.no/geodynamics/gpmdb/</a>
+			</div>
+			<div>
+			In future releases, full editing capabilities and support for a wide range of data (such as the
+			<a href="http://earthref.org/MAGIC/" title="The Magnetics Information Consortium database at earthref.org">MagIC</a> database) will be forthcoming.
+			</div>
+			</li>
+
+			<li>
+			<strong>Small circle arcs</strong> can be rendered by GPlates to indicate the error bounds of virtual geomagnetic poles.
+			</li>
+
+			<li>
+			Development on new colouring options has started. GPlates' default Plate ID colouring scheme has been tweaked, and a
+			<strong>new colour by Plate ID region</strong> colouring scheme has been created.
+			</li>
+
+			<li>
+			The Modify Reconstruction Pole tool can now <strong>constrain the latitude</strong> of the pole manipulation while
+			interactively making adjustments.
+			</li>
+
+			<li>
+			The topological capabilities of GPlates are undergoing constant improvement and expansion. As a consequence of these
+			ongoing developments, GPlates now links with <a href="http://www.cgal.org/" title="CGAL - Computational Geometry Algorithms Library">CGAL</a>,
+			the Computational Geometry Algorithms Library. This will enable many impressive extensions to the topology tools in the future.
+			</li>
+
+			</ul>
+
+			<p>
+			GPlates 0.9.8 compiles and runs on Windows Vista, Windows XP, Linux and MacOS
+			X.  Qt 4.3.2 (or above) and CMake are required.  Download GPlates 0.9.8 from the
+			<a href="download.html"
+			 title="Download GPlates and GPlates-compatible data">Download</a> page.
+			</p>
+
+			<p>
+			GPlates-compatible data have been made available.  For more information, see
+			the <a href="download.html#compatible-data"
+			 title="Download GPlates and GPlates-compatible data">Download</a> page.
+			</p>
+			 
+			<div class="blank-space">
+			</div>
+
+
+
+
+			<h2 class="news">2009-11-10: <a id="gplates097">GPlates 0.9.7.1 released</a></h2>
+			<hr size="4" />
+			<div class="center">
+			<table class="screenshot-row">
+			<tr>
+			<td class="thumb">
+			<a href="screenshots.html" title="View GPlates screenshots"><img
+			 src="screenshots/0.9.7/screenie-composition-1-small.png" width="494" height="206"
+			 alt="Screenshots from GPlates 0.9.7"
+			 /></a>
+			</td>
+			</tr>
+			</table>
+			</div>
+
+
+			<p>
+			Changes since 0.9.5:
+			</p>
+			 
+			<ul>
+
+			<li>
+			GPlates can now utilise a <strong>full screen mode</strong>, which is available by pressing <strong>F11</strong>.
+			This mode is ideal for presenting data and animations using GPlates.
+			It makes the user interface more minimalistic, granting a greater amount of screen space
+			to the main view. This is especially useful on low-resolution devices such as projectors.
+			</li>
+
+			<li>
+			A new <strong>Measure Distance Tool</strong> has been implemented, allowing precise measurement
+			of the distance between any two chosen points. It also interacts with the digitisation and
+			feature-selecting tools, to enable easy inspection of the distances along polyline geometries
+			and polyline segments.
+			</li>
+
+			<li>
+			Exporting the Total Reconstruction Poles table to CSV can now be done with a choice of delimiters,
+			and more closely adheres to the CSV specifications.
+			</li>
+
+			<li>
+			The previous 0.9.6 release involved the <strong>integration of the plate polygon closure workflow</strong> into
+			the main stable branch of GPlates. With 0.9.7.1, additional work has gone into improving
+			the user experience and making the topology algorithms more intelligent, and enables the <strong>export
+			of geometry sub-segments</strong> involved in topologies.
+			</li>
+
+			</ul>
+
+			<p>
+			GPlates 0.9.7.1 compiles and runs on Windows Vista, Windows XP, Linux and MacOS
+			X.  Qt 4.3.2 (or above) and CMake are required.  Download GPlates 0.9.7.1 from the
+			<a href="download.html"
+			 title="Download GPlates and GPlates-compatible data">Download</a> page.
+			</p>
+
+			<p>
+			GPlates-compatible data have been made available.  For more information, see
+			the <a href="download.html#compatible-data"
+			 title="Download GPlates and GPlates-compatible data">Download</a> page.
+			</p>
+			 
+			<div class="blank-space">
+			</div>
+
+
+
+
+			<h2 class="news">2009-06-17: <a id="gplates095">GPlates 0.9.5 released</a></h2>
+			<hr size="4" />
+
+			<div class="center">
+			<table class="screenshot-row">
+			<tr>
+			<td class="thumb">
+			<a href="screenshots.html" title="View GPlates screenshots"><img
+			 src="screenshots/0.9.5/Robinson-projection-thumb.png" width="150" height="117"
+			 alt="Screenshot thumbnail: the Robinson map projection"
+			 /></a>
+			</td>
+			<td class="thumb">
+			<a href="screenshots.html" title="View GPlates screenshots"><img
+			 src="screenshots/0.9.5/Export-Animation-thumb.png" width="125"
+			 height="150" alt="Screenshot thumbnail: Export Animation dialog"
+			 /></a>
+			</td>
+			<td class="thumb">
+			<a href="screenshots.html" title="View GPlates screenshots"><img
+			 src="screenshots/0.9.5/Reconstruction-menu-thumb.png"
+			 width="150" height="134"
+			 alt="Screenshot thumbnail: Reconstruction menu"
+			 /></a>
+			</td>
+			</tr>
+			</table>
+			</div>
+
+			<p>
+			The massive <strong>GPlates 0.9.5</strong> release in fact consists of two
+			simultaneous software releases:
+			</p>
+
+			<ul>
+			<li>the &ldquo;official&rdquo; release of the GPlates &ldquo;stable
+			mainline&rdquo; (like all previous 0.9.x releases), named
+			<i>GPlates&nbsp;0.9.5</i></li>
+			<li>the &ldquo;testing&rdquo; release of the widely-anticipated extension
+			functionality for continuously-closing plates and lithosphere velocity fields
+			which was developed primarily <a href="contact.html"
+			 title="Contact the developers of GPlates">at CalTech</a>, named
+			<i>GPlates&nbsp;0.9.5&nbsp;+&nbsp;platepolygon-testing</i>.</li>
+			</ul>
+
+			<p>
+			The GPlates 0.9.5 release features the following changes since 0.9.4:
+			</p>
+			 
+			<ul>
+
+			<li>
+			GPlates can now <strong>export feature data</strong> in the
+			<strong>Shapefile</strong> format.  (This complements the existing ability to
+			import Shapefiles <em>into</em> GPlates as feature data.)
+			</li>
+
+			<li>
+			Additionally, GPlates can now <strong>export</strong>
+			&ldquo;<strong>reconstructed geometries</strong>&rdquo; (feature geometries at
+			a particular reconstruction time in the past) in both the
+			<strong>Shapefile</strong> and <strong>GMT</strong> formats.
+			</li>
+
+			<li>
+			GPlates is now able to display the Earth in a variety of <strong>map
+			projections</strong> (in addition to the existing 3-D Orthographic Globe
+			projection):
+			<ul>
+			<li>Rectangular</li>
+			<li>Mercator</li>
+			<li>Mollweide</li>
+			<li>Robinson</li>
+			</ul>
+			As was possible with the existing 3-D Orthographic Globe projection, each of
+			these map-projections can be exported as a <strong>2-D geometry
+			snapshot</strong> (a 2-D vector-graphics image in the SVG format), for later
+			viewing in a web-browser or vector-graphics editor.
+			</li>
+
+			<li>
+			The advanced functionality of the new <strong>Export Animation</strong> dialog
+			enables you to harness the power of the GPlates reconstruction engine to create
+			your own &ldquo;<strong>data animations</strong>&rdquo;, exporting a sequence
+			of frames from an animation and saving it to disk in a sequence of files. 
+			Currently, the Export Animation dialog offers the following export functions:
+			<ul>
+			<li>all reconstructed feature geometries (as GMT .xy files or Shapefiles)</li>
+			<li>a 2-D vector graphics snapshot of the view (as SVG files)</li>
+			<li>all velocity fields (as GPML files)</li>
+			</ul>
+			More export functions will be added in the future.
+			</li>
+
+			<li>
+			The GPlates main window has enjoyed a minor re-design of its layout, to improve
+			the locality of the controls:  Now the reconstruction-time controls are
+			together above the reconstruction view, and the view controls (zoom, choice of
+			map projection, and camera and mouse positions) are together <em>below</em> the
+			reconstruction view.  This re-design allowed us to incorporate an integrated
+			<strong>animation time-slider</strong> in with the time controls.
+			</li>
+
+			<li>
+			GPlates is now released as a <strong>MacOS X binary bundle</strong> in a
+			<code>.dmg</code> file (in addition to the existing Windows binary installer
+			and the Linux/UNIX and Windows source-code packages).  To install GPlates on
+			MacOS X, simply:
+			<ol>
+			<li>double-click on the <code>.dmg</code> file to open the disk image in
+			Finder,</li>
+			<li>drag the GPlates binary into your Applications folder.</li>
+			</ol>
+			</li>
+
+			<li>
+			It's now even easier than before to manipulate geometries interactively.  When
+			you're deciding which vertex you want to move using the <strong>Move
+			Vertex</strong> tool, each vertex will <strong>light up</strong> yellow when
+			you pass the mouse pointer over it, and the coordinates of the vertex also
+			light up yellow in the Task Panel.  You can move vertices of existing feature
+			geometries or vertices of partially-digitised geometries.
+			</li>
+
+			<li>
+			You can now <strong>insert vertices</strong> into the middle of an existing
+			feature geometry, or even <strong>extend</strong> the feature geometry
+			at either end, using the new <strong>Insert Vertex</strong> tool.  If the mouse
+			pointer is over a line-section of the geometry, the line-section will light up,
+			and you can click the mouse button once to insert a new vertex.  If the mouse
+			pointer is past either end of the geometry, you can click once to extend the
+			geometry from that end.
+			</li>
+
+			<li>
+			You can also <strong>delete a vertex</strong> from a geometry using the new
+			<strong>Delete Vertex</strong> tool.  The geometry which will be deleted will
+			<strong>light up red</strong>, and the coordinates of the geometry will also
+			light up red in the Task Panel.
+			</li>
+
+			<li>
+			GPlates offers Better handling of multi-geometries (multiple-geometries per
+			feature): both in the loading and saving of files; and in the feature focus
+			and canvas tools in the user-interface.
+			</li>
+
+			<li>
+			The <strong><a href="docs.html"
+			 title="Read the user-manual and other GPlates documentation">official GPlates
+			user-manual</a></strong> is now online!
+			</li>
+
+			</ul>
+
+			<p>
+			The <i>GPlates&nbsp;0.9.5 + platepolygon-testing</i> release builds upon the
+			simultaneous <i>GPlates 0.9.5</i> &ldquo;stable&rdquo; release, adding the
+			following advanced extension functionality:
+			</p>
+
+			<ul>
+
+			<li>
+			<strong>continuously-closing plates</strong>, utilising the new
+			<strong>topological geometry</strong> functionality for the construction of
+			time-varying topological plate-boundary polygons
+			</li>
+
+			<li>
+			the calculation of <strong>lithosphere velocity fields</strong>, utilising the
+			calculation of plate-motion velocities at CitComS mesh-node locations
+			</li>
+
+			<li>
+			velocity-field <strong>arrow decorations</strong> &mdash; which are
+			zoom-dependent, so that both the size of the arrows and the visual density of
+			the arrows (i.e., the number of arrows drawn on the visible area of the surface
+			of the Earth) scale automatically with zoom
+			</li>
+
+			<li>
+			the new <strong>Topology Sections table</strong> which displays, and enables
+			tabular editing of, topologies
+			</li>
+
+			<li>
+			automated generation and export of velocity fields as GML DataBlock instances
+			</li>
+
+			</ul>
+
+			<p>
+			GPlates 0.9.5 compiles and runs on Windows Vista, Windows XP, Linux and MacOS
+			X.  Qt 4.3.2 (or above) and CMake are required.  Download GPlates 0.9.5 from the
+			<a href="download.html"
+			 title="Download GPlates and GPlates-compatible data">Download</a> page.
+			</p>
+
+			<p>
+			GPlates-compatible data have been made available.  For more information, see
+			the <a href="download.html#compatible-data"
+			 title="Download GPlates and GPlates-compatible data">Download</a> page.
+			</p>
+			 
+			<div class="blank-space">
+			</div>
+
+
+			<h2 class="news">2008-12-23: <a id="gplates094">GPlates 0.9.4 released</a></h2>
+			<hr size="4" />
+
+			<div class="center">
+			<table class="screenshot-row">
+			<tr>
+			<td class="thumb">
+			<a href="screenshots.html" title="View GPlates screenshots"><img
+			 src="screenshots/0.9.4/GPlates-094-thumb.png" width="150" height="141"
+			 alt="Screenshot thumbnail: GPlates on Linux"
+			 /></a>
+			</td>
+			<td class="thumb">
+			<a href="screenshots.html" title="View GPlates screenshots"><img
+			 src="screenshots/0.9.4/on_OS_X-thumb.png" width="150" height="126"
+			 alt="Screenshot thumbnail: GPlates on OS X"
+			 /></a>
+			</td>
+			<td class="thumb">
+			<a href="screenshots.html" title="View GPlates screenshots"><img
+			 src="screenshots/0.9.4/sub-global-raster-1-thumb.png" width="150" height="139"
+			 alt="Screenshot thumbnail: GPlates on Windows"
+			 /></a>
+			</td>
+			</tr>
+			</table>
+			</div>
+
+			<p>
+			Changes since 0.9.3:
+			</p>
+			 
+			<ul>
+
+			<li>
+			The transition to the CMake build system has been completed.  This new build
+			system replaces both the Autoconf/Automake/Libtool-based build system for Linux
+			and the project files for the MS Visual Studio compilers, in addition to
+			enabling compilation on MacOS X.
+			</li>
+
+			<li>
+			GPlates now compiles and runs on the three main desktop operating systems: 
+			Windows, Linux and MacOS X.
+			</li>
+
+			<li>
+			It is now possible to manipulate geometries interactively, dragging vertices
+			using the new Move Vertex tool.  This tool can be used on both existing feature
+			geometries, as well as geometries which are in the process of being digitised.
+			When the tool has been selected, the selected geometry will be drawn in grey,
+			while its vertices will be highlighted and draggable.
+			</li>
+
+			<li>
+			Previously, a raster image would always be shown by GPlates to cover the whole
+			globe, from -180 to +180 degrees longitude and -90 to +90 latitude.  It's now
+			possible to specify a surface extent of any longitude and latitude range for
+			the raster, enabling rasters of a smaller size to be correctly sized and
+			positioned.
+			</li>
+
+			<li>
+			The Manage Feature Collections dialog offers the ability to reload a file from
+			disk with a single click, as well as the ability to enable or disable a feature
+			collection without unloading or reloading the file.
+			</li>
+
+			<li>
+			It is now possible to save feature collections in GMT format, with a choice of
+			header formats: PLATES4 line header; GPGIM feature properties; or a mixture of
+			the two.  It's also possible to export a digitised geometry in GMT format (it
+			was already possible to export a digitised geometry in PLATES4 line-format)
+			during the digitisation process, without needing to create a whole new feature.
+			</li>
+
+			<li>
+			Shapefile attributes may now be edited in the Feature Properties dialog in the
+			same way as native GPGIM property-values.
+			</li>
+
+			<li>
+			The Task Panel can now be resized in the main window, enabling text fields to
+			be widened in order to display longer lines of text.
+			</li>
+
+			<li>
+			All the attributes in a Shapefile may additionally be viewed in a more compact
+			tabular (spreadsheet-like) format, with one attribute per column.
+			</li>
+
+			</ul>
+
+			<p>
+			GPlates 0.9.4 compiles and runs on Windows Vista, Windows XP, Linux and MacOS
+			X.  Qt 4.3 (or above) and CMake are required.  Download GPlates 0.9.4 from the
+			<a href="download.html"
+			 title="Download GPlates and GPlates-compatible data">Downloads</a> page.
+			</p>
+
+			<p>
+			GPlates-compatible data have been made available.  For more information, see the
+			<a href="download.html#compatible-data" title="Download GPlates and GPlates-compatible data">Downloads</a> page.
+			</p>
+			 
+			<div class="blank-space">
+			</div>
+
+
+			<h2 class="news">2008-10-20: <a id="gplates0931">GPlates 0.9.3.1 released</a></h2>
+			<hr size="4" />
+
+			<div class="center">
+			<table class="screenshot-row">
+			<tr>
+			<td class="thumb">
+			<a href="screenshots.html" title="View GPlates screenshots"><img
+			 src="screenshots/0.9.3/GPlates-2-thumb.png" width="150" height="139"
+			 alt="Screenshot thumbnail: main window with ocean-floor age texture loaded"
+			 /></a>
+			</td>
+			<td class="thumb">
+			<a href="screenshots.html" title="View GPlates screenshots"><img
+			 src="screenshots/0.9.3/Apply_Reconstruction_Pole_Adjustment-thumb.png" width="148" height="150"
+			 alt="Screenshot thumbnail: modification of a reconstruction pole"
+			 /></a>
+			</td>
+			<td class="thumb">
+			<a href="screenshots.html" title="View GPlates screenshots"><img
+			 src="screenshots/0.9.3/Digitise-3-thumb.png" width="150" height="139"
+			 alt="Screenshot thumbnail: digitising a feature geometry"
+			 /></a>
+			</td>
+			</tr>
+			</table>
+			</div>
+
+			<p>
+			Changes since 0.9.2:
+			</p>
+			 
+			<ul>
+
+			<li>
+			It is now possible to digitise new feature geometries using the point, polyline
+			and polygon digitisation tools.  After a feature geometry has been digitised,
+			an easy-to-use wizard is provided for the creation of a feature, enabling the
+			user to specify the basic properties of the feature such as plate ID, time of
+			existence and name, as well as the feature collection into which the new
+			feature should be placed.
+			</li>
+
+			<li>
+			The new Modify Reconstruction Pole tool enables the interactive modification of
+			the Total Reconstruction Poles which define a reconstruction.  The user may
+			drag the geometries of a plate around the globe to modify the Total
+			Reconstruction Pole which reconstructs that plate.  When the user is happy with
+			the new position of the plate, he or she may click the &ldquo;Apply&rdquo;
+			button to cause a dialog box to appear which lists the calculated finite
+			rotations for review; if the user then clicks the &ldquo;OK&rdquo; button, a
+			new Total Reconstruction Pole will be inserted automatically into the loaded
+			rotation file at the appropriate reconstruction time.
+			</li>
+
+			<li>
+			When a feature geometry is focused or a new feature geometry is being
+			digitised, the geometry will be highlighted in white.  When a geometry is
+			dragged around the globe, its position will be updated in real time in grey.
+			</li>
+
+			<li>
+			The Task Panel is a new user interface element in the main window which
+			provides status information about whichever feature-interaction tool is
+			currently active.  Depending upon which tool is active, this information
+			consists of: a summary of the feature (when the Choose Feature tool is active);
+			a listing of the coordinates which have been digitised so far (when one of the
+			digitisation tools is active); or the adjustment by which the Total
+			Reconstruction Pole has been modified (when the Modify Reconstruction Pole tool
+			is active).
+			</li>
+
+			<li>
+			It is now possible to choose between different feature-colouring schemes (by
+			feature-type, by feature age or by a single user-specified colour), in addition
+			to the existing colouring by plate ID.
+			</li>
+
+			<li>
+			The long-awaited GPML reader is now operational!  This reader is able to read
+			all reconstructable feature-types and reconstruction feature-types (Total
+			Reconstruction Poles and Absolute Reference Frames) defined in the GPGIM 1.6
+			specification.  <a href="gpml.html" title="Learn about GPML">GPML</a>, the
+			GPlates Markup Language, is the GML-based &ldquo;native&rdquo; file format of
+			GPlates.
+			</li>
+
+			<li>
+			The XML-conformance of GPML input, output and in-memory storage has been
+			improved, to ensure GPlates handles XML namespaces correctly.
+			</li>
+
+			<li>
+			GPML may be compressed or uncompressed as it is being written to file or read
+			from disk, using the freely-available free software program GZip.  GZipped GPML
+			files can be up to 30 times smaller than uncompressed files!
+			</li>
+
+			<li>
+			It is now possible to encode a variety of Shapefile attribute-types, with
+			arbitrary attribute-names, in GPML.
+			</li>
+
+			<li>
+			The internal geometry types, reconstruction mechanism and display graphics have
+			been overhauled to enable GPlates to handle and display polygons and
+			multi-geometries, as well as store duplicate vertices in polylines and
+			polygons.
+			</li>
+
+			<li>
+			Geometric property-values may now be edited in the Feature Properties dialog in
+			the same easy-to-use fashion as non-geometric property-values.
+			</li>
+
+			</ul>
+
+			<p>
+			The GPlates 0.9.3.1 release is a minor bugfix to GPlates 0.9.3, to fix a bug in
+			the mapping of Shapefile attributes which was noticed after GPlates 0.9.3 was
+			uploaded, but before any release announcement had been made.  There are no
+			other changes from 0.9.3.
+			</p>
+			 
+			<p>
+			Download GPlates 0.9.3.1 from the <a href="download.html"
+			 title="Download GPlates and GPlates-compatible data">Downloads</a> page.
+			</p>
+
+			<p>
+			GPlates 0.9.3.1 compiles and runs on Linux, Windows XP and Windows Vista. 
+			(Support for MacOS X is currently in testing &mdash; <a href="contact.html"
+			 title="Contact Us">contact us</a> if you'd like to participate in the testing
+			process!)  Qt 4.3 or above is required.
+			</p>
+			 
+			<p>
+			A GPlates-compatible global coastline file and a rotation file may be
+			downloaded from the <a href="http://www.earthbyte.org/resources.html"
+			 title="EarthByte: Resources">EarthByte Project Resources</a> page.  For more
+			information, see the <a href="download.html"
+			 title="Download GPlates and GPlates-compatible data">Downloads</a> page.
+			</p>
+			 
+			<p>
+			A GPlates-compatible sequence of time-dependent global raster images (JPEG
+			images, generated from GMT grid files of dynamic topography created by Bernhard
+			Steinberger at the Norwegian Geological Survey) may be downloaded from the <a
+			 href="ftp://ftp.ngu.no/pub/GPlates">Norwegian Geological Survey FTP site</a>.
+			For more information, see the <a href="download.html"
+			 title="Download GPlates and GPlates-compatible data">Downloads</a> page.
+			</p>
+			 
+			<div class="blank-space">
+			</div>
+
+
+			<h2 class="news">2008-05-23: <a id="gplates092">GPlates 0.9.2 released</a></h2>
+			<hr size="4" />
+
+			<div class="center">
+			<table class="screenshot-row">
+			<tr>
+			<td class="thumb">
+			<a href="screenshots.html" title="View GPlates screenshots"><img
+			 src="screenshots/0.9.2/raster-australia-thumb.png" width="129" height="150"
+			 alt="Screenshot thumbnail: EarthByte coastlines and a NASA topo-bathy image"
+			 /></a>
+			</td>
+			<td class="thumb">
+			<a href="screenshots.html" title="View GPlates screenshots"><img
+			 src="screenshots/0.9.2/total-reconstruction-poles-tree-thumb.png"
+			 width="150" height="98"
+			 alt="Screenshot thumbnail: Total Reconstruction Poles dialog, Reconstruction Tree tab"
+			 /></a>
+			</td>
+			<td class="thumb">
+			<a href="screenshots.html" title="View GPlates screenshots"><img
+			 src="screenshots/0.9.2/edit-feature-properties-thumb.png" width="128"
+			 height="150"
+			 alt="Screenshot thumbnail: Edit Feature Properties dialog"
+			 /></a>
+			</td>
+			</tr>
+			</table>
+			</div>
+
+			<p>
+			Changes since 0.9.1:
+			</p>
+			 
+			<ul>
+
+			<li>
+			In addition to reconstructable features with point- and polyline-geometries,
+			GPlates 0.9.2 is able to display raster images on the globe. These images can
+			represent any kind of imagery or gridded data which covers the whole globe
+			(with the image spanning the longitude range of -180 degrees to +180 degrees,
+			and the latitude range of -90 to +90). GPlates is able to read raster images in
+			the widely-used JPEG image format; once a raster is loaded, it is displayed as
+			an OpenGL texture, enabling GPlates to remain responsive when the globe is
+			rotated or the zoom is changed. (Currently, raster images are not reconstructed
+			by GPlates.)
+			</li>
+			 
+			<li>
+			GPlates is able to display time-dependent global raster images. The user can
+			instruct GPlates to load a sequence of JPEG image files contained in a folder
+			(each image in the sequence corresponding to a particular instant in geological
+			time) and GPlates will display the appropriate image on the globe for the
+			current reconstruction time. As the user changes the reconstruction time, the
+			raster image on the globe will update accordingly.
+			</li>
+			 
+			<li>
+			The Query Feature Properties dialog has been extended to enable the editing of
+			GPGIM feature properties in an easy-to-use fashion (using a variety of
+			custom-designed user-interface widgets for the various property types). Thus,
+			GPlates now makes the transition from pure visualisation to editing as well. In
+			addition, the reconstructed geometries of a feature can be displayed in
+			parallel with the present-day geometries that are stored in data files.
+			</li>
+			 
+			<li>
+			Enhanced synchronisation between the user-interface elements which display the
+			properties of GPGIM features means that when a property is changed, the program
+			will react instantly to update the presentation of the feature &mdash; whether
+			the changed property was a text field (which will be updated in the "Clicked"
+			feature table), the time-period of existence of the feature (which may cause
+			the feature to appear or disappear at the current reconstruction time) or the
+			reconstruction plate ID (which may cause the feature to change colour and move
+			to a different reconstructed position).
+			</li>
+			 
+			<li>
+			The new Total Reconstruction Poles dialog provides a variety of informative
+			representations of the total reconstruction poles (finite rotations) for the
+			current reconstruction time: tables of the relative and equivalent finite
+			rotations for each plate ID in the hierarchy; a tree-like representation of the
+			hierarchy of relative rotations; and the circuit between any plate and the
+			user-specified stationary plate. This dialog also enables the export of the
+			tables of finite rotations in CSV (comma-separated value) format.
+			</li>
+			 
+			<li>
+			The ability to map attributes in a Shapefile to GPlates Model properties on a
+			per-Shapefile basis enables local Shapefile attribute-naming conventions to be
+			integrated seamlessly into GPlates usage. The user-specified mappings will be
+			saved to disk automatically, enabling GPlates to remember mappings between
+			sessions. The attributes can be mapped to different properties at any time.
+			</li>
+			</ul>
+			 
+			<p>
+			Download GPlates 0.9.2 from the <a href="download.html">Downloads</a> page.
+			</p>
+
+			<p>
+			GPlates 0.9.2 compiles and runs on Linux and Windows XP.  Qt 4.3 or above is
+			required.
+			</p>
+			 
+			<p>
+			A GPlates-compatible global coastline file and a rotation file may be
+			downloaded from the <a href="http://www.earthbyte.org/resources.html"
+			 title="EarthByte: Resources">EarthByte Project Resources</a> page.  For more
+			information, see the <a href="download.html">Downloads</a> page.
+			</p>
+			 
+			<p>
+			A GPlates-compatible sequence of time-dependent global raster images (JPEG
+			images, generated from GMT grid files of dynamic topography created by Bernhard
+			Steinberger at the Norwegian Geological Survey) may be downloaded from the <a
+			 href="ftp://ftp.ngu.no/pub/GPlates">Norwegian Geological Survey FTP site</a>.
+			For more information, see the <a href="download.html">Downloads</a> page.
+			</p>
+			 
+			<p>
+			An animated screenshot of the new time-dependent raster image functionality in
+			action (using EarthByte data and Bernhard Steinberger's dynamic topography
+			raster images) may be found on the <a href="screenshots.html">Screenshots</a>
+			page.
+			</p>
+		</div>
+	</body>
+</html>

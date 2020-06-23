@@ -1,0 +1,338 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Plate circuits to anchored plate &mdash; pygplates 2.1.0.18 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.1.0.18',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pygplates 2.1.0.18 documentation" href="../index.html" />
+    <link rel="up" title="Sample code" href="../pygplates_sample_code.html" />
+    <link rel="next" title="Modify a reconstruction pole" href="pygplates_modify_reconstruction_pole.html" />
+    <link rel="prev" title="Hierarchy of plate rotations" href="pygplates_plate_rotation_hierarchy.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="pygplates_modify_reconstruction_pole.html" title="Modify a reconstruction pole"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pygplates_plate_rotation_hierarchy.html" title="Hierarchy of plate rotations"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">pygplates 2.1.0.18 documentation</a> &raquo;</li>
+          <li><a href="../pygplates_sample_code.html" accesskey="U">Sample code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="plate-circuits-to-anchored-plate">
+<span id="pygplates-plate-circuits-to-anchored-plate"></span><h1>Plate circuits to anchored plate<a class="headerlink" href="#plate-circuits-to-anchored-plate" title="Permalink to this headline">¶</a></h1>
+<p>This example finds and prints the plate circuit paths from all plates in the
+<a class="reference internal" href="../pygplates_foundations.html#pygplates-foundations-plate-reconstruction-hierarchy"><em>plate rotation hierarchy</em></a>
+to the anchored plate (for a particular reconstruction time).</p>
+<p>The output of this example is similar to the output of the <tt class="docutils literal"><span class="pre">Total</span> <span class="pre">Reconstruction</span> <span class="pre">Poles</span></tt> dialog
+(under the <tt class="docutils literal"><span class="pre">Plate</span> <span class="pre">Circuits</span> <span class="pre">to</span> <span class="pre">Anchored</span> <span class="pre">Plate</span></tt> tab) in <a class="reference external" href="http://www.gplates.org">GPlates</a>.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="pygplates_plate_rotation_hierarchy.html#pygplates-plate-rotation-hierarchy"><em>Hierarchy of plate rotations</em></a></p>
+</div>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#sample-code" id="id1">Sample code</a></li>
+<li><a class="reference internal" href="#details" id="id2">Details</a></li>
+<li><a class="reference internal" href="#output" id="id3">Output</a></li>
+</ul>
+</div>
+<div class="section" id="sample-code">
+<h2><a class="toc-backref" href="#id1">Sample code</a><a class="headerlink" href="#sample-code" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pygplates</span>
+
+
+<span class="c1"># Load one or more rotation files into a rotation model.</span>
+<span class="n">rotation_model</span> <span class="o">=</span> <span class="n">pygplates</span><span class="o">.</span><span class="n">RotationModel</span><span class="p">(</span><span class="s1">&#39;rotations.rot&#39;</span><span class="p">)</span>
+
+<span class="c1"># The reconstruction time (Ma) of the plate hierarchy we&#39;re interested in.</span>
+<span class="n">reconstruction_time</span> <span class="o">=</span> <span class="mi">60</span>
+
+<span class="c1"># Get the reconstruction tree.</span>
+<span class="n">reconstruction_tree</span> <span class="o">=</span> <span class="n">rotation_model</span><span class="o">.</span><span class="n">get_reconstruction_tree</span><span class="p">(</span><span class="n">reconstruction_time</span><span class="p">)</span>
+
+<span class="c1"># Get all the edges of the reconstruction tree.</span>
+<span class="n">all_edges</span> <span class="o">=</span> <span class="n">reconstruction_tree</span><span class="o">.</span><span class="n">get_edges</span><span class="p">()</span>
+
+<span class="c1"># Iterate over all the edges.</span>
+<span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">all_edges</span><span class="p">:</span>
+
+    <span class="k">print</span> <span class="s1">&#39;Plate ID: </span><span class="si">%d</span><span class="s1">:&#39;</span> <span class="o">%</span> <span class="n">edge</span><span class="o">.</span><span class="n">get_moving_plate_id</span><span class="p">()</span>
+
+    <span class="c1"># Traverse the plate circuit from the current plate to the anchored plate.</span>
+    <span class="n">edge_in_circuit</span> <span class="o">=</span> <span class="n">edge</span>
+    <span class="k">while</span> <span class="n">edge_in_circuit</span><span class="p">:</span>
+
+        <span class="n">relative_total_rotation</span> <span class="o">=</span> <span class="n">edge_in_circuit</span><span class="o">.</span><span class="n">get_relative_total_rotation</span><span class="p">()</span>
+        <span class="n">relative_pole_latitude</span><span class="p">,</span> <span class="n">relative_pole_longitude</span><span class="p">,</span> <span class="n">relative_angle_degrees</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">relative_total_rotation</span><span class="o">.</span><span class="n">get_lat_lon_euler_pole_and_angle_degrees</span><span class="p">())</span>
+
+        <span class="n">equivalent_total_rotation</span> <span class="o">=</span> <span class="n">edge_in_circuit</span><span class="o">.</span><span class="n">get_equivalent_total_rotation</span><span class="p">()</span>
+        <span class="n">equivalent_pole_latitude</span><span class="p">,</span> <span class="n">equivalent_pole_longitude</span><span class="p">,</span> <span class="n">equivalent_angle_degrees</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">equivalent_total_rotation</span><span class="o">.</span><span class="n">get_lat_lon_euler_pole_and_angle_degrees</span><span class="p">())</span>
+
+        <span class="k">print</span> <span class="s1">&#39;  Plate ID: </span><span class="si">%d</span><span class="s1">, Fixed Plate ID: </span><span class="si">%d</span><span class="s1">:&#39;</span> <span class="o">%</span> <span class="p">(</span>
+            <span class="n">edge_in_circuit</span><span class="o">.</span><span class="n">get_moving_plate_id</span><span class="p">(),</span> <span class="n">edge_in_circuit</span><span class="o">.</span><span class="n">get_fixed_plate_id</span><span class="p">())</span>
+
+        <span class="k">print</span> <span class="s1">&#39;    Rotation rel. fixed (parent) plate: lat: </span><span class="si">%f</span><span class="s1">, lon: </span><span class="si">%f</span><span class="s1">:, angle:</span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span>
+            <span class="n">relative_pole_latitude</span><span class="p">,</span> <span class="n">relative_pole_longitude</span><span class="p">,</span> <span class="n">relative_angle_degrees</span><span class="p">)</span>
+
+        <span class="k">print</span> <span class="s1">&#39;    Equivalent rotation rel. anchored plate: lat: </span><span class="si">%f</span><span class="s1">, lon: </span><span class="si">%f</span><span class="s1">:, angle:</span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span>
+            <span class="n">equivalent_pole_latitude</span><span class="p">,</span> <span class="n">equivalent_pole_longitude</span><span class="p">,</span> <span class="n">equivalent_angle_degrees</span><span class="p">)</span>
+
+        <span class="c1"># Blank line.</span>
+        <span class="k">print</span>
+
+        <span class="c1"># Follow the plate circuit one step closer to the anchored plate.</span>
+        <span class="n">edge_in_circuit</span> <span class="o">=</span> <span class="n">edge_in_circuit</span><span class="o">.</span><span class="n">get_parent_edge</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="details">
+<h2><a class="toc-backref" href="#id2">Details</a><a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
+<p>The rotations are loaded from a rotation file into a <a class="reference internal" href="../generated/pygplates.RotationModel.html#pygplates.RotationModel" title="pygplates.RotationModel"><tt class="xref py py-class docutils literal"><span class="pre">pygplates.RotationModel</span></tt></a>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">rotation_model</span> <span class="o">=</span> <span class="n">pygplates</span><span class="o">.</span><span class="n">RotationModel</span><span class="p">(</span><span class="s1">&#39;rotations.rot&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">The <a class="reference internal" href="../pygplates_foundations.html#pygplates-foundations-plate-reconstruction-hierarchy"><em>plate rotation hierarchy</em></a>
+is encapsulated in a <a class="reference internal" href="../generated/pygplates.ReconstructionTree.html#pygplates.ReconstructionTree" title="pygplates.ReconstructionTree"><tt class="xref py py-class docutils literal"><span class="pre">reconstruction</span> <span class="pre">tree</span></tt></a> which we obtain
+from the <a class="reference internal" href="../generated/pygplates.RotationModel.html#pygplates.RotationModel" title="pygplates.RotationModel"><tt class="xref py py-class docutils literal"><span class="pre">rotation</span> <span class="pre">model</span></tt></a> using
+<a class="reference internal" href="../generated/pygplates.RotationModel.html#pygplates.RotationModel.get_reconstruction_tree" title="pygplates.RotationModel.get_reconstruction_tree"><tt class="xref py py-meth docutils literal"><span class="pre">pygplates.RotationModel.get_reconstruction_tree()</span></tt></a> and the desired reconstruction time.</div>
+<div class="line">The hierarchy can change from one reconstruction time to the next depending on how the rotations
+are arranged in the rotation file(s).</div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">reconstruction_tree</span> <span class="o">=</span> <span class="n">rotation_model</span><span class="o">.</span><span class="n">get_reconstruction_tree</span><span class="p">(</span><span class="n">reconstruction_time</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">An edge in a <a class="reference internal" href="../pygplates_foundations.html#pygplates-foundations-plate-reconstruction-hierarchy"><em>plate rotation hierarchy</em></a>
+represents the rotation of a moving plate relative to a fixed plate. These edges are arranged in
+a tree-like structure (hierarchy) rooted at the anchor plate (usually plate ID zero).</div>
+<div class="line">We get all the edges in the reconstruction tree because all the plates in the reconstruction tree
+(except the anchor plate) are in fact the moving plates of all the edges.</div>
+<div class="line">All the edges are obtained using <a class="reference internal" href="../generated/pygplates.ReconstructionTree.html#pygplates.ReconstructionTree.get_edges" title="pygplates.ReconstructionTree.get_edges"><tt class="xref py py-meth docutils literal"><span class="pre">pygplates.ReconstructionTree.get_edges()</span></tt></a>.</div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">all_edges</span> <span class="o">=</span> <span class="n">reconstruction_tree</span><span class="o">.</span><span class="n">get_edges</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">all_edges</span><span class="p">:</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>Print the (moving) plate ID corresponding to the current edge before we print its plate circuit to the anchored plate.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">print</span> <span class="s1">&#39;Plate ID: </span><span class="si">%d</span><span class="s1">:&#39;</span> <span class="o">%</span> <span class="n">edge</span><span class="o">.</span><span class="n">get_moving_plate_id</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Iterate over the edges in the plate circuit path between the current <tt class="docutils literal"><span class="pre">edge</span></tt> and the anchored plate.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">edge_in_circuit</span> <span class="o">=</span> <span class="n">edge</span>
+<span class="k">while</span> <span class="n">edge_in_circuit</span><span class="p">:</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Get the <a class="reference internal" href="../pygplates_foundations.html#pygplates-foundations-relative-total-rotation"><em>relative</em></a> and
+<a class="reference internal" href="../pygplates_foundations.html#pygplates-foundations-equivalent-total-rotation"><em>equivalent</em></a> total rotations of the current edge
+in the plate circuit path using <a class="reference internal" href="../generated/pygplates.ReconstructionTreeEdge.html#pygplates.ReconstructionTreeEdge.get_relative_total_rotation" title="pygplates.ReconstructionTreeEdge.get_relative_total_rotation"><tt class="xref py py-meth docutils literal"><span class="pre">pygplates.ReconstructionTreeEdge.get_relative_total_rotation()</span></tt></a>
+and <a class="reference internal" href="../generated/pygplates.ReconstructionTreeEdge.html#pygplates.ReconstructionTreeEdge.get_equivalent_total_rotation" title="pygplates.ReconstructionTreeEdge.get_equivalent_total_rotation"><tt class="xref py py-meth docutils literal"><span class="pre">pygplates.ReconstructionTreeEdge.get_equivalent_total_rotation()</span></tt></a>.</div>
+<div class="line">The relative rotation is the total rotation of the edge&#8217;s moving plate relative to its fixed plate.</div>
+<div class="line">The equivalent total rotation is the total rotation of the edge&#8217;s moving plate relative to anchored plate.</div>
+<div class="line">A <em>total</em> rotation means a rotation at the reconstruction time relative to <em>present day</em> (0Ma).</div>
+<div class="line">The pole and angle of each rotation is obtained using
+<a class="reference internal" href="../generated/pygplates.FiniteRotation.html#pygplates.FiniteRotation.get_lat_lon_euler_pole_and_angle_degrees" title="pygplates.FiniteRotation.get_lat_lon_euler_pole_and_angle_degrees"><tt class="xref py py-meth docutils literal"><span class="pre">pygplates.FiniteRotation.get_lat_lon_euler_pole_and_angle_degrees()</span></tt></a>.</div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">relative_total_rotation</span> <span class="o">=</span> <span class="n">edge_in_circuit</span><span class="o">.</span><span class="n">get_relative_total_rotation</span><span class="p">()</span>
+<span class="n">relative_pole_latitude</span><span class="p">,</span> <span class="n">relative_pole_longitude</span><span class="p">,</span> <span class="n">relative_angle_degrees</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">relative_total_rotation</span><span class="o">.</span><span class="n">get_lat_lon_euler_pole_and_angle_degrees</span><span class="p">())</span>
+
+<span class="n">equivalent_total_rotation</span> <span class="o">=</span> <span class="n">edge_in_circuit</span><span class="o">.</span><span class="n">get_equivalent_total_rotation</span><span class="p">()</span>
+<span class="n">equivalent_pole_latitude</span><span class="p">,</span> <span class="n">equivalent_pole_longitude</span><span class="p">,</span> <span class="n">equivalent_angle_degrees</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">equivalent_total_rotation</span><span class="o">.</span><span class="n">get_lat_lon_euler_pole_and_angle_degrees</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Print the relative and equivalent total rotations of the moving plate of the current edge in the plate circuit path.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">print</span> <span class="s1">&#39;  Plate ID: </span><span class="si">%d</span><span class="s1">, Fixed Plate ID: </span><span class="si">%d</span><span class="s1">:&#39;</span> <span class="o">%</span> <span class="p">(</span>
+    <span class="n">edge_in_circuit</span><span class="o">.</span><span class="n">get_moving_plate_id</span><span class="p">(),</span> <span class="n">edge_in_circuit</span><span class="o">.</span><span class="n">get_fixed_plate_id</span><span class="p">())</span>
+
+<span class="k">print</span> <span class="s1">&#39;    Rotation rel. fixed (parent) plate: lat: </span><span class="si">%f</span><span class="s1">, lon: </span><span class="si">%f</span><span class="s1">:, angle:</span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span>
+    <span class="n">relative_pole_latitude</span><span class="p">,</span> <span class="n">relative_pole_longitude</span><span class="p">,</span> <span class="n">relative_angle_degrees</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="s1">&#39;    Equivalent rotation rel. anchored plate: lat: </span><span class="si">%f</span><span class="s1">, lon: </span><span class="si">%f</span><span class="s1">:, angle:</span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span>
+    <span class="n">equivalent_pole_latitude</span><span class="p">,</span> <span class="n">equivalent_pole_longitude</span><span class="p">,</span> <span class="n">equivalent_angle_degrees</span><span class="p">)</span>
+
+<span class="k">print</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Follow the plate circuit one step closer to the anchored plate using
+<a class="reference internal" href="../generated/pygplates.ReconstructionTreeEdge.html#pygplates.ReconstructionTreeEdge.get_parent_edge" title="pygplates.ReconstructionTreeEdge.get_parent_edge"><tt class="xref py py-meth docutils literal"><span class="pre">pygplates.ReconstructionTreeEdge.get_parent_edge()</span></tt></a>.</div>
+<div class="line">The <tt class="docutils literal"><span class="pre">while</span></tt> loop stops when an edge has no parent edge. This means we&#8217;ve reached an anchored plate edge
+(an edge whose fixed plate is the anchored plate).</div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">edge_in_circuit</span> <span class="o">=</span> <span class="n">edge_in_circuit</span><span class="o">.</span><span class="n">get_parent_edge</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2><a class="toc-backref" href="#id3">Output</a><a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span>Plate ID: 1:
+  Plate ID: 1, Fixed Plate ID: 0:
+    Rotation rel. fixed (parent) plate: lat: 90.000000, lon: 0.000000:, angle:0.000000
+    Equivalent rotation rel. anchored plate: lat: 90.000000, lon: 0.000000:, angle:0.000000
+
+Plate ID: 2:
+  Plate ID: 2, Fixed Plate ID: 901:
+    Rotation rel. fixed (parent) plate: lat: 57.429209, lon: -72.529235:, angle:-38.063290
+    Equivalent rotation rel. anchored plate: lat: -46.815419, lon: -78.838045:, angle:-9.303734
+
+  Plate ID: 901, Fixed Plate ID: 804:
+    Rotation rel. fixed (parent) plate: lat: 71.312099, lon: -54.488341:, angle:44.370707
+    Equivalent rotation rel. anchored plate: lat: 68.669125, lon: -58.413957:, angle:41.330547
+
+  Plate ID: 804, Fixed Plate ID: 802:
+    Rotation rel. fixed (parent) plate: lat: -18.150000, lon: -17.850000:, angle:2.129032
+    Equivalent rotation rel. anchored plate: lat: -74.349502, lon: -68.326678:, angle:3.731361
+
+  Plate ID: 802, Fixed Plate ID: 701:
+    Rotation rel. fixed (parent) plate: lat: 10.617614, lon: -47.371326:, angle:10.778033
+    Equivalent rotation rel. anchored plate: lat: 62.066424, lon: 9.485588:, angle:-3.331182
+
+  Plate ID: 701, Fixed Plate ID: 1:
+    Rotation rel. fixed (parent) plate: lat: 23.730000, lon: -42.140000:, angle:-12.530000
+    Equivalent rotation rel. anchored plate: lat: 23.730000, lon: -42.140000:, angle:-12.530000
+
+  Plate ID: 1, Fixed Plate ID: 0:
+    Rotation rel. fixed (parent) plate: lat: 90.000000, lon: 0.000000:, angle:0.000000
+    Equivalent rotation rel. anchored plate: lat: 90.000000, lon: 0.000000:, angle:0.000000
+
+Plate ID: 3:
+  Plate ID: 3, Fixed Plate ID: 0:
+    Rotation rel. fixed (parent) plate: lat: 90.000000, lon: 0.000000:, angle:0.000000
+    Equivalent rotation rel. anchored plate: lat: 90.000000, lon: 0.000000:, angle:0.000000
+
+Plate ID: 101:
+  Plate ID: 101, Fixed Plate ID: 714:
+    Rotation rel. fixed (parent) plate: lat: 81.307187, lon: 3.720675:, angle:19.151434
+    Equivalent rotation rel. anchored plate: lat: -53.663182, lon: -64.839189:, angle:-16.897027
+
+  Plate ID: 714, Fixed Plate ID: 701:
+    Rotation rel. fixed (parent) plate: lat: 90.000000, lon: 0.000000:, angle:0.000000
+    Equivalent rotation rel. anchored plate: lat: 23.730000, lon: -42.140000:, angle:-12.530000
+
+  Plate ID: 701, Fixed Plate ID: 1:
+    Rotation rel. fixed (parent) plate: lat: 23.730000, lon: -42.140000:, angle:-12.530000
+    Equivalent rotation rel. anchored plate: lat: 23.730000, lon: -42.140000:, angle:-12.530000
+
+  Plate ID: 1, Fixed Plate ID: 0:
+    Rotation rel. fixed (parent) plate: lat: 90.000000, lon: 0.000000:, angle:0.000000
+    Equivalent rotation rel. anchored plate: lat: 90.000000, lon: 0.000000:, angle:0.000000
+
+...
+</pre></div>
+</div>
+<p>...where <tt class="docutils literal"><span class="pre">lat:</span> <span class="pre">90.000000,</span> <span class="pre">lon:</span> <span class="pre">0.000000:,</span> <span class="pre">angle:0.000000</span></tt> is the default representation that
+<a class="reference internal" href="../generated/pygplates.FiniteRotation.html#pygplates.FiniteRotation.get_lat_lon_euler_pole_and_angle_degrees" title="pygplates.FiniteRotation.get_lat_lon_euler_pole_and_angle_degrees"><tt class="xref py py-meth docutils literal"><span class="pre">pygplates.FiniteRotation.get_lat_lon_euler_pole_and_angle_degrees()</span></tt></a> returns for an
+<a class="reference internal" href="../generated/pygplates.FiniteRotation.html#pygplates.FiniteRotation.represents_identity_rotation" title="pygplates.FiniteRotation.represents_identity_rotation"><tt class="xref py py-meth docutils literal"><span class="pre">identity</span> <span class="pre">rotation</span></tt></a> (zero rotation angle).</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Plate circuits to anchored plate</a><ul>
+<li><a class="reference internal" href="#sample-code">Sample code</a></li>
+<li><a class="reference internal" href="#details">Details</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pygplates_plate_rotation_hierarchy.html"
+                        title="previous chapter">Hierarchy of plate rotations</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pygplates_modify_reconstruction_pole.html"
+                        title="next chapter">Modify a reconstruction pole</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/sample-code/pygplates_plate_circuits_to_anchored_plate.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="pygplates_modify_reconstruction_pole.html" title="Modify a reconstruction pole"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pygplates_plate_rotation_hierarchy.html" title="Hierarchy of plate rotations"
+             >previous</a> |</li>
+        <li><a href="../index.html">pygplates 2.1.0.18 documentation</a> &raquo;</li>
+          <li><a href="../pygplates_sample_code.html" >Sample code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright (C) 2003-2016 The University of Sydney, Australia
+(C) 2004-2016 California Institute of Technology
+(C) 2007-2016 The Geological Survey of Norway
+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

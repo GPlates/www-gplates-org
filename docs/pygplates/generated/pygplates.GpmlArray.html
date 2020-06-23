@@ -1,0 +1,450 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pygplates.GpmlArray &mdash; pygplates 2.1.0.18 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.1.0.18',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pygplates 2.1.0.18 documentation" href="../index.html" />
+    <link rel="up" title="Reference" href="../pygplates_reference.html" />
+    <link rel="next" title="pygplates.GpmlFiniteRotation" href="pygplates.GpmlFiniteRotation.html" />
+    <link rel="prev" title="pygplates.GmlTimePeriod" href="pygplates.GmlTimePeriod.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="pygplates.GpmlFiniteRotation.html" title="pygplates.GpmlFiniteRotation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pygplates.GmlTimePeriod.html" title="pygplates.GmlTimePeriod"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">pygplates 2.1.0.18 documentation</a> &raquo;</li>
+          <li><a href="../pygplates_reference.html" accesskey="U">Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="pygplates-gpmlarray">
+<h1>pygplates.GpmlArray<a class="headerlink" href="#pygplates-gpmlarray" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pygplates.GpmlArray">
+<em class="property">class </em><tt class="descclassname">pygplates.</tt><tt class="descname">GpmlArray</tt><big>(</big><em>elements</em><big>)</big><a class="headerlink" href="#pygplates.GpmlArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pygplates.PropertyValue.html#pygplates.PropertyValue" title="pygplates.PropertyValue"><tt class="xref py py-class docutils literal"><span class="pre">pygplates.PropertyValue</span></tt></a></p>
+<p>A sequence of property value elements.</p>
+<p>GpmlArray behaves like a regular python <tt class="docutils literal"><span class="pre">list</span></tt> in that the following operations are supported:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Operation</th>
+<th class="head">Result</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">s</span></tt></td>
+<td>iterates over the elements <em>x</em> of <em>s</em></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">x</span> <span class="pre">in</span> <span class="pre">s</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">True</span></tt> if <em>x</em> is an item of <em>s</em></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">x</span> <span class="pre">not</span> <span class="pre">in</span> <span class="pre">s</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">False</span></tt> if <em>x</em> is an item of <em>s</em></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">s</span> <span class="pre">+=</span> <span class="pre">t</span></tt></td>
+<td>the <em>GpmlArray</em> instance <em>s</em> is extended by sequence <em>t</em></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">s</span> <span class="pre">+</span> <span class="pre">t</span></tt></td>
+<td>the concatenation of sequences <em>s</em> and <em>t</em> where either, or both, is a <em>GpmlArray</em></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">s[i]</span></tt></td>
+<td>the item of <em>s</em> at index <em>i</em></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">s[i]</span> <span class="pre">=</span> <span class="pre">x</span></tt></td>
+<td>replace the item of <em>s</em> at index <em>i</em> with <em>x</em></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">del</span> <span class="pre">s[i]</span></tt></td>
+<td>remove the item at index <em>i</em> from <em>s</em></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">s[i:j]</span></tt></td>
+<td>slice of <em>s</em> from <em>i</em> to <em>j</em></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">s[i:j]</span> <span class="pre">=</span> <span class="pre">t</span></tt></td>
+<td>slice of <em>s</em> from <em>i</em> to <em>j</em> is replaced by the contents of the sequence <em>t</em> (the slice and <em>t</em> can be different lengths)</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">del</span> <span class="pre">s[i:j]</span></tt></td>
+<td>same as <tt class="docutils literal"><span class="pre">s[i:j]</span> <span class="pre">=</span> <span class="pre">[]</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">s[i:j:k]</span></tt></td>
+<td>slice of <em>s</em> from <em>i</em> to <em>j</em> with step <em>k</em></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">del</span> <span class="pre">s[i:j:k]</span></tt></td>
+<td>removes the elements of <tt class="docutils literal"><span class="pre">s[i:j:k]</span></tt> from the list</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">s[i:j:k]</span> <span class="pre">=</span> <span class="pre">t</span></tt></td>
+<td>the elements of <tt class="docutils literal"><span class="pre">s[i:j:k]</span></tt> are replaced by those of <em>t</em> (the slice and <em>t</em> <strong>must</strong> be the same length if <tt class="docutils literal"><span class="pre">k</span> <span class="pre">!=</span> <span class="pre">1</span></tt>)</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">len(s)</span></tt></td>
+<td>length of <em>s</em></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">s.append(x)</span></tt></td>
+<td>add element <em>x</em> to the end of <em>s</em></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">s.extend(t)</span></tt></td>
+<td>add the elements in sequence <em>t</em> to the end of <em>s</em></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">s.insert(i,x)</span></tt></td>
+<td>insert element <em>x</em> at index <em>i</em> in <em>s</em></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">s.pop([i])</span></tt></td>
+<td>removes the element at index <em>i</em> in <em>s</em> and returns it (defaults to last element)</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">s.remove(x)</span></tt></td>
+<td>removes the first element in <em>s</em> that equals <em>x</em> (raises <tt class="docutils literal"><span class="pre">ValueError</span></tt> if not found)</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">s.count(x)</span></tt></td>
+<td>number of occurrences of <em>x</em> in <em>s</em></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">s.index(x[,i[,j]])</span></tt></td>
+<td>smallest <em>k</em> such that <tt class="docutils literal"><span class="pre">s[k]</span> <span class="pre">==</span> <span class="pre">x</span></tt> and <tt class="docutils literal"><span class="pre">i</span> <span class="pre">&lt;=</span> <span class="pre">k</span> <span class="pre">&lt;</span> <span class="pre">j</span></tt> (raises <tt class="docutils literal"><span class="pre">ValueError</span></tt> if not found)</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">s.reverse()</span></tt></td>
+<td>reverses the items of <em>s</em> in place</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">s.sort(key[,reverse])</span></tt></td>
+<td>sort the items of <em>s</em> in place (note that <em>key</em> is <strong>not</strong> optional and, like python 3.0, we removed <em>cmp</em>)</td>
+</tr>
+</tbody>
+</table>
+<p>All elements should have the same type (such as <a class="reference internal" href="pygplates.GmlTimePeriod.html#pygplates.GmlTimePeriod" title="pygplates.GmlTimePeriod"><tt class="xref py py-class docutils literal"><span class="pre">GmlTimePeriod</span></tt></a>).</p>
+<dl class="method">
+<dt id="pygplates.GpmlArray.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>elements</em><big>)</big><a class="headerlink" href="#pygplates.GpmlArray.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an array from a sequence of property value elements.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>elements</strong> (Any sequence such as a <tt class="docutils literal"><span class="pre">list</span></tt> or a <tt class="docutils literal"><span class="pre">tuple</span></tt>) &#8211; A sequence of <a class="reference internal" href="pygplates.PropertyValue.html#pygplates.PropertyValue" title="pygplates.PropertyValue"><tt class="xref py py-class docutils literal"><span class="pre">PropertyValue</span></tt></a> elements.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">RuntimeError if sequence is empty</td>
+</tr>
+</tbody>
+</table>
+<p>Note that all elements should have the same type (such as <a class="reference internal" href="pygplates.GmlTimePeriod.html#pygplates.GmlTimePeriod" title="pygplates.GmlTimePeriod"><tt class="xref py py-class docutils literal"><span class="pre">GmlTimePeriod</span></tt></a>).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The sequence of elements must <strong>not</strong> be empty (for technical implementation reasons), otherwise a <em>RuntimeError</em> exception will be thrown.</p>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">array</span> <span class="o">=</span> <span class="n">pygplates</span><span class="o">.</span><span class="n">GpmlArray</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.GpmlArray.__init__" title="pygplates.GpmlArray.__init__"><tt class="xref py py-obj docutils literal"><span class="pre">__init__</span></tt></a>(elements)</td>
+<td>Create an array from a sequence of property value elements.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.GpmlArray.accept_visitor" title="pygplates.GpmlArray.accept_visitor"><tt class="xref py py-obj docutils literal"><span class="pre">accept_visitor</span></tt></a>(visitor)</td>
+<td>Accept a property value visitor so that it can visit this property value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.GpmlArray.append" title="pygplates.GpmlArray.append"><tt class="xref py py-obj docutils literal"><span class="pre">append</span></tt></a>(x)</td>
+<td>Add element <em>x</em> to the end.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.GpmlArray.clone" title="pygplates.GpmlArray.clone"><tt class="xref py py-obj docutils literal"><span class="pre">clone</span></tt></a>()</td>
+<td>Create a duplicate of this property value (derived) instance, including a recursive copy of any nested property values that this instance might contain.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.GpmlArray.count" title="pygplates.GpmlArray.count"><tt class="xref py py-obj docutils literal"><span class="pre">count</span></tt></a>(x)</td>
+<td>Number of occurrences of <em>x</em>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.GpmlArray.extend" title="pygplates.GpmlArray.extend"><tt class="xref py py-obj docutils literal"><span class="pre">extend</span></tt></a>(t)</td>
+<td>Add the elements in sequence <em>t</em> to the end.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.GpmlArray.get_geometry" title="pygplates.GpmlArray.get_geometry"><tt class="xref py py-obj docutils literal"><span class="pre">get_geometry</span></tt></a>()</td>
+<td>Extracts the <a class="reference internal" href="pygplates.GeometryOnSphere.html#pygplates.GeometryOnSphere" title="pygplates.GeometryOnSphere"><tt class="xref py py-class docutils literal"><span class="pre">geometry</span></tt></a> if this property value contains a geometry.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.GpmlArray.get_value" title="pygplates.GpmlArray.get_value"><tt class="xref py py-obj docutils literal"><span class="pre">get_value</span></tt></a>([time=0])</td>
+<td>Extracts the value, of this possibly time-dependent property value, at the reconstruction <em>time</em>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.GpmlArray.index" title="pygplates.GpmlArray.index"><tt class="xref py py-obj docutils literal"><span class="pre">index</span></tt></a>(x[,i[,j]])</td>
+<td>Smallest <em>k</em> such that the <em>k</em> th element equals <tt class="docutils literal"><span class="pre">x</span></tt> and <tt class="docutils literal"><span class="pre">i</span> <span class="pre">&lt;=</span> <span class="pre">k</span> <span class="pre">&lt;</span> <span class="pre">j</span></tt> (raises <tt class="docutils literal"><span class="pre">ValueError</span></tt> if not found).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.GpmlArray.insert" title="pygplates.GpmlArray.insert"><tt class="xref py py-obj docutils literal"><span class="pre">insert</span></tt></a>(i,x)</td>
+<td>Insert element <em>x</em> at index <em>i</em>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.GpmlArray.pop" title="pygplates.GpmlArray.pop"><tt class="xref py py-obj docutils literal"><span class="pre">pop</span></tt></a>([i])</td>
+<td>Removes the element at index <em>i</em> and returns it (defaults to last element).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.GpmlArray.remove" title="pygplates.GpmlArray.remove"><tt class="xref py py-obj docutils literal"><span class="pre">remove</span></tt></a>(x)</td>
+<td>Removes the first element that equals <em>x</em> (raises <tt class="docutils literal"><span class="pre">ValueError</span></tt> if not found).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.GpmlArray.reverse" title="pygplates.GpmlArray.reverse"><tt class="xref py py-obj docutils literal"><span class="pre">reverse</span></tt></a>()</td>
+<td>Reverses the items in place.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.GpmlArray.sort" title="pygplates.GpmlArray.sort"><tt class="xref py py-obj docutils literal"><span class="pre">sort</span></tt></a>(key[,reverse])</td>
+<td>Sort the items in place (note that <em>key</em> is <strong>not</strong> optional and, like python 3.0, we removed <em>cmp</em>).</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="pygplates.GpmlArray.accept_visitor">
+<tt class="descname">accept_visitor</tt><big>(</big><em>visitor</em><big>)</big><a class="headerlink" href="#pygplates.GpmlArray.accept_visitor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accept a property value visitor so that it can visit this property value. As part of the visitor pattern, this enables the visitor instance to discover the derived class type of this property. Note that there is no common interface shared by all property value types, hence the visitor pattern provides one way to find out which type of property value is being visited.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>visitor</strong> (<a class="reference internal" href="pygplates.PropertyValueVisitor.html#pygplates.PropertyValueVisitor" title="pygplates.PropertyValueVisitor"><tt class="xref py py-class docutils literal"><span class="pre">PropertyValueVisitor</span></tt></a>) &#8211; the visitor instance visiting this property value</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.GpmlArray.append">
+<tt class="descname">append</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#pygplates.GpmlArray.append" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add element <em>x</em> to the end.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.GpmlArray.clone">
+<tt class="descname">clone</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.GpmlArray.clone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a duplicate of this property value (derived) instance, including a recursive copy of any nested property values that this instance might contain.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="pygplates.PropertyValue.html#pygplates.PropertyValue" title="pygplates.PropertyValue"><tt class="xref py py-class docutils literal"><span class="pre">PropertyValue</span></tt></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.GpmlArray.count">
+<tt class="descname">count</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#pygplates.GpmlArray.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of occurrences of <em>x</em>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.GpmlArray.extend">
+<tt class="descname">extend</tt><big>(</big><em>t</em><big>)</big><a class="headerlink" href="#pygplates.GpmlArray.extend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add the elements in sequence <em>t</em> to the end.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.GpmlArray.get_geometry">
+<tt class="descname">get_geometry</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.GpmlArray.get_geometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extracts the <a class="reference internal" href="pygplates.GeometryOnSphere.html#pygplates.GeometryOnSphere" title="pygplates.GeometryOnSphere"><tt class="xref py py-class docutils literal"><span class="pre">geometry</span></tt></a> if this property value contains a geometry.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="pygplates.GeometryOnSphere.html#pygplates.GeometryOnSphere" title="pygplates.GeometryOnSphere"><tt class="xref py py-class docutils literal"><span class="pre">GeometryOnSphere</span></tt></a> or None</td>
+</tr>
+</tbody>
+</table>
+<p>This function searches for a geometry in the following standard geometry property value types:</p>
+<ul class="simple">
+<li><a class="reference internal" href="pygplates.GmlPoint.html#pygplates.GmlPoint" title="pygplates.GmlPoint"><tt class="xref py py-class docutils literal"><span class="pre">GmlPoint</span></tt></a></li>
+<li><a class="reference internal" href="pygplates.GmlMultiPoint.html#pygplates.GmlMultiPoint" title="pygplates.GmlMultiPoint"><tt class="xref py py-class docutils literal"><span class="pre">GmlMultiPoint</span></tt></a></li>
+<li><a class="reference internal" href="pygplates.GmlPolygon.html#pygplates.GmlPolygon" title="pygplates.GmlPolygon"><tt class="xref py py-class docutils literal"><span class="pre">GmlPolygon</span></tt></a></li>
+<li><a class="reference internal" href="pygplates.GmlLineString.html#pygplates.GmlLineString" title="pygplates.GmlLineString"><tt class="xref py py-class docutils literal"><span class="pre">GmlLineString</span></tt></a></li>
+<li><a class="reference internal" href="pygplates.GmlOrientableCurve.html#pygplates.GmlOrientableCurve" title="pygplates.GmlOrientableCurve"><tt class="xref py py-class docutils literal"><span class="pre">GmlOrientableCurve</span></tt></a> (a possible wrapper around <a class="reference internal" href="pygplates.GmlLineString.html#pygplates.GmlLineString" title="pygplates.GmlLineString"><tt class="xref py py-class docutils literal"><span class="pre">GmlLineString</span></tt></a>)</li>
+<li><a class="reference internal" href="pygplates.GpmlConstantValue.html#pygplates.GpmlConstantValue" title="pygplates.GpmlConstantValue"><tt class="xref py py-class docutils literal"><span class="pre">GpmlConstantValue</span></tt></a> (a possible wrapper around any of the above)</li>
+</ul>
+<p>If this property value does not contain a geometry then <tt class="docutils literal"><span class="pre">None</span></tt> is returned.</p>
+<p>Time-dependent geometry properties are <em>not</em> yet supported, so the only time-dependent property value wrapper currently supported by this function is <a class="reference internal" href="pygplates.GpmlConstantValue.html#pygplates.GpmlConstantValue" title="pygplates.GpmlConstantValue"><tt class="xref py py-class docutils literal"><span class="pre">GpmlConstantValue</span></tt></a>.</p>
+<p>To extract geometry from a specific feature property:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">property_value</span> <span class="o">=</span> <span class="n">feature</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">pygplates</span><span class="o">.</span><span class="n">PropertyName</span><span class="o">.</span><span class="n">gpml_pole_position</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">property_value</span><span class="p">:</span>
+    <span class="n">geometry</span> <span class="o">=</span> <span class="n">property_value</span><span class="o">.</span><span class="n">get_geometry</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>...however <a class="reference internal" href="pygplates.Feature.html#pygplates.Feature.get_geometry" title="pygplates.Feature.get_geometry"><tt class="xref py py-meth docutils literal"><span class="pre">Feature.get_geometry()</span></tt></a> provides an easier way to extract geometry from a feature with:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">geometry</span> <span class="o">=</span> <span class="n">feature</span><span class="o">.</span><span class="n">get_geometry</span><span class="p">(</span><span class="n">pygplates</span><span class="o">.</span><span class="n">PropertyName</span><span class="o">.</span><span class="n">gpml_pole_position</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To extract all geometries from a feature (regardless of which properties they came from):</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">all_geometries</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="nb">property</span> <span class="ow">in</span> <span class="n">feature</span><span class="p">:</span>
+    <span class="n">property_value</span> <span class="o">=</span> <span class="nb">property</span><span class="o">.</span><span class="n">get_value</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">property_value</span><span class="p">:</span>
+        <span class="n">geometry</span> <span class="o">=</span> <span class="n">property_value</span><span class="o">.</span><span class="n">get_geometry</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">geometry</span><span class="p">:</span>
+            <span class="n">all_geometries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">geometry</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>...however again <a class="reference internal" href="pygplates.Feature.html#pygplates.Feature.get_geometry" title="pygplates.Feature.get_geometry"><tt class="xref py py-meth docutils literal"><span class="pre">Feature.get_geometry()</span></tt></a> does this more easily with:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">all_geometries</span> <span class="o">=</span> <span class="n">feature</span><span class="o">.</span><span class="n">get_geometry</span><span class="p">(</span><span class="k">lambda</span> <span class="nb">property</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span> <span class="n">pygplates</span><span class="o">.</span><span class="n">PropertyReturn</span><span class="o">.</span><span class="n">all</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.GpmlArray.get_value">
+<tt class="descname">get_value</tt><big>(</big><span class="optional">[</span><em>time=0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#pygplates.GpmlArray.get_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extracts the value, of this possibly time-dependent property value, at the reconstruction <em>time</em>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>time</strong> (float or <a class="reference internal" href="pygplates.GeoTimeInstant.html#pygplates.GeoTimeInstant" title="pygplates.GeoTimeInstant"><tt class="xref py py-class docutils literal"><span class="pre">GeoTimeInstant</span></tt></a>) &#8211; the time to extract value (defaults to present day)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="pygplates.PropertyValue.html#pygplates.PropertyValue" title="pygplates.PropertyValue"><tt class="xref py py-class docutils literal"><span class="pre">PropertyValue</span></tt></a> or None</td>
+</tr>
+</tbody>
+</table>
+<p>If this property value is a time-dependent property (<a class="reference internal" href="pygplates.GpmlConstantValue.html#pygplates.GpmlConstantValue" title="pygplates.GpmlConstantValue"><tt class="xref py py-class docutils literal"><span class="pre">GpmlConstantValue</span></tt></a>,
+<a class="reference internal" href="pygplates.GpmlIrregularSampling.html#pygplates.GpmlIrregularSampling" title="pygplates.GpmlIrregularSampling"><tt class="xref py py-class docutils literal"><span class="pre">GpmlIrregularSampling</span></tt></a> or <a class="reference internal" href="pygplates.GpmlPiecewiseAggregation.html#pygplates.GpmlPiecewiseAggregation" title="pygplates.GpmlPiecewiseAggregation"><tt class="xref py py-class docutils literal"><span class="pre">GpmlPiecewiseAggregation</span></tt></a>) then a nested property
+value is extracted at the reconstruction <em>time</em> and returned. Otherwise this property value
+instance is simply returned as is (since it&#8217;s not a time-dependent property value).</p>
+<p>Returns <tt class="docutils literal"><span class="pre">None</span></tt> if this property value is a time-dependent property (<a class="reference internal" href="pygplates.GpmlConstantValue.html#pygplates.GpmlConstantValue" title="pygplates.GpmlConstantValue"><tt class="xref py py-class docutils literal"><span class="pre">GpmlConstantValue</span></tt></a>,
+<a class="reference internal" href="pygplates.GpmlIrregularSampling.html#pygplates.GpmlIrregularSampling" title="pygplates.GpmlIrregularSampling"><tt class="xref py py-class docutils literal"><span class="pre">GpmlIrregularSampling</span></tt></a> or <a class="reference internal" href="pygplates.GpmlPiecewiseAggregation.html#pygplates.GpmlPiecewiseAggregation" title="pygplates.GpmlPiecewiseAggregation"><tt class="xref py py-class docutils literal"><span class="pre">GpmlPiecewiseAggregation</span></tt></a>) and <em>time</em> is outside its
+time range (of time samples or time windows).</p>
+<p>Note that if this property value is a <a class="reference internal" href="pygplates.GpmlIrregularSampling.html#pygplates.GpmlIrregularSampling" title="pygplates.GpmlIrregularSampling"><tt class="xref py py-class docutils literal"><span class="pre">GpmlIrregularSampling</span></tt></a> instance then the extracted
+property value is interpolated (at reconstruction <em>time</em>) if property value can be interpolated
+(currently only <a class="reference internal" href="pygplates.GpmlFiniteRotation.html#pygplates.GpmlFiniteRotation" title="pygplates.GpmlFiniteRotation"><tt class="xref py py-class docutils literal"><span class="pre">GpmlFiniteRotation</span></tt></a> and <a class="reference internal" href="pygplates.XsDouble.html#pygplates.XsDouble" title="pygplates.XsDouble"><tt class="xref py py-class docutils literal"><span class="pre">XsDouble</span></tt></a>), otherwise <tt class="docutils literal"><span class="pre">None</span></tt> is returned.</p>
+<p>The following example demonstrates extracting an interpolated finite rotation from a
+<a class="reference internal" href="pygplates.GpmlIrregularSampling.html#pygplates.GpmlIrregularSampling" title="pygplates.GpmlIrregularSampling"><tt class="xref py py-class docutils literal"><span class="pre">total</span> <span class="pre">reconstruction</span> <span class="pre">pole</span></tt></a> at time 20Ma:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">gpml_finite_rotation_20Ma</span> <span class="o">=</span> <span class="n">total_reconstruction_pole</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">gpml_finite_rotation_20Ma</span><span class="p">:</span>
+  <span class="k">print</span> <span class="s1">&#39;Interpolated finite rotation at 20Ma: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">gpml_finite_rotation_20Ma</span><span class="o">.</span><span class="n">get_finite_rotation</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.GpmlArray.index">
+<tt class="descname">index</tt><big>(</big><em>x</em><span class="optional">[</span>, <em>i</em><span class="optional">[</span>, <em>j</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#pygplates.GpmlArray.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Smallest <em>k</em> such that the <em>k</em> th element equals <tt class="docutils literal"><span class="pre">x</span></tt> and <tt class="docutils literal"><span class="pre">i</span> <span class="pre">&lt;=</span> <span class="pre">k</span> <span class="pre">&lt;</span> <span class="pre">j</span></tt> (raises <tt class="docutils literal"><span class="pre">ValueError</span></tt> if not found).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.GpmlArray.insert">
+<tt class="descname">insert</tt><big>(</big><em>i</em>, <em>x</em><big>)</big><a class="headerlink" href="#pygplates.GpmlArray.insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert element <em>x</em> at index <em>i</em>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.GpmlArray.pop">
+<tt class="descname">pop</tt><big>(</big><span class="optional">[</span><em>i</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#pygplates.GpmlArray.pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the element at index <em>i</em> and returns it (defaults to last element).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.GpmlArray.remove">
+<tt class="descname">remove</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#pygplates.GpmlArray.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the first element that equals <em>x</em> (raises <tt class="docutils literal"><span class="pre">ValueError</span></tt> if not found).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.GpmlArray.reverse">
+<tt class="descname">reverse</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.GpmlArray.reverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reverses the items in place.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygplates.GpmlArray.sort">
+<tt class="descname">sort</tt><big>(</big><em>key</em><span class="optional">[</span>, <em>reverse</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#pygplates.GpmlArray.sort" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sort the items in place (note that <em>key</em> is <strong>not</strong> optional and, like python 3.0, we removed <em>cmp</em>).</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pygplates.GmlTimePeriod.html"
+                        title="previous chapter">pygplates.GmlTimePeriod</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pygplates.GpmlFiniteRotation.html"
+                        title="next chapter">pygplates.GpmlFiniteRotation</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/generated/pygplates.GpmlArray.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="pygplates.GpmlFiniteRotation.html" title="pygplates.GpmlFiniteRotation"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pygplates.GmlTimePeriod.html" title="pygplates.GmlTimePeriod"
+             >previous</a> |</li>
+        <li><a href="../index.html">pygplates 2.1.0.18 documentation</a> &raquo;</li>
+          <li><a href="../pygplates_reference.html" >Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright (C) 2003-2016 The University of Sydney, Australia
+(C) 2004-2016 California Institute of Technology
+(C) 2007-2016 The Geological Survey of Norway
+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

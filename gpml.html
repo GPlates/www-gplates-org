@@ -1,0 +1,108 @@
+<!DOCTYPE html> <!--html5-->
+<html>
+	<head>
+		<title>GPlates: GPML</title>
+
+		<meta charset="UTF-8"/>
+        <meta name="page-id" content="gpml">
+
+        <link type="image/png" rel="icon" href="img/GPlates-icon.png" />
+		<link type="text/css" rel="stylesheet" href="css/default.css" />
+		<link type="text/css" rel="stylesheet" href="css/navbars.css" />
+	    
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="js/header-footer-loader.js"></script>
+   </head>
+	
+	<body>
+		<div class="gpml-tab">
+			<h1>GPML</h1>
+			<h2>What is GPML?</h2>
+			<hr size="4" />
+
+			<p>
+				<b>GPML</b> is the <em>GPlates Markup Language</em>, the &ldquo;native&rdquo;
+				file format of GPlates.  GPML is custom-designed for geological and geographic
+				data in a plate-tectonics context.  At this time, GPML is the only file format
+				capable of representing all the various types of current and next-generation
+				data used in GPlates for <a href="features.html"
+				 title="Find out what GPlates can do">next-generation plate-tectonics
+				research</a>.
+			</p>
+
+			<p>
+				GPML is an XML-based language for plate-tectonics data, just as <a
+				 href="http://www.opengeospatial.org/standards/kml/" title="KML | OGC">KML</a>
+				(used by <a href="http://maps.google.com/" title="Google Maps">Google Maps</a>
+				and <a href="http://earth.google.com/" title="Google Earth">Google Earth</a>)
+				is an XML-based language for geographic annotations.  In the future, GPlates
+				will offer the ability to export geographic snapshots as KML.
+			</p>
+
+			<h2>How is GPML defined?</h2>
+			<hr size="4" />
+
+			<p>
+				GPML is defined by the <b>GPGIM</b>, the <em><a
+				 href="http://www.earthbyte.org/Resources/GPGIM/"
+				 title="EarthByte: GPlates Geological Information Model">GPlates Geological
+				Information Model</a></em>, an application schema of <a
+				 href="http://www.opengeospatial.org/standards/gml"
+				 title="OGC: Geography Markup Language">GML</a> which specifies and describes:
+			</p>
+
+			<ul>
+				<li>
+					the geological, geographic and tectonic entities which GPlates simulates
+				</li>
+
+				<li>
+					the conceptual building-blocks which GPlates defines
+				</li>
+
+				<li>
+					the processing and simulation constraints to which GPlates adheres.
+				</li>
+			</ul>
+
+			<p>
+				The <a href="contact.html" title="Contact the developers of GPlates">GPlates
+				software developers</a> have worked closely with the scientists to create,
+				refine and evolve the GPGIM specification over time, since this
+				document both specifies formally what the programmers need to implement in the
+				GPlates software, and defines the geological terminology in precise modelling
+				terms, to enable the scientists and software developers to communicate most
+				effectively using a shared vocabulary.
+			</p>
+
+			<h2>Why use GPML?</h2>
+			<hr size="4" />
+
+			<p>
+				When geological features or reconstruction poles are loaded in GPlates, the
+				data are contained in GPlates as <a
+				 href="http://www.earthbyte.org/Resources/GPGIM/public/"
+				 title="Browse the GPGIM feature catalogue">GPGIM features</a>.  Since the
+				structure of GPML corresponds to the GPGIM, GPML is the closest representation
+				to the internal data representation of GPlates.  Saving your GPlates data in
+				GPML ensures that no information will be lost due to file format limitations or
+				incompatibilities.
+			</p>
+
+			<p>
+				Since GPML is an XML format, it is more easily understood by other software,
+				and the XML structure of a GPML file may be validated automatically by
+				XML-validating software.  However, the downside to XML is that it can be quite
+				verbose, so general-purpose GPML files are usually larger than special-purpose
+				proprietary formats like the <span
+				 style="font-variant: small-caps">Plates4</span> and ESRI Shapefile formats. 
+				For this reason, GPlates also offers the <b>compressed GPML</b> format, which
+				is GPML compressed by the open-source <a href="http://www.gzip.org/"
+				 title="The gzip home page">gzip</a> program.  A compressed GPML file can be up
+				to 1/30th the size of the corresponding regular GPML file, and approximately
+				60% of the size of the equivalent <span
+				 style="font-variant: small-caps">Plates4</span> file!
+			</p>
+		</div>
+	</body>
+</html>
