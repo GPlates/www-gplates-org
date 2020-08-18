@@ -1,36 +1,28 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>pygplates.LatLonPoint &mdash; pygplates 2.1.0.18 documentation</title>
-    
-    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <title>pygplates.LatLonPoint &#8212; pygplates 2.2.0.28 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '2.1.0.18',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="pygplates 2.1.0.18 documentation" href="../index.html" />
-    <link rel="up" title="Reference" href="../pygplates_reference.html" />
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="pygplates.LocalCartesian" href="pygplates.LocalCartesian.html" />
     <link rel="prev" title="pygplates.GreatCircleArc" href="pygplates.GreatCircleArc.html" /> 
-  </head>
-  <body>
-    <div class="related">
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -42,40 +34,40 @@
         <li class="right" >
           <a href="pygplates.GreatCircleArc.html" title="pygplates.GreatCircleArc"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">pygplates 2.1.0.18 documentation</a> &raquo;</li>
-          <li><a href="../pygplates_reference.html" accesskey="U">Reference</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">pygplates 2.2.0.28 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../pygplates_reference.html" accesskey="U">Reference</a> &#187;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="pygplates-latlonpoint">
 <h1>pygplates.LatLonPoint<a class="headerlink" href="#pygplates-latlonpoint" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="pygplates.LatLonPoint">
-<em class="property">class </em><tt class="descclassname">pygplates.</tt><tt class="descname">LatLonPoint</tt><big>(</big><em>latitude</em>, <em>longitude</em><big>)</big><a class="headerlink" href="#pygplates.LatLonPoint" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></tt></p>
+<em class="property">class </em><code class="descclassname">pygplates.</code><code class="descname">LatLonPoint</code><a class="headerlink" href="#pygplates.LatLonPoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Boost.Python.instance</span></code></p>
 <p>Represents a point in 2D geographic coordinates (latitude and longitude).</p>
-<p>LatLonPoints are <em>not</em> equality (<tt class="docutils literal"><span class="pre">==</span></tt>, <tt class="docutils literal"><span class="pre">!=</span></tt>) comparable (will raise <tt class="docutils literal"><span class="pre">TypeError</span></tt> when compared) and are not hashable (cannot be used as a key in a <tt class="docutils literal"><span class="pre">dict</span></tt>).</p>
+<p>LatLonPoints are <em>not</em> equality (<code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code>) comparable (will raise <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> when compared) and are not hashable (cannot be used as a key in a <code class="docutils literal notranslate"><span class="pre">dict</span></code>).</p>
 <p>As a convenience the North and South poles are available as class attributes:</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">pygplates.LatLonPoint.north_pole</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">pygplates.LatLonPoint.south_pole</span></tt></li>
+<li><code class="docutils literal notranslate"><span class="pre">pygplates.LatLonPoint.north_pole</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">pygplates.LatLonPoint.south_pole</span></code></li>
 </ul>
 <dl class="method">
 <dt id="pygplates.LatLonPoint.__init__">
-<tt class="descname">__init__</tt><big>(</big><em>latitude</em>, <em>longitude</em><big>)</big><a class="headerlink" href="#pygplates.LatLonPoint.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>latitude</em>, <em>longitude</em><span class="sig-paren">)</span><a class="headerlink" href="#pygplates.LatLonPoint.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a <em>LatLonPoint</em> instance from a <em>latitude</em> and <em>longitude</em>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>latitude</strong> (<em>float</em>) &#8211; the latitude (in degrees)</li>
-<li><strong>longitude</strong> (<em>float</em>) &#8211; the longitude (in degrees)</li>
+<li><strong>latitude</strong> (<em>float</em>) – the latitude (in degrees)</li>
+<li><strong>longitude</strong> (<em>float</em>) – the longitude (in degrees)</li>
 </ul>
 </td>
 </tr>
@@ -84,12 +76,12 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">point</span> <span class="o">=</span> <span class="n">pygplates</span><span class="o">.</span><span class="n">LatLonPoint</span><span class="p">(</span><span class="n">latitude</span><span class="p">,</span> <span class="n">longitude</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">point</span> <span class="o">=</span> <span class="n">pygplates</span><span class="o">.</span><span class="n">LatLonPoint</span><span class="p">(</span><span class="n">latitude</span><span class="p">,</span> <span class="n">longitude</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><em>latitude</em> must satisfy <a class="reference internal" href="#pygplates.LatLonPoint.is_valid_latitude" title="pygplates.LatLonPoint.is_valid_latitude"><tt class="xref py py-meth docutils literal"><span class="pre">is_valid_latitude()</span></tt></a> and <em>longitude</em> must satisfy <a class="reference internal" href="#pygplates.LatLonPoint.is_valid_longitude" title="pygplates.LatLonPoint.is_valid_longitude"><tt class="xref py py-meth docutils literal"><span class="pre">is_valid_longitude()</span></tt></a>, otherwise <em>InvalidLatLonError</em> will be raised.</p>
+<p class="last"><em>latitude</em> must satisfy <a class="reference internal" href="#pygplates.LatLonPoint.is_valid_latitude" title="pygplates.LatLonPoint.is_valid_latitude"><code class="xref py py-meth docutils literal notranslate"><span class="pre">is_valid_latitude()</span></code></a> and <em>longitude</em> must satisfy <a class="reference internal" href="#pygplates.LatLonPoint.is_valid_longitude" title="pygplates.LatLonPoint.is_valid_longitude"><code class="xref py py-meth docutils literal notranslate"><span class="pre">is_valid_longitude()</span></code></a>, otherwise <em>InvalidLatLonError</em> will be raised.</p>
 </div>
 </dd></dl>
 
@@ -100,28 +92,28 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#pygplates.LatLonPoint.__init__" title="pygplates.LatLonPoint.__init__"><tt class="xref py py-obj docutils literal"><span class="pre">__init__</span></tt></a>(latitude,&nbsp;longitude)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.LatLonPoint.__init__" title="pygplates.LatLonPoint.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(latitude,&nbsp;longitude)</td>
 <td>Create a <em>LatLonPoint</em> instance from a <em>latitude</em> and <em>longitude</em>.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#pygplates.LatLonPoint.get_latitude" title="pygplates.LatLonPoint.get_latitude"><tt class="xref py py-obj docutils literal"><span class="pre">get_latitude</span></tt></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.LatLonPoint.get_latitude" title="pygplates.LatLonPoint.get_latitude"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_latitude</span></code></a>()</td>
 <td>Returns the latitude (in degrees).</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#pygplates.LatLonPoint.get_longitude" title="pygplates.LatLonPoint.get_longitude"><tt class="xref py py-obj docutils literal"><span class="pre">get_longitude</span></tt></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.LatLonPoint.get_longitude" title="pygplates.LatLonPoint.get_longitude"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_longitude</span></code></a>()</td>
 <td>Returns the longitude (in degrees).</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#pygplates.LatLonPoint.is_valid_latitude" title="pygplates.LatLonPoint.is_valid_latitude"><tt class="xref py py-obj docutils literal"><span class="pre">is_valid_latitude</span></tt></a>(latitude)</td>
-<td>[<em>staticmethod</em>] Returns <tt class="docutils literal"><span class="pre">True</span></tt> if <em>latitude</em> is in the range [-90, 90].</td>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.LatLonPoint.is_valid_latitude" title="pygplates.LatLonPoint.is_valid_latitude"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid_latitude</span></code></a>(latitude)</td>
+<td>[<em>staticmethod</em>] Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if <em>latitude</em> is in the range [-90, 90].</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#pygplates.LatLonPoint.is_valid_longitude" title="pygplates.LatLonPoint.is_valid_longitude"><tt class="xref py py-obj docutils literal"><span class="pre">is_valid_longitude</span></tt></a>(longitude)</td>
-<td>[<em>staticmethod</em>] Returns <tt class="docutils literal"><span class="pre">True</span></tt> if <em>longitude</em> is in the range [-360, 360].</td>
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.LatLonPoint.is_valid_longitude" title="pygplates.LatLonPoint.is_valid_longitude"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid_longitude</span></code></a>(longitude)</td>
+<td>[<em>staticmethod</em>] Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if <em>longitude</em> is in the range [-360, 360].</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#pygplates.LatLonPoint.to_lat_lon" title="pygplates.LatLonPoint.to_lat_lon"><tt class="xref py py-obj docutils literal"><span class="pre">to_lat_lon</span></tt></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.LatLonPoint.to_lat_lon" title="pygplates.LatLonPoint.to_lat_lon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_lat_lon</span></code></a>()</td>
 <td>Returns the tuple (latitude,longitude) in degrees.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#pygplates.LatLonPoint.to_point_on_sphere" title="pygplates.LatLonPoint.to_point_on_sphere"><tt class="xref py py-obj docutils literal"><span class="pre">to_point_on_sphere</span></tt></a>()</td>
-<td>Returns the cartesian coordinates as a <a class="reference internal" href="pygplates.PointOnSphere.html#pygplates.PointOnSphere" title="pygplates.PointOnSphere"><tt class="xref py py-class docutils literal"><span class="pre">PointOnSphere</span></tt></a>.</td>
+<tr class="row-odd"><td><a class="reference internal" href="#pygplates.LatLonPoint.to_point_on_sphere" title="pygplates.LatLonPoint.to_point_on_sphere"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_point_on_sphere</span></code></a>()</td>
+<td>Returns the cartesian coordinates as a <a class="reference internal" href="pygplates.PointOnSphere.html#pygplates.PointOnSphere" title="pygplates.PointOnSphere"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointOnSphere</span></code></a>.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#pygplates.LatLonPoint.to_xyz" title="pygplates.LatLonPoint.to_xyz"><tt class="xref py py-obj docutils literal"><span class="pre">to_xyz</span></tt></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#pygplates.LatLonPoint.to_xyz" title="pygplates.LatLonPoint.to_xyz"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_xyz</span></code></a>()</td>
 <td>Returns the cartesian coordinates as the tuple (x,y,z).</td>
 </tr>
 </tbody>
@@ -133,17 +125,17 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><tt class="xref py py-obj docutils literal"><span class="pre">north_pole</span></tt></td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">north_pole</span></code></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><tt class="xref py py-obj docutils literal"><span class="pre">south_pole</span></tt></td>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">south_pole</span></code></td>
 <td></td>
 </tr>
 </tbody>
 </table>
 <dl class="method">
 <dt id="pygplates.LatLonPoint.get_latitude">
-<tt class="descname">get_latitude</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.LatLonPoint.get_latitude" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_latitude</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pygplates.LatLonPoint.get_latitude" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the latitude (in degrees).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -157,7 +149,7 @@
 
 <dl class="method">
 <dt id="pygplates.LatLonPoint.get_longitude">
-<tt class="descname">get_longitude</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.LatLonPoint.get_longitude" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_longitude</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pygplates.LatLonPoint.get_longitude" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the longitude (in degrees).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -169,42 +161,42 @@
 </table>
 </dd></dl>
 
-<dl class="method">
+<dl class="staticmethod">
 <dt id="pygplates.LatLonPoint.is_valid_latitude">
-<tt class="descname">is_valid_latitude</tt><big>(</big><em>latitude</em><big>)</big><a class="headerlink" href="#pygplates.LatLonPoint.is_valid_latitude" title="Permalink to this definition">¶</a></dt>
-<dd><p>[<em>staticmethod</em>] Returns <tt class="docutils literal"><span class="pre">True</span></tt> if <em>latitude</em> is in the range [-90, 90].</p>
+<em class="property">static </em><code class="descname">is_valid_latitude</code><span class="sig-paren">(</span><em>latitude</em><span class="sig-paren">)</span><a class="headerlink" href="#pygplates.LatLonPoint.is_valid_latitude" title="Permalink to this definition">¶</a></dt>
+<dd><p>[<em>staticmethod</em>] Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if <em>latitude</em> is in the range [-90, 90].</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>latitude</strong> (<em>float</em>) &#8211; the latitude (in degrees)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>latitude</strong> (<em>float</em>) – the latitude (in degrees)</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">pygplates</span><span class="o">.</span><span class="n">LatLonPoint</span><span class="o">.</span><span class="n">is_valid_latitude</span><span class="p">(</span><span class="n">latitude</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">pygplates</span><span class="o">.</span><span class="n">LatLonPoint</span><span class="o">.</span><span class="n">is_valid_latitude</span><span class="p">(</span><span class="n">latitude</span><span class="p">):</span>
   <span class="o">...</span>
 </pre></div>
 </div>
 </dd></dl>
 
-<dl class="method">
+<dl class="staticmethod">
 <dt id="pygplates.LatLonPoint.is_valid_longitude">
-<tt class="descname">is_valid_longitude</tt><big>(</big><em>longitude</em><big>)</big><a class="headerlink" href="#pygplates.LatLonPoint.is_valid_longitude" title="Permalink to this definition">¶</a></dt>
-<dd><p>[<em>staticmethod</em>] Returns <tt class="docutils literal"><span class="pre">True</span></tt> if <em>longitude</em> is in the range [-360, 360].</p>
+<em class="property">static </em><code class="descname">is_valid_longitude</code><span class="sig-paren">(</span><em>longitude</em><span class="sig-paren">)</span><a class="headerlink" href="#pygplates.LatLonPoint.is_valid_longitude" title="Permalink to this definition">¶</a></dt>
+<dd><p>[<em>staticmethod</em>] Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if <em>longitude</em> is in the range [-360, 360].</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>longitude</strong> (<em>float</em>) &#8211; the longitude (in degrees)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>longitude</strong> (<em>float</em>) – the longitude (in degrees)</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
 <p>GPlates uses the half-open range (-180.0, 180.0], but accepts [-360.0, 360.0] as input</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">pygplates</span><span class="o">.</span><span class="n">LatLonPoint</span><span class="o">.</span><span class="n">is_valid_longitude</span><span class="p">(</span><span class="n">longitude</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">pygplates</span><span class="o">.</span><span class="n">LatLonPoint</span><span class="o">.</span><span class="n">is_valid_longitude</span><span class="p">(</span><span class="n">longitude</span><span class="p">):</span>
   <span class="o">...</span>
 </pre></div>
 </div>
@@ -212,7 +204,7 @@
 
 <dl class="method">
 <dt id="pygplates.LatLonPoint.to_lat_lon">
-<tt class="descname">to_lat_lon</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.LatLonPoint.to_lat_lon" title="Permalink to this definition">¶</a></dt>
+<code class="descname">to_lat_lon</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pygplates.LatLonPoint.to_lat_lon" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the tuple (latitude,longitude) in degrees.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -222,20 +214,20 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">latitude</span><span class="p">,</span> <span class="n">longitude</span> <span class="o">=</span> <span class="n">lat_lon_point</span><span class="o">.</span><span class="n">to_lat_lon</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">latitude</span><span class="p">,</span> <span class="n">longitude</span> <span class="o">=</span> <span class="n">lat_lon_point</span><span class="o">.</span><span class="n">to_lat_lon</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="pygplates.LatLonPoint.to_point_on_sphere">
-<tt class="descname">to_point_on_sphere</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.LatLonPoint.to_point_on_sphere" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the cartesian coordinates as a <a class="reference internal" href="pygplates.PointOnSphere.html#pygplates.PointOnSphere" title="pygplates.PointOnSphere"><tt class="xref py py-class docutils literal"><span class="pre">PointOnSphere</span></tt></a>.</p>
+<code class="descname">to_point_on_sphere</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pygplates.LatLonPoint.to_point_on_sphere" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the cartesian coordinates as a <a class="reference internal" href="pygplates.PointOnSphere.html#pygplates.PointOnSphere" title="pygplates.PointOnSphere"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointOnSphere</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="pygplates.PointOnSphere.html#pygplates.PointOnSphere" title="pygplates.PointOnSphere"><tt class="xref py py-class docutils literal"><span class="pre">PointOnSphere</span></tt></a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="pygplates.PointOnSphere.html#pygplates.PointOnSphere" title="pygplates.PointOnSphere"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointOnSphere</span></code></a></td>
 </tr>
 </tbody>
 </table>
@@ -243,7 +235,7 @@
 
 <dl class="method">
 <dt id="pygplates.LatLonPoint.to_xyz">
-<tt class="descname">to_xyz</tt><big>(</big><big>)</big><a class="headerlink" href="#pygplates.LatLonPoint.to_xyz" title="Permalink to this definition">¶</a></dt>
+<code class="descname">to_xyz</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pygplates.LatLonPoint.to_xyz" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the cartesian coordinates as the tuple (x,y,z).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -253,10 +245,10 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">lat_lon_point</span><span class="o">.</span><span class="n">to_xyz</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">lat_lon_point</span><span class="o">.</span><span class="n">to_xyz</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>This is similar to <a class="reference internal" href="pygplates.PointOnSphere.html#pygplates.PointOnSphere.to_xyz" title="pygplates.PointOnSphere.to_xyz"><tt class="xref py py-meth docutils literal"><span class="pre">PointOnSphere.to_xyz()</span></tt></a>.</p>
+<p>This is similar to <a class="reference internal" href="pygplates.PointOnSphere.html#pygplates.PointOnSphere.to_xyz" title="pygplates.PointOnSphere.to_xyz"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PointOnSphere.to_xyz()</span></code></a>.</p>
 </dd></dl>
 
 </dd></dl>
@@ -267,7 +259,7 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="pygplates.GreatCircleArc.html"
@@ -275,29 +267,30 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="pygplates.LocalCartesian.html"
                         title="next chapter">pygplates.LocalCartesian</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../_sources/generated/pygplates.LatLonPoint.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generated/pygplates.LatLonPoint.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -309,16 +302,16 @@
         <li class="right" >
           <a href="pygplates.GreatCircleArc.html" title="pygplates.GreatCircleArc"
              >previous</a> |</li>
-        <li><a href="../index.html">pygplates 2.1.0.18 documentation</a> &raquo;</li>
-          <li><a href="../pygplates_reference.html" >Reference</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">pygplates 2.2.0.28 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../pygplates_reference.html" >Reference</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright (C) 2003-2016 The University of Sydney, Australia
-(C) 2004-2016 California Institute of Technology
-(C) 2007-2016 The Geological Survey of Norway
+    <div class="footer" role="contentinfo">
+        &#169; Copyright (C) 2003-2020 The University of Sydney, Australia
+(C) 2004-2020 California Institute of Technology
+(C) 2007-2020 The Geological Survey of Norway
 .
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
     </div>
   </body>
 </html>
